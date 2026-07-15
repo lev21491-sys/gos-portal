@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0053)file:///C:/Users/User/Downloads/sibirsky-sarim_8.html -->
+<!-- saved from url=(0053)file:///C:/Users/User/Downloads/sibirsky-sarim_9.html -->
 <html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -312,6 +312,34 @@
   footer{ border-top:3px solid var(--gold); background:var(--navy); padding:36px 24px 44px; text-align:center; }
   footer .fmotto{ font-family:'IBM Plex Mono', monospace; color:#cdd6e4; font-size:12px; letter-spacing:0.1em; }
   footer .fnote{ font-family:'IBM Plex Mono', monospace; color:#7c8aa4; font-size:10.5px; margin-top:10px; }
+  /* ---------- Mobile fixes ---------- */
+  html, body{ max-width:100%; overflow-x:hidden; }
+  @media (max-width:640px){
+    section{ padding:56px 16px; }
+    .passport-body{ flex-wrap:wrap; }
+    .passport-photo{ margin:0 auto; }
+    .passport-fields{ min-width:0; width:100%; }
+    .p-row{ flex-wrap:wrap; }
+    .chat-tabs{ width:100%; flex-wrap:wrap; }
+    .chat-tab{ flex:1 1 auto; text-align:center; padding:11px 8px; font-size:10.5px; }
+    .chat-wrap, .chat-box, .chat-input-row, .passports-panel{ width:100%; max-width:100%; }
+    .decree{ flex-wrap:wrap; gap:6px 14px; }
+    .auth-tabs{ width:100%; }
+    .auth-tab{ flex:1; text-align:center; }
+    .auth-panel, .official-panel, .ally-panel, .passport-card{ padding-left:18px; padding-right:18px; }
+    .zone-split, .duo-grid{ grid-template-columns:1fr; }
+    .status-strip{ width:100%; justify-content:flex-start; }
+    .map-wrap{ flex-direction:column; }
+    #sectorMap{ width:100%; height:auto; max-width:320px; margin:0 auto; }
+    .btn, .chat-input-row button, .pp-actions button{ min-height:44px; } /* comfortable tap targets */
+    .whoami{ display:flex; flex-wrap:wrap; align-items:center; gap:6px; }
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .reveal{ opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease; }
+    .reveal.in{ opacity:1; transform:translateY(0); }
+  }
+  .seal-big{ animation: sealGlow 6s ease-in-out infinite; }
+  @keyframes sealGlow{ 0%,100%{ filter:drop-shadow(0 0 0 rgba(169,130,47,0)); } 50%{ filter:drop-shadow(0 0 10px rgba(169,130,47,0.35)); } }
 </style>
 </head>
 <body>
@@ -346,15 +374,15 @@
     <span>Сибирский Сарим</span>
   </div>
   <div class="nav-links">
-    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_8.html#constitution">Конституция</a>
-    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_8.html#avc">Альянс AVC</a>
-    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_8.html#ally">Гобидори</a>
-    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_8.html#territory">Карта</a>
-    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_8.html#symbols">Символика</a>
-    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_8.html#anthem">Гимн</a>
-    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_8.html#decrees">Указы</a>
-    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_8.html#cabinet">Кабинет</a>
-    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_8.html#chronicle">Хроника</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_9.html#constitution">Конституция</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_9.html#avc">Альянс AVC</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_9.html#ally">Гобидори</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_9.html#territory">Карта</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_9.html#symbols">Символика</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_9.html#anthem">Гимн</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_9.html#decrees">Указы</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_9.html#cabinet">Кабинет</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_9.html#chronicle">Хроника</a>
   </div>
 </nav>
 
@@ -371,12 +399,12 @@
     <div class="status-cell"><div class="label">Основано</div><div class="value">2024</div></div>
     <div class="status-cell"><div class="label">Альянс</div><div class="value">AVC — с 22.01.2026</div></div>
     <div class="status-cell"><div class="label">Устройство</div><div class="value">Военно-экономическое</div></div>
-    <div class="status-cell"><div class="label">Время Сарима</div><div class="value" id="stateClock">14:37:22 · 15.07.2026</div></div>
+    <div class="status-cell"><div class="label">Время Сарима</div><div class="value" id="stateClock">17:23:58 · 15.07.2026</div></div>
   </div>
   <div class="quote-of-day" id="quoteOfDay"><span class="qlabel">Девиз дня</span>Высшим приоритетом государства является защита интересов граждан, сохранение внутренней стабильности и укрепление позиций в виртуальном пространстве.</div>
 </header>
 
-<section id="constitution">
+<section id="constitution" class="reveal in">
   <div class="section-kicker">Основной закон</div>
   <h2>Конституция государства</h2>
   <p class="section-sub">Принята и действует с 22 января 2026 года — момента подписания акта о присоединении к альянсу AVC. Разверните статью, чтобы прочитать полный текст.</p>
@@ -442,7 +470,7 @@
     </div></div>
 </section>
 
-<section id="avc">
+<section id="avc" class="reveal in">
   <div class="section-kicker">Внешняя политика</div>
   <h2>Альянс AVC</h2>
   <p class="section-sub">Сибирский Сарим — участник альянса AVC с 22 января 2026 года. Часть полномочий делегирована структурам альянса; остальное остаётся исключительной юрисдикцией государства.</p>
@@ -467,7 +495,7 @@
   </div>
 </section>
 
-<section id="ally">
+<section id="ally" class="reveal in">
   <div class="section-kicker">Специальный союз</div>
   <h2>Гобидори</h2>
   <p class="section-sub">Ближайший союзник Сибирского Сарима — союз заключён в 2024 году. Оба государства проходят возрождение государственности параллельно в 2026 году. Раздел будет дополнен по мере поступления данных.</p>
@@ -476,14 +504,16 @@
     <div class="ally-fields">
       <div class="ally-field"><div class="label">Статус отношений</div><div class="value">Союзник</div></div>
       <div class="ally-field"><div class="label">Союз заключён</div><div class="value">2024</div></div>
+      <div class="ally-field"><div class="label">Режим правления</div><div class="value">Парламентская монархия</div></div>
+      <div class="ally-field"><div class="label">Валюта</div><div class="value">Гобидорский рубль</div></div>
       <div class="ally-field"><div class="label">Совместный орган</div><div class="value placeholder">не учреждён — уточняется</div></div>
-      <div class="ally-field"><div class="label">Общая валюта</div><div class="value placeholder">не введена — уточняется</div></div>
+      <div class="ally-field"><div class="label">Общая валюта союза</div><div class="value placeholder">не введена — уточняется</div></div>
       <div class="ally-field"><div class="label">Кибер-доктрина</div><div class="value placeholder">в разработке</div></div>
     </div>
   </div>
 </section>
 
-<section id="territory">
+<section id="territory" class="reveal in">
   <div class="section-kicker">Территориальное деление</div>
   <h2>Карта секторов</h2>
   <p class="section-sub">Административные секторы государства. Нажмите на сектор, чтобы прочитать о нём — именно из этого списка граждане выбирают родной сектор при оформлении паспорта.</p>
@@ -493,7 +523,7 @@
   </div>
 </section>
 
-<section id="symbols">
+<section id="symbols" class="reveal in">
   <div class="section-kicker">Государственная символика</div>
   <h2>Символы Сарима</h2>
   <p class="section-sub">Официальные атрибуты государственности.</p>
@@ -515,7 +545,7 @@
   </div>
 </section>
 
-<section id="anthem">
+<section id="anthem" class="reveal in">
   <div class="section-kicker">Государственная символика</div>
   <h2>Гимн Сибирского Сарима</h2>
   <p class="section-sub">Официальный текст государственного гимна.</p>
@@ -558,7 +588,7 @@
   </div>
 </section>
 
-<section id="decrees">
+<section id="decrees" class="reveal in">
   <div class="section-kicker">Официальный реестр</div>
   <h2>Указы государства</h2>
   <p class="section-sub">Публичный журнал актов, изданных от имени государства. Пополняется по мере событий — новые указы могут издавать только вошедшие в кабинет правители.</p>
@@ -579,7 +609,7 @@
   </div>
 </section>
 
-<section id="cabinet">
+<section id="cabinet" class="reveal in">
   <div class="section-kicker">Личный доступ</div>
   <h2>Кабинет гражданина</h2>
   <p class="section-sub">Паспорт и ключ доступа создаются один раз — как приватный ключ криптокошелька. Гражданам выдаётся ключ, правителям и паспортной комиссии — секретная фраза из 12 слов, а президенту — усиленная фраза из 24 слов, длиннее любого другого ключа в государстве. Все повышенные статусы требуют кода приглашения. Ключи не хранятся в открытом виде и не подлежат восстановлению.</p>
@@ -622,6 +652,7 @@
           <option value="citizen">Гражданин</option>
           <option value="ruler">Правитель (нужен код приглашения)</option>
           <option value="commission">Паспортная комиссия (нужен код приглашения)</option>
+          <option value="diplomat">Дипломат (нужен код приглашения)</option>
           <option value="president">Президент (нужен код приглашения)</option>
         </select>
       </div>
@@ -709,6 +740,7 @@
       <div class="chat-tabs">
         <div class="chat-tab active" data-chat="citizens">Чат граждан</div>
         <div class="chat-tab hidden" id="tabRulers" data-chat="rulers">Совет</div>
+        <div class="chat-tab hidden" id="tabDiplomacy" data-chat="diplomacy">Дипломатия</div>
         <div class="chat-tab hidden" id="tabPassports" data-chat="passports">Паспорты</div>
       </div>
       <div class="chat-box" id="chatBox"></div>
@@ -722,7 +754,7 @@
   </div>
 </section>
 
-<section id="chronicle">
+<section id="chronicle" class="reveal in">
   <div class="section-kicker">Летопись</div>
   <h2>Хроника государства</h2>
   <p class="section-sub">Записи ведутся по мере событий — указы, кризисы, договоры.</p>
@@ -731,7 +763,7 @@
 
 <footer>
   <div class="fmotto">СИБИРСКИЙ САРИМ · АЛЬЯНС AVC · 2026</div>
-  <div class="fnote">Официальный государственный портал · <span id="visitCounter">посещение №2</span></div>
+  <div class="fnote">Официальный государственный портал · <span id="visitCounter">посещение №3</span></div>
 </footer>
 
 <script>
@@ -748,6 +780,17 @@
     }
     banner.textContent = '⚠ Ошибка на странице: ' + e.message + ' — откройте консоль браузера (F12) для деталей.';
   });
+
+  // ---------- Scroll-reveal animation for sections ----------
+  try{
+    if('IntersectionObserver' in window){
+      document.querySelectorAll('section').forEach(sec => sec.classList.add('reveal'));
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(en => { if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+      }, { threshold: 0.08 });
+      document.querySelectorAll('section.reveal').forEach(sec => io.observe(sec));
+    }
+  }catch(e){ /* purely decorative — never block the rest of the page */ }
 
   // ---------- State emblem rays ----------
   const raysGroup = document.getElementById('raysGroup');
@@ -996,6 +1039,7 @@
   const store = (window.storage && typeof window.storage.get === 'function') ? window.storage : localFallback;
   const usingLocalFallback = (store === localFallback);
   loadDecrees();
+  tryAutoLogin();
 
   (async function visitCounter(){
     const el = document.getElementById('visitCounter');
@@ -1008,19 +1052,114 @@
     } catch(e){ el.textContent = ''; }
   })();
 
-  // One-time invite codes. Each works only once. Replace these lists with your
-  // own secret codes before sharing the site publicly, and hand them out
-  // individually to the people who should get that status.
-  const RULER_INVITE_CODES = Array.from({length: 25}, (_, i) => 'SARIM-COUNCIL-' + String(i+1).padStart(2,'0'));
-  const COMMISSION_INVITE_CODES = Array.from({length: 10}, (_, i) => 'SARIM-COMMISSION-' + String(i+1).padStart(2,'0'));
+  // One-time invite codes. Each works only once and is random/non-sequential
+  // so it can't be guessed. Replace these lists with your own secret codes
+  // before sharing the site publicly, and hand them out individually.
+  const RULER_INVITE_CODES = [
+    "SARIM-CNCL-YSSG-ZKBT",
+    "SARIM-CNCL-XB9N-V8S6",
+    "SARIM-CNCL-J3M4-PAJ9",
+    "SARIM-CNCL-UH8R-E27J",
+    "SARIM-CNCL-ZTH5-4U4X",
+    "SARIM-CNCL-RM8U-JA3Q",
+    "SARIM-CNCL-BMJ9-ZV45",
+    "SARIM-CNCL-7YMS-9UJK",
+    "SARIM-CNCL-76CY-5D4A",
+    "SARIM-CNCL-7V4M-5WG8",
+    "SARIM-CNCL-FU4A-3B88",
+    "SARIM-CNCL-Y49E-DG6H",
+    "SARIM-CNCL-WGK4-8MJ7",
+    "SARIM-CNCL-VF4F-PTY7",
+    "SARIM-CNCL-3PKJ-CS4D",
+    "SARIM-CNCL-PKJB-SUVX",
+    "SARIM-CNCL-RHED-R3D9",
+    "SARIM-CNCL-VDQR-VE3K",
+    "SARIM-CNCL-QERM-3HQS",
+    "SARIM-CNCL-KNGC-GMHD",
+    "SARIM-CNCL-ARMK-DVWT",
+    "SARIM-CNCL-82P7-GDMS",
+    "SARIM-CNCL-ZKNZ-XD7W",
+    "SARIM-CNCL-47TX-DM4W",
+    "SARIM-CNCL-KKZT-G5GC",
+    "SARIM-CNCL-5PHV-SXTN",
+    "SARIM-CNCL-SD4G-QYYY",
+    "SARIM-CNCL-CEYY-Y9ME",
+    "SARIM-CNCL-7HFW-SCXK",
+    "SARIM-CNCL-WRZA-5F62",
+    "SARIM-CNCL-DSE6-PWQ3",
+    "SARIM-CNCL-WZSQ-9KTN",
+    "SARIM-CNCL-XU4B-CYB6",
+    "SARIM-CNCL-BMUQ-MDH6",
+    "SARIM-CNCL-JP8A-YCW6",
+    "SARIM-CNCL-68FN-TYS4",
+    "SARIM-CNCL-R78N-TPZX",
+    "SARIM-CNCL-2K8R-7SG7",
+    "SARIM-CNCL-AMCK-VMRB",
+    "SARIM-CNCL-UMWA-76WF",
+    "SARIM-CNCL-J2YX-ERAR",
+    "SARIM-CNCL-TCH4-HPDU",
+    "SARIM-CNCL-5973-53W5",
+    "SARIM-CNCL-DE2Y-99RY",
+    "SARIM-CNCL-CTC9-5MC8",
+    "SARIM-CNCL-QDNX-JWCZ",
+    "SARIM-CNCL-PGMH-YWGG",
+    "SARIM-CNCL-VBTS-YEZV",
+    "SARIM-CNCL-DJ68-BJME",
+    "SARIM-CNCL-JCJP-JENF"
+  ];
+  const COMMISSION_INVITE_CODES = [
+    "SARIM-COMM-UNTJ-FPSB",
+    "SARIM-COMM-RDF4-9DGX",
+    "SARIM-COMM-DJ7Z-E333",
+    "SARIM-COMM-6SPP-3CDB",
+    "SARIM-COMM-5V5X-RH3Y",
+    "SARIM-COMM-7ARB-8JUF",
+    "SARIM-COMM-U9FJ-YQQ6",
+    "SARIM-COMM-N8EK-36YZ",
+    "SARIM-COMM-WEPS-W3ZZ",
+    "SARIM-COMM-FGQP-GGCW",
+    "SARIM-COMM-CMYW-XQBA",
+    "SARIM-COMM-9PMU-TSFW",
+    "SARIM-COMM-787R-UF3Y",
+    "SARIM-COMM-HNSU-CCZP",
+    "SARIM-COMM-E8KY-W8WQ",
+    "SARIM-COMM-ZN6V-37UX",
+    "SARIM-COMM-C4J3-DF7C",
+    "SARIM-COMM-GWM8-HFUV",
+    "SARIM-COMM-9327-6N6W",
+    "SARIM-COMM-GB92-5BXR",
+    "SARIM-COMM-ZQJG-M2BN",
+    "SARIM-COMM-ZUX6-CTWK",
+    "SARIM-COMM-WRFD-W5YN",
+    "SARIM-COMM-ARTN-KDFP",
+    "SARIM-COMM-SHSX-CV6T"
+  ];
+  const DIPLOMAT_INVITE_CODES = [
+    "SARIM-DIPL-HQZU-SJNH",
+    "SARIM-DIPL-VGSX-XZEG",
+    "SARIM-DIPL-ZVY9-J3TC",
+    "SARIM-DIPL-JPKW-4J7R",
+    "SARIM-DIPL-Z8YU-ZD3K",
+    "SARIM-DIPL-AQZ5-Y7W7",
+    "SARIM-DIPL-RDHY-KSPS",
+    "SARIM-DIPL-3ZRU-6ZWM",
+    "SARIM-DIPL-WWRZ-PQN7",
+    "SARIM-DIPL-NYVM-FB6D",
+    "SARIM-DIPL-TEQN-AN99",
+    "SARIM-DIPL-XTB6-6UZK",
+    "SARIM-DIPL-KKP8-GQNS",
+    "SARIM-DIPL-SFVE-R34A",
+    "SARIM-DIPL-KDS4-NCG9"
+  ];
   // The President's code is deliberately the longest and most obscure of all —
   // change this before publishing the site, and give it to exactly one person.
-  const PRESIDENT_INVITE_CODE = "SARIM-PRESIDENT-ROOT-SOVEREIGN-2026-01";
+  const PRESIDENT_INVITE_CODE = "SARIM-PRES-JSQ8-3KAY";
 
   const ROLE_CONFIG = {
-    citizen:    { prefix: 'СГ-', label: 'Гражданин',            secretType: 'key',    codes: null },
+    citizen:    { prefix: 'СГ-', label: 'Гражданин',            secretType: 'key',      codes: null },
     ruler:      { prefix: 'СП-', label: 'Правитель',            secretType: 'phrase12', codes: RULER_INVITE_CODES },
     commission: { prefix: 'СК-', label: 'Паспортная комиссия',  secretType: 'phrase12', codes: COMMISSION_INVITE_CODES },
+    diplomat:   { prefix: 'СД-', label: 'Дипломат',             secretType: 'phrase12', codes: DIPLOMAT_INVITE_CODES },
     president:  { prefix: 'ПР-', label: 'Президент',            secretType: 'phrase24', codes: [PRESIDENT_INVITE_CODE] }
   };
   function roleByPrefix(id){
@@ -1028,15 +1167,24 @@
     return 'citizen';
   }
   function roleLabel(role){ return (ROLE_CONFIG[role] && ROLE_CONFIG[role].label) || 'Гражданин'; }
-  function isElevated(role){ return role === 'ruler' || role === 'commission' || role === 'president'; }
+  function isElevated(role){ return role === 'ruler' || role === 'commission' || role === 'president' || role === 'diplomat'; }
   function canReviewPassports(role){ return role === 'commission' || role === 'president'; }
+  function canUseDiplomaticChannel(role){ return role === 'diplomat' || role === 'ruler' || role === 'president'; }
 
   // Thematic wordlist for ruler mnemonic seed-phrases (bitcoin-style, 12 words)
   const WORDLIST = ["тайга","сталь","орбита","кодекс","штурвал","мороз","гранит","сигнал",
     "аврора","редут","кабель","бастион","ядро","компас","вымпел","радар","янтарь","доктрина",
     "щит","полюс","реактор","гарнизон","алгоритм","держава","маяк","патруль","снегопад","алмаз",
     "терминал","рубеж","ковчег","циркуль","летопись","знамя","орден","вектор","резонанс","страж",
-    "плато","кристалл","архив","полигон","феррум","созвездие","хроника","бивак","периметр","доверие"];
+    "плато","кристалл","архив","полигон","феррум","созвездие","хроника","бивак","периметр","доверие",
+    "лавина","берилл","обелиск","циклон","феникс","молибден","абрис","гравитация","эшелон","паллада",
+    "нейтрон","вольфрам","циркон","бункер","аргон","базальт","ковен","орион","пантеон","силуэт",
+    "тектоника","фьорд","цитадель","шифр","эфир","ясень","антрацит","бивень","вихрь","гелий",
+    "дельта","есаул","жезл","зенит","изморозь","каньон","лабиринт","меридиан","навигатор","озон",
+    "пирит","ртуть","сумрак","троица","уран","форпост","хребет","цепь","часовой","шпиль",
+    "экватор","юстировка","якорь","борей","вертикаль","гарпун","дозор","ересь","жерло","зарница",
+    "иней","келья","ливень","мантия","нить","опора","пламя","рунит","скала","твердыня"
+  ];
 
   function hasSubtle(){ return !!(window.crypto && window.crypto.subtle && window.isSecureContext !== false); }
 
@@ -1232,6 +1380,7 @@
         await store.set('invite-used:' + inviteCode, JSON.stringify({ usedBy: id, at: record.createdAt }), true).catch(() => {});
       }
       pendingRecord = record;
+      pendingRecord._secret = secretDisplay; // kept in memory only, never sent to storage (already saved above)
       document.getElementById('keyValue').textContent = `${id}  /  ${secretDisplay}`;
       document.getElementById('keyReveal').classList.remove('hidden');
       document.getElementById('genUsername').value = id;
@@ -1244,11 +1393,32 @@
     }
   });
 
+  // Remember the logged-in passport on this device so a page reload doesn't
+  // force re-entering the key every time. This is separate from the shared
+  // store — it's purely local, like staying signed in in a normal browser.
+  function saveSession(id, secret){ try{ localStorage.setItem('sarim-session', JSON.stringify({id, secret})); }catch(e){} }
+  function clearSession(){ try{ localStorage.removeItem('sarim-session'); }catch(e){} }
+  async function tryAutoLogin(){
+    let saved;
+    try{ saved = JSON.parse(localStorage.getItem('sarim-session') || 'null'); }catch(e){ saved = null; }
+    if(!saved || !saved.id || !saved.secret) return;
+    try{
+      const res = await store.get('citizen:' + saved.id, true);
+      if(!res) return;
+      const record = JSON.parse(res.value);
+      const hash = await sha256Hex(saved.secret);
+      if(hash !== record.keyHash) return;
+      currentUser = record;
+      enterCabinet(record);
+    }catch(e){ /* couldn't auto-login silently — user just sees the login form */ }
+  }
+
   let pendingRecord = null;
   document.getElementById('saveCredentialsForm').addEventListener('submit', (e) => {
     e.preventDefault(); // the hidden username/password fields exist only so Chrome offers to save them
     if(!pendingRecord) return;
     currentUser = pendingRecord;
+    saveSession(pendingRecord.id, pendingRecord._secret);
     enterCabinet(pendingRecord);
     pendingRecord = null;
   });
@@ -1280,6 +1450,7 @@
       if(hash !== record.keyHash){ registerFailedLogin(); msgEl.textContent = 'Неверный ключ доступа.'; msgEl.classList.add('err'); return; }
       resetLoginThrottle();
       currentUser = record;
+      saveSession(id, secret);
       enterCabinet(record);
     } catch(e){
       msgEl.textContent = 'Паспорт не найден или хранилище недоступно.'; msgEl.classList.add('err');
@@ -1348,12 +1519,14 @@
     // The council chat and passport-review tabs only exist for the roles that
     // can actually use them — regular citizens never see them at all.
     document.getElementById('tabRulers').classList.toggle('hidden', !isElevated(record.role));
+    document.getElementById('tabDiplomacy').classList.toggle('hidden', !canUseDiplomaticChannel(record.role));
     document.getElementById('tabPassports').classList.toggle('hidden', !canReviewPassports(record.role));
     document.getElementById('decreeForm').classList.toggle('hidden', !(record.role === 'ruler' || record.role === 'president'));
   }
 
   document.getElementById('btnLogout').addEventListener('click', () => {
     currentUser = null;
+    clearSession();
     stopChatPolling();
     document.getElementById('loggedInView').classList.add('hidden');
     document.getElementById('loggedOutView').classList.remove('hidden');
@@ -1389,7 +1562,10 @@
 
       document.getElementById('passportsPanel').classList.add('hidden');
       const wantsRulers = kind === 'rulers';
-      const allowed = !wantsRulers || (currentUser && isElevated(currentUser.role));
+      const wantsDiplomacy = kind === 'diplomacy';
+      const allowed = (wantsRulers && currentUser && isElevated(currentUser.role))
+        || (wantsDiplomacy && currentUser && canUseDiplomaticChannel(currentUser.role))
+        || (!wantsRulers && !wantsDiplomacy);
       activeChat = kind;
       if(allowed){
         document.getElementById('chatBox').classList.remove('hidden');
@@ -1435,6 +1611,7 @@
     const text = input.value.trim();
     if(!text) return;
     if(activeChat === 'rulers' && !isElevated(currentUser.role)) return;
+    if(activeChat === 'diplomacy' && !canUseDiplomaticChannel(currentUser.role)) return;
     input.disabled = true;
     try{
       const res = await store.get('chat:' + activeChat, true);
