@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0053)file:///C:/Users/User/Downloads/sibirsky-sarim_9.html -->
+<!-- saved from url=(0054)file:///C:/Users/User/Downloads/sibirsky-sarim_13.html -->
 <html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -246,8 +246,20 @@
   .chat-tab.active{ color:var(--navy); background:var(--panel); font-weight:700; }
   .chat-box{ border:1px solid var(--line-strong); border-top:none; background:var(--panel); height:280px; overflow-y:auto; padding:16px 18px; display:flex; flex-direction:column; gap:10px; }
   .msg{ font-size:13.5px; }
-  .msg .who{ font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--gold); margin-right:8px; font-weight:600; }
+  .msg .who{ font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--gold); margin-right:8px; font-weight:600; cursor:pointer; }
+  .msg .who:hover{ text-decoration:underline; }
   .msg .who.role-ruler{ color:var(--seal-red); }
+  .role-president{ color:#8a5a00; background:linear-gradient(90deg,#c9a24a,#f0d78a,#c9a24a); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; font-weight:700; letter-spacing:0.02em; }
+  .ban-btn{ margin-left:8px; font-family:'IBM Plex Mono',monospace; font-size:9.5px; color:var(--seal-red); background:none; border:1px solid var(--seal-red); padding:2px 6px; cursor:pointer; opacity:0.7; }
+  .ban-btn:hover{ opacity:1; background:var(--seal-red); color:#fff; }
+  .dm-target-bar{ background:var(--panel-2); border:1px solid var(--line-strong); border-bottom:none; padding:8px 16px; font-size:12.5px; color:var(--text-dim); }
+  .pp-decided{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--steel); font-style:italic; }
+  .prof-select{ font-family:'IBM Plex Mono',monospace; font-size:11px; padding:5px 8px; background:var(--parchment); border:1px solid var(--line-strong); }
+  .prof-save{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; padding:5px 10px; border:1px solid var(--line-strong); background:var(--panel-2); cursor:pointer; }
+  .prof-save:hover{ background:#d3e7d9; }
+  .prof-msg{ margin-top:0; font-size:10.5px; }
+  @keyframes panelIn{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);} }
+  .panel-anim{ animation: panelIn .35s ease; }
   .msg .when{ font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--steel); margin-left:8px; }
   .chat-empty{ color:var(--steel); font-size:13px; font-style:italic; }
   .chat-input-row{ display:flex; border:1px solid var(--line-strong); border-top:none; }
@@ -374,15 +386,15 @@
     <span>Сибирский Сарим</span>
   </div>
   <div class="nav-links">
-    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_9.html#constitution">Конституция</a>
-    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_9.html#avc">Альянс AVC</a>
-    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_9.html#ally">Гобидори</a>
-    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_9.html#territory">Карта</a>
-    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_9.html#symbols">Символика</a>
-    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_9.html#anthem">Гимн</a>
-    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_9.html#decrees">Указы</a>
-    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_9.html#cabinet">Кабинет</a>
-    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_9.html#chronicle">Хроника</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_13.html#constitution">Конституция</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_13.html#avc">Альянс AVC</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_13.html#ally">Гобидори</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_13.html#territory">Карта</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_13.html#symbols">Символика</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_13.html#anthem">Гимн</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_13.html#decrees">Указы</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_13.html#cabinet">Кабинет</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_13.html#chronicle">Хроника</a>
   </div>
 </nav>
 
@@ -399,9 +411,9 @@
     <div class="status-cell"><div class="label">Основано</div><div class="value">2024</div></div>
     <div class="status-cell"><div class="label">Альянс</div><div class="value">AVC — с 22.01.2026</div></div>
     <div class="status-cell"><div class="label">Устройство</div><div class="value">Военно-экономическое</div></div>
-    <div class="status-cell"><div class="label">Время Сарима</div><div class="value" id="stateClock">17:23:58 · 15.07.2026</div></div>
+    <div class="status-cell"><div class="label">Время Сарима</div><div class="value" id="stateClock">13:29:29 · 16.07.2026</div></div>
   </div>
-  <div class="quote-of-day" id="quoteOfDay"><span class="qlabel">Девиз дня</span>Высшим приоритетом государства является защита интересов граждан, сохранение внутренней стабильности и укрепление позиций в виртуальном пространстве.</div>
+  <div class="quote-of-day" id="quoteOfDay"><span class="qlabel">Девиз дня</span>Государство поддерживает постоянную боевую готовность подразделений для защиты национальных и союзных интересов.</div>
 </header>
 
 <section id="constitution" class="reveal in">
@@ -614,7 +626,7 @@
   <h2>Кабинет гражданина</h2>
   <p class="section-sub">Паспорт и ключ доступа создаются один раз — как приватный ключ криптокошелька. Гражданам выдаётся ключ, правителям и паспортной комиссии — секретная фраза из 12 слов, а президенту — усиленная фраза из 24 слов, длиннее любого другого ключа в государстве. Все повышенные статусы требуют кода приглашения. Ключи не хранятся в открытом виде и не подлежат восстановлению.</p>
 
-  <div id="loggedOutView">
+  <div id="loggedOutView" class="">
     <div class="auth-tabs">
       <div class="auth-tab active" data-tab="login">Вход</div>
       <div class="auth-tab" data-tab="register">Оформить паспорт</div>
@@ -653,6 +665,7 @@
           <option value="ruler">Правитель (нужен код приглашения)</option>
           <option value="commission">Паспортная комиссия (нужен код приглашения)</option>
           <option value="diplomat">Дипломат (нужен код приглашения)</option>
+          <option value="support">Служба поддержки (нужен код приглашения)</option>
           <option value="president">Президент (нужен код приглашения)</option>
         </select>
       </div>
@@ -706,50 +719,58 @@
   </div>
 
   <div id="loggedInView" class="hidden">
-    <div class="whoami">Вы вошли как <span class="name" id="whoName"></span> · <span id="whoRole"></span><button id="btnLogout">Выйти</button></div>
+    <div class="whoami">Вы вошли как <span class="name" id="whoName">шпнееа</span> · <span id="whoRole">Гражданин</span><button id="btnLogout">Выйти</button></div>
 
     <div class="passport-card">
       <svg class="p-watermark" viewBox="0 0 200 200"><use href="#sarimEmblem" x="0" y="0" width="200" height="200"></use></svg>
       <div class="passport-topbar">
         <span class="ptitle">Паспорт гражданина · Сибирский Сарим</span>
-        <span class="pnum mono" id="pSerial"></span>
+        <span class="pnum mono" id="pSerial">СЕР. 6493F0BE</span>
       </div>
       <div class="passport-body">
-        <div class="passport-photo" id="pSigil">
-          <div class="pp-corner pp-tl"></div><div class="pp-corner pp-br"></div>
-        </div>
+        <div class="passport-photo" id="pSigil"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#f6f2e8"></rect><g fill="#26395c"><rect x="80" y="0" width="40" height="40"></rect><rect x="40" y="80" width="40" height="40"></rect><rect x="120" y="80" width="40" height="40"></rect><rect x="40" y="120" width="40" height="40"></rect><rect x="120" y="120" width="40" height="40"></rect><rect x="80" y="120" width="40" height="40"></rect><rect x="0" y="160" width="40" height="40"></rect><rect x="160" y="160" width="40" height="40"></rect><rect x="40" y="160" width="40" height="40"></rect><rect x="120" y="160" width="40" height="40"></rect></g></svg><div class="pp-corner pp-tl"></div><div class="pp-corner pp-br"></div></div>
         <div class="passport-fields">
-          <div class="p-row"><span class="k">ID</span><span class="v" id="pId"></span></div>
-          <div class="p-row"><span class="k">Имя</span><span class="v" id="pName"></span></div>
-          <div class="p-row"><span class="k">Статус</span><span class="v" id="pRole"></span></div>
-          <div class="p-row"><span class="k">Специализация</span><span class="v" id="pSpec"></span></div>
-          <div class="p-row"><span class="k">Сектор</span><span class="v" id="pSector"></span></div>
-          <div class="p-row"><span class="k">Допуск</span><span class="v" id="pClearance"></span></div>
-          <div class="p-row"><span class="k">Выдан</span><span class="v" id="pDate"></span></div>
-          <div class="p-row"><span class="k">Действителен до</span><span class="v" id="pExpiry"></span></div>
+          <div class="p-row"><span class="k">ID</span><span class="v" id="pId">СГ-6493F0BE</span></div>
+          <div class="p-row"><span class="k">Имя</span><span class="v" id="pName">ппаап ппапа паппап</span></div>
+          <div class="p-row"><span class="k">Статус</span><span class="v" id="pRole">Гражданин</span></div>
+          <div class="p-row"><span class="k">Специализация</span><span class="v" id="pSpec">Кибер-страж</span></div>
+          <div class="p-row"><span class="k">Сектор</span><span class="v" id="pSector">Северный редут</span></div>
+          <div class="p-row"><span class="k">Допуск</span><span class="v" id="pClearance">Уровень I</span></div>
+          <div class="p-row"><span class="k">Выдан</span><span class="v" id="pDate">2026-07-15</span></div>
+          <div class="p-row"><span class="k">Действителен до</span><span class="v" id="pExpiry">2031-07-15</span></div>
           <div class="p-row"><span class="k">Проверка AVC</span><span class="v"><span class="p-status pending" id="pAvc">на рассмотрении</span></span></div>
         </div>
       </div>
-      <div class="p-motto" id="pMotto"></div>
-      <div class="passport-mrz" id="pMrz"></div>
+      <div class="p-motto" id="pMotto">«Честь в коде, сила в единстве»</div>
+      <div class="passport-mrz" id="pMrz">PSARPPAAPPPAPAPAPPAP&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;<br>СГ6493F0BSAR202607C&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</div>
     </div>
     <p class="section-sub" style="margin-bottom:8px; font-size:13px;">Паспорта Сибирского Сарима проверяются альянсом AVC не сразу, а по мере рассмотрения — это не мгновенная процедура. Писать в чат может только гражданин с оформленным паспортом — вы видите эту страницу, значит доступ уже открыт.</p>
-    <p class="auth-msg" id="storageModeNotice" style="margin-bottom:30px;"></p>
+    <p class="auth-msg err" id="storageModeNotice" style="margin-bottom:30px;">⚠ Хранилище работает в локальном режиме этого браузера: ваш паспорт и сообщения сохранятся здесь, но чат не будет виден другим посетителям, пока сайт не подключат к настоящему серверу.</p>
 
     <div class="chat-wrap">
       <div class="chat-tabs">
         <div class="chat-tab active" data-chat="citizens">Чат граждан</div>
         <div class="chat-tab hidden" id="tabRulers" data-chat="rulers">Совет</div>
         <div class="chat-tab hidden" id="tabDiplomacy" data-chat="diplomacy">Дипломатия</div>
+        <div class="chat-tab" data-chat="dm" id="tabDM">Личные</div>
         <div class="chat-tab hidden" id="tabPassports" data-chat="passports">Паспорты</div>
+        <div class="chat-tab hidden" id="tabPersonnel" data-chat="personnel">Кадры</div>
       </div>
-      <div class="chat-box" id="chatBox"></div>
+      <div class="dm-target-bar hidden" id="dmTargetBar">Собеседник: <b id="dmTargetName"></b></div>
+      <div class="chat-box" id="chatBox"><div class="msg">
+        <span class="who" data-id="" data-handle="Орк (Тест 2 )" title="Написать в личные">Орк (Тест 2 )</span>привет!<span class="when">14:52</span>
+        
+      </div><div class="msg">
+        <span class="who" data-id="" data-handle="шпнееа" title="Написать в личные">шпнееа</span>а<span class="when">17:56</span>
+        
+      </div></div>
       <div class="chat-input-row" id="chatInputRow">
         <input type="text" id="chatInput" placeholder="Сообщение...">
         <button id="chatSend">Отправить</button>
       </div>
       <div class="chat-locked-note hidden" id="chatLockedNote">Этот канал доступен только правителям.</div>
       <div class="passports-panel hidden" id="passportsPanel"></div>
+      <div class="passports-panel hidden" id="personnelPanel"></div>
     </div>
   </div>
 </section>
@@ -763,7 +784,7 @@
 
 <footer>
   <div class="fmotto">СИБИРСКИЙ САРИМ · АЛЬЯНС AVC · 2026</div>
-  <div class="fnote">Официальный государственный портал · <span id="visitCounter">посещение №3</span></div>
+  <div class="fnote">Официальный государственный портал · <span id="visitCounter">посещение №15</span></div>
 </footer>
 
 <script>
@@ -1154,12 +1175,30 @@
   // The President's code is deliberately the longest and most obscure of all —
   // change this before publishing the site, and give it to exactly one person.
   const PRESIDENT_INVITE_CODE = "SARIM-PRES-JSQ8-3KAY";
+  const SUPPORT_INVITE_CODES = [
+    "SARIM-SUPP-4BPS-RAH6",
+    "SARIM-SUPP-56XQ-ZD7A",
+    "SARIM-SUPP-48W8-N8YV",
+    "SARIM-SUPP-Y4PY-M49G",
+    "SARIM-SUPP-T35F-TPXH",
+    "SARIM-SUPP-T2A6-4KU5",
+    "SARIM-SUPP-9D9N-G2KK",
+    "SARIM-SUPP-7B9B-ACBV",
+    "SARIM-SUPP-587X-MJF5",
+    "SARIM-SUPP-SDTD-STDH",
+    "SARIM-SUPP-R5V3-MGAM",
+    "SARIM-SUPP-ZVMT-5TMX",
+    "SARIM-SUPP-NCHQ-GWVP",
+    "SARIM-SUPP-RXGH-9VFN",
+    "SARIM-SUPP-AW63-JZ77"
+  ];
 
   const ROLE_CONFIG = {
     citizen:    { prefix: 'СГ-', label: 'Гражданин',            secretType: 'key',      codes: null },
     ruler:      { prefix: 'СП-', label: 'Правитель',            secretType: 'phrase12', codes: RULER_INVITE_CODES },
     commission: { prefix: 'СК-', label: 'Паспортная комиссия',  secretType: 'phrase12', codes: COMMISSION_INVITE_CODES },
     diplomat:   { prefix: 'СД-', label: 'Дипломат',             secretType: 'phrase12', codes: DIPLOMAT_INVITE_CODES },
+    support:    { prefix: 'СУ-', label: 'Служба поддержки',     secretType: 'phrase12', codes: SUPPORT_INVITE_CODES },
     president:  { prefix: 'ПР-', label: 'Президент',            secretType: 'phrase24', codes: [PRESIDENT_INVITE_CODE] }
   };
   function roleByPrefix(id){
@@ -1167,9 +1206,11 @@
     return 'citizen';
   }
   function roleLabel(role){ return (ROLE_CONFIG[role] && ROLE_CONFIG[role].label) || 'Гражданин'; }
-  function isElevated(role){ return role === 'ruler' || role === 'commission' || role === 'president' || role === 'diplomat'; }
+  function isElevated(role){ return role === 'ruler' || role === 'commission' || role === 'president' || role === 'diplomat' || role === 'support'; }
   function canReviewPassports(role){ return role === 'commission' || role === 'president'; }
   function canUseDiplomaticChannel(role){ return role === 'diplomat' || role === 'ruler' || role === 'president'; }
+  function canBan(role){ return role === 'commission' || role === 'president'; }
+  function canManageProfessions(role){ return role === 'support' || role === 'president'; }
 
   // Thematic wordlist for ruler mnemonic seed-phrases (bitcoin-style, 12 words)
   const WORDLIST = ["тайга","сталь","орбита","кодекс","штурвал","мороз","гранит","сигнал",
@@ -1257,6 +1298,8 @@
     const palettes = {
       ruler: ['#7a2530','#a9822f','#1b2942'],
       commission: ['#2f6b45','#26395c','#a9822f'],
+      diplomat: ['#4a2f6b','#26395c','#a9822f'],
+      support: ['#1c6b7a','#26395c','#2f6b45'],
       president: ['#7a2530','#1b2942','#c9a24a'],
       citizen: ['#a9822f','#26395c','#7a2530']
     };
@@ -1348,6 +1391,8 @@
       citizen: ['I','I','I','II','II','III'][randInts(1,6)[0]],
       ruler: 'V — Совет',
       commission: 'IV — Комиссия',
+      diplomat: 'IV — Дипломатический корпус',
+      support: 'III — Служба поддержки',
       president: 'VII — Президент'
     };
     const clearance = clearanceByRole[role];
@@ -1471,7 +1516,9 @@
   function enterCabinet(record){
     document.getElementById('loggedOutView').classList.add('hidden');
     document.getElementById('loggedInView').classList.remove('hidden');
-    document.getElementById('whoName').textContent = record.handle;
+    const whoNameEl = document.getElementById('whoName');
+    whoNameEl.textContent = (record.role === 'president' ? '♛ ' : '') + record.handle;
+    whoNameEl.className = 'name' + (record.role === 'president' ? ' role-president' : '');
     document.getElementById('whoRole').textContent = roleLabel(record.role);
     document.getElementById('pId').textContent = record.id;
     document.getElementById('pName').textContent = record.fio || record.handle;
@@ -1499,7 +1546,7 @@
     else { avcEl.textContent = 'на рассмотрении'; avcEl.className = 'p-status pending'; }
 
     // Machine-readable zone, styled after real passport MRZ conventions
-    const roleCode = { citizen:'C', ruler:'R', commission:'K', president:'P' }[record.role] || 'C';
+    const roleCode = { citizen:'C', ruler:'R', commission:'K', diplomat:'D', support:'S', president:'P' }[record.role] || 'C';
     const nameT = mrzPad(transliterate(record.fio || record.handle), 24);
     const line1 = 'P<SAR' + nameT;
     const line2 = mrzPad(record.id, 9) + '<SAR<' + mrzPad((record.createdAt||'').replace(/-/g,''), 6) + '<' + roleCode + '<<<<<<<<<<<<<<<<<';
@@ -1521,6 +1568,10 @@
     document.getElementById('tabRulers').classList.toggle('hidden', !isElevated(record.role));
     document.getElementById('tabDiplomacy').classList.toggle('hidden', !canUseDiplomaticChannel(record.role));
     document.getElementById('tabPassports').classList.toggle('hidden', !canReviewPassports(record.role));
+    document.getElementById('tabPersonnel').classList.toggle('hidden', !canManageProfessions(record.role));
+    document.getElementById('personnelPanel').classList.add('hidden');
+    document.getElementById('dmTargetBar').classList.add('hidden');
+    dmPartner = null;
     document.getElementById('decreeForm').classList.toggle('hidden', !(record.role === 'ruler' || record.role === 'president'));
   }
 
@@ -1549,18 +1600,45 @@
       const kind = tab.dataset.chat;
       document.querySelectorAll('.chat-tab').forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
+      document.getElementById('dmTargetBar').classList.toggle('hidden', kind !== 'dm');
+      function pulseIn(el){ if(!el) return; el.classList.remove('panel-anim'); void el.offsetWidth; el.classList.add('panel-anim'); }
 
       if(kind === 'passports'){
         activeChat = 'passports';
+        document.getElementById('personnelPanel').classList.add('hidden');
         document.getElementById('chatBox').classList.add('hidden');
         document.getElementById('chatInputRow').classList.add('hidden');
         document.getElementById('chatLockedNote').classList.add('hidden');
         document.getElementById('passportsPanel').classList.remove('hidden');
+        pulseIn(document.getElementById('passportsPanel'));
         loadPassportsForReview();
+        return;
+      }
+      if(kind === 'personnel'){
+        activeChat = 'personnel';
+        document.getElementById('passportsPanel').classList.add('hidden');
+        document.getElementById('chatBox').classList.add('hidden');
+        document.getElementById('chatInputRow').classList.add('hidden');
+        document.getElementById('chatLockedNote').classList.add('hidden');
+        document.getElementById('personnelPanel').classList.remove('hidden');
+        pulseIn(document.getElementById('personnelPanel'));
+        loadPersonnelPanel();
+        return;
+      }
+      if(kind === 'dm'){
+        activeChat = 'dm';
+        document.getElementById('passportsPanel').classList.add('hidden');
+        document.getElementById('personnelPanel').classList.add('hidden');
+        document.getElementById('chatBox').classList.remove('hidden');
+        document.getElementById('chatInputRow').classList.remove('hidden');
+        document.getElementById('chatLockedNote').classList.add('hidden');
+        pulseIn(document.getElementById('chatBox'));
+        loadDM();
         return;
       }
 
       document.getElementById('passportsPanel').classList.add('hidden');
+      document.getElementById('personnelPanel').classList.add('hidden');
       const wantsRulers = kind === 'rulers';
       const wantsDiplomacy = kind === 'diplomacy';
       const allowed = (wantsRulers && currentUser && isElevated(currentUser.role))
@@ -1571,6 +1649,7 @@
         document.getElementById('chatBox').classList.remove('hidden');
         document.getElementById('chatInputRow').classList.remove('hidden');
         document.getElementById('chatLockedNote').classList.add('hidden');
+        pulseIn(document.getElementById('chatBox'));
         loadChat(activeChat);
       } else {
         document.getElementById('chatBox').classList.add('hidden');
@@ -1588,18 +1667,46 @@
       const msgs = res ? JSON.parse(res.value) : [];
       if(channel === activeChat) renderChat(msgs);
     } catch(e){
-      if(channel === activeChat) box.innerHTML = '<div class="chat-empty">Пока пусто. Будьте первым.</div>';
+      if(channel === activeChat) box.innerHTML = '<div class="chat-empty">Пока пусто. Будьте первым.</div>'; 
     }
+  }
+  function nameClass(role){
+    if(role === 'president') return 'who role-president';
+    if(isElevated(role)) return 'who role-ruler';
+    return 'who';
   }
   function renderChat(msgs){
     const box = document.getElementById('chatBox');
     const wasAtBottom = box.scrollTop + box.clientHeight >= box.scrollHeight - 20;
     if(!msgs.length){ box.innerHTML = '<div class="chat-empty">Пока пусто. Будьте первым.</div>'; return; }
-    box.innerHTML = msgs.map(m => `<div class="msg"><span class="who ${isElevated(m.role) ? 'role-ruler' : ''}">${escapeHtml(m.who)}</span>${escapeHtml(m.text)}<span class="when">${m.when}</span></div>`).join('');
+    const showBan = currentUser && canBan(currentUser.role);
+    box.innerHTML = msgs.map(m => `<div class="msg">
+        <span class="${nameClass(m.role)}" data-id="${escapeHtml(m.id||'')}" data-handle="${escapeHtml(m.who)}" title="Написать в личные">${m.role==='president' ? '♛ ' : ''}${escapeHtml(m.who)}</span>${escapeHtml(m.text)}<span class="when">${m.when}</span>
+        ${showBan && m.id && m.id !== currentUser.id ? `<button class="ban-btn" data-ban-id="${escapeHtml(m.id)}" data-ban-handle="${escapeHtml(m.who)}">забанить</button>` : ''}
+      </div>`).join('');
     if(wasAtBottom) box.scrollTop = box.scrollHeight;
   }
   function escapeHtml(s){
     return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  // Clicking a name opens a private message thread with that person.
+  document.getElementById('chatBox').addEventListener('click', (e) => {
+    const banBtn = e.target.closest('.ban-btn');
+    if(banBtn){ handleBanClick(banBtn.dataset.banId, banBtn.dataset.banHandle); return; }
+    const nameEl = e.target.closest('.who');
+    if(nameEl && nameEl.dataset.id && currentUser && nameEl.dataset.id !== currentUser.id){
+      openDM(nameEl.dataset.id, nameEl.dataset.handle);
+    }
+  });
+
+  async function handleBanClick(id, handle){
+    if(!currentUser || !canBan(currentUser.role) || !id) return;
+    if(!confirm(`Забанить ${handle} (${id}) в чатах?`)) return;
+    try{
+      await store.set('ban:' + id, JSON.stringify({ by: currentUser.handle, at: new Date().toISOString() }), true);
+      loadChat(activeChat);
+    } catch(e){ /* ignore */ }
   }
 
   document.getElementById('chatSend').addEventListener('click', sendChat);
@@ -1612,11 +1719,17 @@
     if(!text) return;
     if(activeChat === 'rulers' && !isElevated(currentUser.role)) return;
     if(activeChat === 'diplomacy' && !canUseDiplomaticChannel(currentUser.role)) return;
+    if(activeChat === 'dm') return sendDM();
+    const msgEl = document.getElementById('chatLockedNote');
+    try{
+      const banRes = await store.get('ban:' + currentUser.id, true).catch(() => null);
+      if(banRes){ input.value = ''; alert('Вы забанены в чатах государства.'); return; }
+    } catch(e){ /* if the ban check itself fails, don't block sending */ }
     input.disabled = true;
     try{
       const res = await store.get('chat:' + activeChat, true);
       const msgs = res ? JSON.parse(res.value) : [];
-      msgs.push({ who: currentUser.handle, role: currentUser.role, text, when: new Date().toLocaleTimeString('ru-RU', {hour:'2-digit', minute:'2-digit'}) });
+      msgs.push({ who: currentUser.handle, role: currentUser.role, id: currentUser.id, text, when: new Date().toLocaleTimeString('ru-RU', {hour:'2-digit', minute:'2-digit'}) });
       const trimmed = msgs.slice(-200);
       await store.set('chat:' + activeChat, JSON.stringify(trimmed), true);
       input.value = '';
@@ -1627,6 +1740,60 @@
       input.disabled = false;
       input.focus();
     }
+  }
+
+  // ---------- Private messages ----------
+  let dmPartner = null; // { id, handle }
+  function dmKey(a, b){ return 'dm:' + [a,b].sort().join('~'); }
+  function openDM(id, handle){
+    dmPartner = { id, handle };
+    document.querySelectorAll('.chat-tab').forEach(t => t.classList.remove('active'));
+    const tab = document.getElementById('tabDM');
+    if(tab) tab.classList.add('active');
+    activeChat = 'dm';
+    document.getElementById('passportsPanel').classList.add('hidden');
+    document.getElementById('chatLockedNote').classList.add('hidden');
+    document.getElementById('chatBox').classList.remove('hidden');
+    document.getElementById('chatInputRow').classList.remove('hidden');
+    document.getElementById('dmTargetBar').classList.remove('hidden');
+    document.getElementById('dmTargetName').textContent = handle + ' (' + id + ')';
+    loadDM();
+  }
+  async function loadDM(){
+    const box = document.getElementById('chatBox');
+    if(!currentUser || !dmPartner){ box.innerHTML = '<div class="chat-empty">Нажмите на имя собеседника в любом чате, чтобы написать лично.</div>'; return; }
+    box.innerHTML = '<div class="chat-empty">Загрузка...</div>';
+    try{
+      const res = await store.get(dmKey(currentUser.id, dmPartner.id), true);
+      const msgs = res ? JSON.parse(res.value) : [];
+      renderDM(msgs);
+    } catch(e){
+      box.innerHTML = '<div class="chat-empty">Сообщений пока нет.</div>';
+    }
+  }
+  function renderDM(msgs){
+    const box = document.getElementById('chatBox');
+    if(!msgs.length){ box.innerHTML = '<div class="chat-empty">Сообщений пока нет. Напишите первым.</div>'; return; }
+    box.innerHTML = msgs.map(m => `<div class="msg"><span class="${nameClass(m.role)}">${m.fromId === currentUser.id ? 'Вы' : escapeHtml(m.who)}</span>${escapeHtml(m.text)}<span class="when">${m.when}</span></div>`).join('');
+    box.scrollTop = box.scrollHeight;
+  }
+  async function sendDM(){
+    if(!currentUser || !dmPartner) return;
+    const input = document.getElementById('chatInput');
+    const text = input.value.trim();
+    if(!text) return;
+    input.disabled = true;
+    try{
+      const key = dmKey(currentUser.id, dmPartner.id);
+      const res = await store.get(key, true);
+      const msgs = res ? JSON.parse(res.value) : [];
+      msgs.push({ who: currentUser.handle, role: currentUser.role, fromId: currentUser.id, text, when: new Date().toLocaleTimeString('ru-RU', {hour:'2-digit', minute:'2-digit'}) });
+      const trimmed = msgs.slice(-200);
+      await store.set(key, JSON.stringify(trimmed), true);
+      input.value = '';
+      renderDM(trimmed);
+    } catch(e){ console.error('Ошибка отправки личного сообщения', e); }
+    finally { input.disabled = false; input.focus(); }
   }
 
   // ---------- Passport review (President & Commission only) ----------
@@ -1655,16 +1822,19 @@
     panel.innerHTML = records.map(r => {
       const fioOk = isPlausibleFIO(r.fio);
       const status = r.avcStatus || 'pending';
+      const decided = status === 'verified' || status === 'rejected';
       return `
         <div class="pp-row" data-id="${r.id}">
           <span class="pp-id mono">${escapeHtml(r.id)}</span>
           <span class="pp-fio ${fioOk ? '' : 'invalid'}">${escapeHtml(r.fio || r.handle || '—')}</span>
           <span class="pp-badge ${fioOk ? 'ok' : 'bad'}">${fioOk ? 'ФИО в норме' : 'проверить ФИО'}</span>
           <span class="pp-badge ${status==='verified' ? 'ok' : (status==='rejected' ? 'bad' : '')}">${status==='verified' ? 'подтверждён' : (status==='rejected' ? 'отклонён' : 'на рассмотрении')}</span>
-          <div class="pp-actions">
-            <button class="approve" data-action="verified" data-id="${r.id}">Подтвердить</button>
-            <button class="reject" data-action="rejected" data-id="${r.id}">Отклонить</button>
-          </div>
+          ${decided
+            ? `<span class="pp-decided">решение вынесено — изменить нельзя</span>`
+            : `<div class="pp-actions">
+                <button class="approve" data-action="verified" data-id="${r.id}">Подтвердить</button>
+                <button class="reject" data-action="rejected" data-id="${r.id}">Отклонить</button>
+              </div>`}
         </div>`;
     }).join('');
     panel.querySelectorAll('button[data-action]').forEach(btn => {
@@ -1676,11 +1846,69 @@
           const res = await store.get('citizen:' + id, true);
           if(!res) return;
           const rec = JSON.parse(res.value);
+          if(rec.avcStatus === 'verified' || rec.avcStatus === 'rejected') return; // already decided — can't be re-clicked
           rec.avcStatus = action;
           await store.set('citizen:' + id, JSON.stringify(rec), true);
           if(currentUser.id === id){ currentUser.avcStatus = action; }
         } finally {
           loadPassportsForReview();
+        }
+      });
+    });
+  }
+
+  // ---------- Personnel / professions (Support role & President) ----------
+  const PROFESSION_OPTIONS = ["Кибер-страж","Инженер систем","Дипломат","Учёный-исследователь",
+    "Логист снабжения","Картограф территорий","Хронист","Пограничный страж","Медик","Архитектор"];
+
+  async function loadPersonnelPanel(){
+    const panel = document.getElementById('personnelPanel');
+    panel.innerHTML = '<div class="pp-empty">Загрузка списка граждан...</div>';
+    try{
+      const listRes = await store.list('citizen:', true);
+      const keys = (listRes && listRes.keys) || [];
+      if(!keys.length){ panel.innerHTML = '<div class="pp-empty">Граждан пока нет.</div>'; return; }
+      const records = [];
+      for(const k of keys){
+        try{
+          const res = await store.get(k, true);
+          if(res && res.value) records.push(JSON.parse(res.value));
+        }catch(e){ /* skip unreadable record */ }
+      }
+      renderPersonnelPanel(records);
+    } catch(e){
+      panel.innerHTML = '<div class="pp-empty">Не удалось загрузить список (хранилище недоступно).</div>';
+    }
+  }
+  function renderPersonnelPanel(records){
+    const panel = document.getElementById('personnelPanel');
+    if(!records.length){ panel.innerHTML = '<div class="pp-empty">Граждан пока нет.</div>'; return; }
+    panel.innerHTML = records.map(r => `
+      <div class="pp-row" data-id="${r.id}">
+        <span class="pp-id mono">${escapeHtml(r.id)}</span>
+        <span class="pp-fio">${escapeHtml(r.handle || '—')}</span>
+        <select class="prof-select" data-id="${r.id}">
+          ${PROFESSION_OPTIONS.map(p => `<option value="${p}" ${p===r.specialization?'selected':''}>${p}</option>`).join('')}
+        </select>
+        <button class="prof-save" data-id="${r.id}">Сохранить</button>
+        <span class="auth-msg prof-msg" id="prof-msg-${r.id}"></span>
+      </div>`).join('');
+    panel.querySelectorAll('.prof-save').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        if(!currentUser || !canManageProfessions(currentUser.role)) return;
+        const id = btn.dataset.id;
+        const select = panel.querySelector(`.prof-select[data-id="${id}"]`);
+        const msgEl = document.getElementById('prof-msg-' + id);
+        try{
+          const res = await store.get('citizen:' + id, true);
+          if(!res) return;
+          const rec = JSON.parse(res.value);
+          rec.specialization = select.value;
+          await store.set('citizen:' + id, JSON.stringify(rec), true);
+          msgEl.textContent = 'Сохранено'; msgEl.classList.add('ok');
+          if(currentUser.id === id){ currentUser.specialization = select.value; }
+        } catch(e){
+          msgEl.textContent = 'Ошибка'; msgEl.classList.add('err');
         }
       });
     });
