@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0054)file:///C:/Users/User/Downloads/sibirsky-sarim_13.html -->
+<!-- saved from url=(0054)file:///C:/Users/User/Downloads/sibirsky-sarim_14.html -->
 <html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -252,7 +252,11 @@
   .role-president{ color:#8a5a00; background:linear-gradient(90deg,#c9a24a,#f0d78a,#c9a24a); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; font-weight:700; letter-spacing:0.02em; }
   .ban-btn{ margin-left:8px; font-family:'IBM Plex Mono',monospace; font-size:9.5px; color:var(--seal-red); background:none; border:1px solid var(--seal-red); padding:2px 6px; cursor:pointer; opacity:0.7; }
   .ban-btn:hover{ opacity:1; background:var(--seal-red); color:#fff; }
-  .dm-target-bar{ background:var(--panel-2); border:1px solid var(--line-strong); border-bottom:none; padding:8px 16px; font-size:12.5px; color:var(--text-dim); }
+  .dm-target-bar{ background:var(--panel-2); border:1px solid var(--line-strong); border-bottom:none; padding:8px 16px; font-size:12.5px; color:var(--text-dim); display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
+  .code-issuer{ display:flex; align-items:center; gap:6px; font-family:'IBM Plex Mono',monospace; font-size:11px; }
+  .code-issuer select{ font-family:'IBM Plex Mono',monospace; font-size:11px; padding:4px 6px; background:var(--parchment); border:1px solid var(--line-strong); }
+  .code-issuer button{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; padding:4px 9px; border:1px solid var(--gold); background:var(--panel); color:var(--navy); cursor:pointer; }
+  .code-issuer button:hover{ background:var(--gold); color:#fff; }
   .pp-decided{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--steel); font-style:italic; }
   .prof-select{ font-family:'IBM Plex Mono',monospace; font-size:11px; padding:5px 8px; background:var(--parchment); border:1px solid var(--line-strong); }
   .prof-save{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; padding:5px 10px; border:1px solid var(--line-strong); background:var(--panel-2); cursor:pointer; }
@@ -386,15 +390,15 @@
     <span>Сибирский Сарим</span>
   </div>
   <div class="nav-links">
-    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_13.html#constitution">Конституция</a>
-    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_13.html#avc">Альянс AVC</a>
-    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_13.html#ally">Гобидори</a>
-    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_13.html#territory">Карта</a>
-    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_13.html#symbols">Символика</a>
-    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_13.html#anthem">Гимн</a>
-    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_13.html#decrees">Указы</a>
-    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_13.html#cabinet">Кабинет</a>
-    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_13.html#chronicle">Хроника</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_14.html#constitution">Конституция</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_14.html#avc">Альянс AVC</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_14.html#ally">Гобидори</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_14.html#territory">Карта</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_14.html#symbols">Символика</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_14.html#anthem">Гимн</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_14.html#decrees">Указы</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_14.html#cabinet">Кабинет</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_14.html#chronicle">Хроника</a>
   </div>
 </nav>
 
@@ -411,7 +415,7 @@
     <div class="status-cell"><div class="label">Основано</div><div class="value">2024</div></div>
     <div class="status-cell"><div class="label">Альянс</div><div class="value">AVC — с 22.01.2026</div></div>
     <div class="status-cell"><div class="label">Устройство</div><div class="value">Военно-экономическое</div></div>
-    <div class="status-cell"><div class="label">Время Сарима</div><div class="value" id="stateClock">13:29:29 · 16.07.2026</div></div>
+    <div class="status-cell"><div class="label">Время Сарима</div><div class="value" id="stateClock">13:46:16 · 16.07.2026</div></div>
   </div>
   <div class="quote-of-day" id="quoteOfDay"><span class="qlabel">Девиз дня</span>Государство поддерживает постоянную боевую готовность подразделений для защиты национальных и союзных интересов.</div>
 </header>
@@ -626,7 +630,7 @@
   <h2>Кабинет гражданина</h2>
   <p class="section-sub">Паспорт и ключ доступа создаются один раз — как приватный ключ криптокошелька. Гражданам выдаётся ключ, правителям и паспортной комиссии — секретная фраза из 12 слов, а президенту — усиленная фраза из 24 слов, длиннее любого другого ключа в государстве. Все повышенные статусы требуют кода приглашения. Ключи не хранятся в открытом виде и не подлежат восстановлению.</p>
 
-  <div id="loggedOutView" class="">
+  <div id="loggedOutView">
     <div class="auth-tabs">
       <div class="auth-tab active" data-tab="login">Вход</div>
       <div class="auth-tab" data-tab="register">Оформить паспорт</div>
@@ -719,33 +723,35 @@
   </div>
 
   <div id="loggedInView" class="hidden">
-    <div class="whoami">Вы вошли как <span class="name" id="whoName">шпнееа</span> · <span id="whoRole">Гражданин</span><button id="btnLogout">Выйти</button></div>
+    <div class="whoami">Вы вошли как <span class="name" id="whoName"></span> · <span id="whoRole"></span><button id="btnLogout">Выйти</button></div>
 
     <div class="passport-card">
       <svg class="p-watermark" viewBox="0 0 200 200"><use href="#sarimEmblem" x="0" y="0" width="200" height="200"></use></svg>
       <div class="passport-topbar">
         <span class="ptitle">Паспорт гражданина · Сибирский Сарим</span>
-        <span class="pnum mono" id="pSerial">СЕР. 6493F0BE</span>
+        <span class="pnum mono" id="pSerial"></span>
       </div>
       <div class="passport-body">
-        <div class="passport-photo" id="pSigil"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#f6f2e8"></rect><g fill="#26395c"><rect x="80" y="0" width="40" height="40"></rect><rect x="40" y="80" width="40" height="40"></rect><rect x="120" y="80" width="40" height="40"></rect><rect x="40" y="120" width="40" height="40"></rect><rect x="120" y="120" width="40" height="40"></rect><rect x="80" y="120" width="40" height="40"></rect><rect x="0" y="160" width="40" height="40"></rect><rect x="160" y="160" width="40" height="40"></rect><rect x="40" y="160" width="40" height="40"></rect><rect x="120" y="160" width="40" height="40"></rect></g></svg><div class="pp-corner pp-tl"></div><div class="pp-corner pp-br"></div></div>
+        <div class="passport-photo" id="pSigil">
+          <div class="pp-corner pp-tl"></div><div class="pp-corner pp-br"></div>
+        </div>
         <div class="passport-fields">
-          <div class="p-row"><span class="k">ID</span><span class="v" id="pId">СГ-6493F0BE</span></div>
-          <div class="p-row"><span class="k">Имя</span><span class="v" id="pName">ппаап ппапа паппап</span></div>
-          <div class="p-row"><span class="k">Статус</span><span class="v" id="pRole">Гражданин</span></div>
-          <div class="p-row"><span class="k">Специализация</span><span class="v" id="pSpec">Кибер-страж</span></div>
-          <div class="p-row"><span class="k">Сектор</span><span class="v" id="pSector">Северный редут</span></div>
-          <div class="p-row"><span class="k">Допуск</span><span class="v" id="pClearance">Уровень I</span></div>
-          <div class="p-row"><span class="k">Выдан</span><span class="v" id="pDate">2026-07-15</span></div>
-          <div class="p-row"><span class="k">Действителен до</span><span class="v" id="pExpiry">2031-07-15</span></div>
+          <div class="p-row"><span class="k">ID</span><span class="v" id="pId"></span></div>
+          <div class="p-row"><span class="k">Имя</span><span class="v" id="pName"></span></div>
+          <div class="p-row"><span class="k">Статус</span><span class="v" id="pRole"></span></div>
+          <div class="p-row"><span class="k">Специализация</span><span class="v" id="pSpec"></span></div>
+          <div class="p-row"><span class="k">Сектор</span><span class="v" id="pSector"></span></div>
+          <div class="p-row"><span class="k">Допуск</span><span class="v" id="pClearance"></span></div>
+          <div class="p-row"><span class="k">Выдан</span><span class="v" id="pDate"></span></div>
+          <div class="p-row"><span class="k">Действителен до</span><span class="v" id="pExpiry"></span></div>
           <div class="p-row"><span class="k">Проверка AVC</span><span class="v"><span class="p-status pending" id="pAvc">на рассмотрении</span></span></div>
         </div>
       </div>
-      <div class="p-motto" id="pMotto">«Честь в коде, сила в единстве»</div>
-      <div class="passport-mrz" id="pMrz">PSARPPAAPPPAPAPAPPAP&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;<br>СГ6493F0BSAR202607C&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</div>
+      <div class="p-motto" id="pMotto"></div>
+      <div class="passport-mrz" id="pMrz"></div>
     </div>
     <p class="section-sub" style="margin-bottom:8px; font-size:13px;">Паспорта Сибирского Сарима проверяются альянсом AVC не сразу, а по мере рассмотрения — это не мгновенная процедура. Писать в чат может только гражданин с оформленным паспортом — вы видите эту страницу, значит доступ уже открыт.</p>
-    <p class="auth-msg err" id="storageModeNotice" style="margin-bottom:30px;">⚠ Хранилище работает в локальном режиме этого браузера: ваш паспорт и сообщения сохранятся здесь, но чат не будет виден другим посетителям, пока сайт не подключат к настоящему серверу.</p>
+    <p class="auth-msg" id="storageModeNotice" style="margin-bottom:30px;"></p>
 
     <div class="chat-wrap">
       <div class="chat-tabs">
@@ -756,14 +762,19 @@
         <div class="chat-tab hidden" id="tabPassports" data-chat="passports">Паспорты</div>
         <div class="chat-tab hidden" id="tabPersonnel" data-chat="personnel">Кадры</div>
       </div>
-      <div class="dm-target-bar hidden" id="dmTargetBar">Собеседник: <b id="dmTargetName"></b></div>
-      <div class="chat-box" id="chatBox"><div class="msg">
-        <span class="who" data-id="" data-handle="Орк (Тест 2 )" title="Написать в личные">Орк (Тест 2 )</span>привет!<span class="when">14:52</span>
-        
-      </div><div class="msg">
-        <span class="who" data-id="" data-handle="шпнееа" title="Написать в личные">шпнееа</span>а<span class="when">17:56</span>
-        
-      </div></div>
+      <div class="dm-target-bar hidden" id="dmTargetBar">Собеседник: <b id="dmTargetName"></b>
+        <span class="code-issuer hidden" id="codeIssuer">
+          · Выдать код:
+          <select id="issueRoleSelect">
+            <option value="ruler">Правитель</option>
+            <option value="commission">Комиссия</option>
+            <option value="diplomat">Дипломат</option>
+            <option value="support">Поддержка</option>
+          </select>
+          <button id="btnIssueCode" type="button">Вставить код</button>
+        </span>
+      </div>
+      <div class="chat-box" id="chatBox"></div>
       <div class="chat-input-row" id="chatInputRow">
         <input type="text" id="chatInput" placeholder="Сообщение...">
         <button id="chatSend">Отправить</button>
@@ -784,8 +795,12 @@
 
 <footer>
   <div class="fmotto">СИБИРСКИЙ САРИМ · АЛЬЯНС AVC · 2026</div>
-  <div class="fnote">Официальный государственный портал · <span id="visitCounter">посещение №15</span></div>
+  <div class="fnote">Официальный государственный портал · <span id="visitCounter">посещение №1</span></div>
 </footer>
+
+<!-- Firebase (Firestore) — real shared backend for passports, chat and decrees -->
+<script src="./index_files/firebase-app-compat.js.Без названия"></script>
+<script src="./index_files/firebase-firestore-compat.js.Без названия"></script>
 
 <script>
   // If anything on the page throws, show it instead of silently breaking —
@@ -1029,12 +1044,8 @@
 
   // ---------- Cabinet: passport auth + chat ----------
   // window.storage only exists while this page is viewed inside Claude's own
-  // preview. Once the file is downloaded and opened directly (or hosted on your
-  // own site), it doesn't exist — so we fall back to the browser's localStorage.
-  // NOTE: localStorage is per-browser/per-device only. Login & your own passport
-  // will work fine anywhere. Group chat between DIFFERENT people, though, can only
-  // ever be shared across visitors with a real backend (see chat notice below) —
-  // no client-side trick can get around that for a file you self-host.
+  // preview. Firebase (below) is the real shared backend for everyone else —
+  // localStorage is the last-resort fallback if Firebase can't initialize.
   const localFallback = {
     async get(key){
       try{
@@ -1057,7 +1068,49 @@
       }catch(e){ return { keys: [] }; }
     }
   };
-  const store = (window.storage && typeof window.storage.get === 'function') ? window.storage : localFallback;
+
+  // ---------- Firebase (Firestore) — the real shared backend ----------
+  const firebaseConfig = {
+    apiKey: "AIzaSyAP1u2eNRmXGMYrkFO9hl5eDFQ_kmux62Y",
+    authDomain: "sibirsky-sarim-60d0e.firebaseapp.com",
+    projectId: "sibirsky-sarim-60d0e",
+    storageBucket: "sibirsky-sarim-60d0e.firebasestorage.app",
+    messagingSenderId: "872921437141",
+    appId: "1:872921437141:web:24513f4e31e59794c5635c"
+  };
+  let db = null;
+  try{
+    if(window.firebase && typeof firebase.initializeApp === 'function'){
+      firebase.initializeApp(firebaseConfig);
+      db = firebase.firestore();
+    }
+  }catch(e){ db = null; console.error('[Сарим] Firebase не инициализировался:', e); }
+
+  const firebaseStore = {
+    async get(key){
+      const snap = await db.collection('sarim_store').doc(key).get();
+      if(!snap.exists) return null;
+      return { key, value: snap.data().value };
+    },
+    async set(key, value){
+      await db.collection('sarim_store').doc(key).set({
+        value, updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+      });
+      return { key, value };
+    },
+    async list(prefix){
+      const p = prefix || '';
+      const q = await db.collection('sarim_store')
+        .where(firebase.firestore.FieldPath.documentId(), '>=', p)
+        .where(firebase.firestore.FieldPath.documentId(), '<', p + '\uf8ff')
+        .get();
+      return { keys: q.docs.map(d => d.id) };
+    }
+  };
+
+  const store = db ? firebaseStore
+    : ((window.storage && typeof window.storage.get === 'function') ? window.storage : localFallback);
+  const usingFirebase = (store === firebaseStore);
   const usingLocalFallback = (store === localFallback);
   loadDecrees();
   tryAutoLogin();
@@ -1537,6 +1590,9 @@
     if(usingLocalFallback){
       noticeEl.textContent = '⚠ Хранилище работает в локальном режиме этого браузера: ваш паспорт и сообщения сохранятся здесь, но чат не будет виден другим посетителям, пока сайт не подключат к настоящему серверу.';
       noticeEl.classList.add('err');
+    } else if(usingFirebase){
+      noticeEl.textContent = '✓ Подключено к общему серверу — паспорт и чат видны всем посетителям сайта.';
+      noticeEl.classList.remove('err'); noticeEl.classList.add('ok');
     } else {
       noticeEl.textContent = '';
     }
@@ -1632,6 +1688,7 @@
         document.getElementById('chatBox').classList.remove('hidden');
         document.getElementById('chatInputRow').classList.remove('hidden');
         document.getElementById('chatLockedNote').classList.add('hidden');
+        document.getElementById('codeIssuer').classList.toggle('hidden', !(currentUser && currentUser.role === 'president' && dmPartner));
         pulseIn(document.getElementById('chatBox'));
         loadDM();
         return;
@@ -1757,6 +1814,7 @@
     document.getElementById('chatInputRow').classList.remove('hidden');
     document.getElementById('dmTargetBar').classList.remove('hidden');
     document.getElementById('dmTargetName').textContent = handle + ' (' + id + ')';
+    document.getElementById('codeIssuer').classList.toggle('hidden', !(currentUser && currentUser.role === 'president'));
     loadDM();
   }
   async function loadDM(){
@@ -1795,6 +1853,34 @@
     } catch(e){ console.error('Ошибка отправки личного сообщения', e); }
     finally { input.disabled = false; input.focus(); }
   }
+
+  // President-only helper: find an unused invite code for the chosen role and
+  // drop it straight into the message box, ready to send.
+  document.getElementById('btnIssueCode').addEventListener('click', async () => {
+    if(!currentUser || currentUser.role !== 'president') return;
+    const role = document.getElementById('issueRoleSelect').value;
+    const pool = ROLE_CONFIG[role] && ROLE_CONFIG[role].codes;
+    if(!pool || !pool.length) return;
+    const btn = document.getElementById('btnIssueCode');
+    const original = btn.textContent;
+    btn.disabled = true; btn.textContent = 'Ищу код...';
+    try{
+      const shuffled = [...pool].sort(() => Math.random() - 0.5);
+      let found = null;
+      for(const code of shuffled.slice(0, 20)){ // check a random sample, not the whole pool, to stay fast
+        try{
+          const used = await store.get('invite-used:' + code, true);
+          if(!used){ found = code; break; }
+        } catch(e){ found = code; break; } // if the check fails, offer it anyway — registration re-checks for real
+      }
+      if(!found){ alert('Не удалось быстро найти свободный код — попробуйте ещё раз.'); return; }
+      const input = document.getElementById('chatInput');
+      input.value = `Ваш код приглашения в статус «${roleLabel(role)}»: ${found} — используйте его при регистрации на сайте, в разделе «Оформить паспорт».`;
+      input.focus();
+    } finally {
+      btn.disabled = false; btn.textContent = original;
+    }
+  });
 
   // ---------- Passport review (President & Commission only) ----------
   async function loadPassportsForReview(){
