@@ -250,6 +250,7 @@
   .msg .who:hover{ text-decoration:underline; }
   .msg .who.role-ruler{ color:var(--seal-red); }
   .role-president{ color:#8a5a00; background:linear-gradient(90deg,#c9a24a,#f0d78a,#c9a24a); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; font-weight:700; letter-spacing:0.02em; }
+  .role-foreign-president{ color:#1c4a6b; background:linear-gradient(90deg,#4a86ad,#a8d3ec,#4a86ad); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; font-weight:700; letter-spacing:0.02em; }
   .ban-btn{ margin-left:8px; font-family:'IBM Plex Mono',monospace; font-size:9.5px; color:var(--seal-red); background:none; border:1px solid var(--seal-red); padding:2px 6px; cursor:pointer; opacity:0.7; }
   .ban-btn:hover{ opacity:1; background:var(--seal-red); color:#fff; }
   .dm-target-bar{ background:var(--panel-2); border:1px solid var(--line-strong); border-bottom:none; padding:8px 16px; font-size:12.5px; color:var(--text-dim); display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
@@ -258,6 +259,23 @@
   .code-issuer button{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; padding:4px 9px; border:1px solid var(--gold); background:var(--panel); color:var(--navy); cursor:pointer; }
   .code-issuer button:hover{ background:var(--gold); color:#fff; }
   .pp-decided{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--steel); font-style:italic; }
+  .mod-toolbar{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; background:var(--panel-2); border:1px solid var(--line-strong); border-bottom:none; padding:8px 16px; }
+  .mod-toolbar button{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; padding:5px 10px; border:1px solid var(--seal-red); background:var(--panel); color:var(--seal-red); cursor:pointer; }
+  .mod-toolbar button:hover{ background:var(--seal-red); color:#fff; }
+  .mod-toolbar-note{ font-size:11px; color:var(--text-dim); font-style:italic; }
+  .msg{ position:relative; padding-right:18px; }
+  .msg-del-btn{ display:none; position:absolute; right:0; top:0; background:none; border:none; color:var(--seal-red); cursor:pointer; font-size:12px; padding:0 4px; }
+  .msg:hover .msg-del-btn{ display:inline; }
+  .msg-del-all-btn{ margin-left:6px; font-family:'IBM Plex Mono',monospace; font-size:9.5px; color:var(--text-dim); background:none; border:1px solid var(--line-strong); padding:1px 6px; cursor:pointer; }
+  .msg-del-all-btn:hover{ background:var(--panel-2); }
+  .journal-entry{ padding:10px 16px; border-bottom:1px solid var(--line); font-size:12px; font-family:'IBM Plex Mono',monospace; color:var(--text-dim); }
+  .journal-entry .j-action{ color:var(--gold); font-weight:600; }
+  .journal-entry .j-bot{ color:var(--seal-red); font-weight:700; }
+  .banned-row{ display:flex; align-items:center; gap:12px; padding:12px 18px; border-bottom:1px solid var(--line); }
+  .banned-row .b-id{ font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text-dim); }
+  .banned-row button{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; padding:5px 10px; border:1px solid var(--ok); background:var(--panel); color:var(--ok); cursor:pointer; margin-left:auto; }
+  .banned-row button:hover{ background:var(--ok); color:#fff; }
+  .journal-section-title{ font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--navy); background:var(--panel-2); padding:8px 16px; border-bottom:1px solid var(--line-strong); }
   .prof-select{ font-family:'IBM Plex Mono',monospace; font-size:11px; padding:5px 8px; background:var(--parchment); border:1px solid var(--line-strong); }
   .prof-save{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; padding:5px 10px; border:1px solid var(--line-strong); background:var(--panel-2); cursor:pointer; }
   .prof-save:hover{ background:#d3e7d9; }
@@ -613,6 +631,7 @@
           <option value="diplomat">Дипломат (нужен код приглашения)</option>
           <option value="support">Служба поддержки (нужен код приглашения)</option>
           <option value="president">Президент (нужен код приглашения)</option>
+          <option value="foreign_president">Президент союзной страны (нужен код приглашения)</option>
         </select>
       </div>
       <div class="field">
@@ -703,6 +722,7 @@
         <div class="chat-tab" data-chat="dm" id="tabDM">Личные</div>
         <div class="chat-tab hidden" id="tabPassports" data-chat="passports">Паспорты</div>
         <div class="chat-tab hidden" id="tabPersonnel" data-chat="personnel">Кадры</div>
+        <div class="chat-tab hidden" id="tabJournal" data-chat="journal">Журнал</div>
       </div>
       <div class="dm-target-bar hidden" id="dmTargetBar">Собеседник: <b id="dmTargetName"></b>
         <span class="code-issuer hidden" id="codeIssuer">
@@ -712,9 +732,14 @@
             <option value="commission">Комиссия</option>
             <option value="diplomat">Дипломат</option>
             <option value="support">Поддержка</option>
+            <option value="foreign_president">Президент союзной страны</option>
           </select>
           <button id="btnIssueCode" type="button">Вставить код</button>
         </span>
+      </div>
+      <div class="mod-toolbar hidden" id="modToolbar">
+        <button id="btnClearChat" type="button">🗑 Очистить весь чат</button>
+        <span class="mod-toolbar-note">Модерация: удаляйте отдельные сообщения кнопкой ✕, наведя на них.</span>
       </div>
       <div class="chat-box" id="chatBox"></div>
       <div class="chat-input-row" id="chatInputRow">
@@ -724,6 +749,7 @@
       <div class="chat-locked-note hidden" id="chatLockedNote">Этот канал доступен только правителям.</div>
       <div class="passports-panel hidden" id="passportsPanel"></div>
       <div class="passports-panel hidden" id="personnelPanel"></div>
+      <div class="passports-panel hidden" id="journalPanel"></div>
     </div>
   </div>
 </section>
@@ -854,8 +880,8 @@
 
   // ---------- State decree registry ----------
   const SEED_DECREES = [
-    { title: "Акт о присоединении к альянсу AVC", date: "22.01.2026", issuedBy: "Совет" },
-    { title: "О возрождении государственности", date: "2026", issuedBy: "Совет" }
+    { title: "Акт о присоединении к альянсу AVC", date: "22.01.2026", issuedBy: "Совет", issuedByRole: "ruler" },
+    { title: "О возрождении государственности", date: "2026", issuedBy: "Совет", issuedByRole: "ruler" }
   ];
   async function loadDecrees(){
     const list = document.getElementById('decreeList');
@@ -869,23 +895,45 @@
   }
   function renderDecrees(decrees){
     const list = document.getElementById('decreeList');
+    const canDelete = currentUser && canDeleteDecree(currentUser.role);
     list.innerHTML = decrees.map((d, i) => `
-      <div class="decree"><span class="dnum mono">№ ${String(i+1).padStart(3,'0')}</span><span class="dtitle">${escapeHtml(d.title)}</span><span class="ddate mono">${escapeHtml(d.date)}</span></div>
+      <div class="decree">
+        <span class="dnum mono">№ ${String(i+1).padStart(3,'0')}</span>
+        <span class="dtitle">${roleBadge(d.issuedByRole)}${escapeHtml(d.title)}${d.issuedByRole === 'foreign_president' ? ' <span class="pp-badge" style="margin-left:6px;">от союзного президента</span>' : ''}</span>
+        <span class="ddate mono">${escapeHtml(d.date)}</span>
+        ${canDelete ? `<button class="msg-del-all-btn" data-decree-idx="${i}">удалить</button>` : ''}
+      </div>
     `).join('');
+    if(canDelete){
+      list.querySelectorAll('button[data-decree-idx]').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          if(!confirm('Удалить этот указ безвозвратно?')) return;
+          try{
+            const res = await store.get('state-decrees', true);
+            const current = (res && res.value) ? JSON.parse(res.value) : SEED_DECREES.slice();
+            const removed = current.splice(Number(btn.dataset.decreeIdx), 1)[0];
+            await store.set('state-decrees', JSON.stringify(current), true);
+            if(removed) await logAudit('delete_decree', currentUser, removed.title);
+            renderDecrees(current);
+          } catch(e){ /* ignore */ }
+        });
+      });
+    }
   }
 
   document.getElementById('btnIssueDecree').addEventListener('click', async () => {
     const msgEl = document.getElementById('decreeMsg');
     msgEl.textContent = ''; msgEl.className = 'auth-msg';
-    if(!currentUser || !(currentUser.role === 'ruler' || currentUser.role === 'president')){ msgEl.textContent = 'Издавать указы могут только правители и президент.'; msgEl.classList.add('err'); return; }
+    if(!currentUser || !canIssueDecree(currentUser.role)){ msgEl.textContent = 'Издавать указы могут только правители, президент и президенты союзных стран.'; msgEl.classList.add('err'); return; }
     const titleInput = document.getElementById('decreeTitle');
     const title = titleInput.value.trim();
     if(!title){ msgEl.textContent = 'Введите заголовок указа.'; msgEl.classList.add('err'); return; }
     try{
       const res = await store.get('state-decrees', true);
       const decrees = (res && res.value) ? JSON.parse(res.value) : SEED_DECREES.slice();
-      decrees.push({ title, date: new Date().toLocaleDateString('ru-RU'), issuedBy: currentUser.handle });
+      decrees.push({ title, date: new Date().toLocaleDateString('ru-RU'), issuedBy: currentUser.handle, issuedByRole: currentUser.role });
       await store.set('state-decrees', JSON.stringify(decrees), true);
+      await logAudit('issue_decree', currentUser, title);
       renderDecrees(decrees);
       titleInput.value = '';
       msgEl.textContent = 'Указ издан.'; msgEl.classList.add('ok');
@@ -1167,9 +1215,34 @@
     "SARIM-DIPL-SFVE-R34A",
     "SARIM-DIPL-KDS4-NCG9"
   ];
-  // The President's code is deliberately the longest and most obscure of all —
-  // change this before publishing the site, and give it to exactly one person.
-  const PRESIDENT_INVITE_CODE = "SARIM-PRES-JSQ8-3KAY";
+  // The President's codes are deliberately the longest/most obscure of all —
+  // several backups in case one is lost. Change these before publishing,
+  // and only ever hand ONE of them to the real president.
+  const PRESIDENT_INVITE_CODES = [
+    "SARIM-PRES-JSQ8-3KAY",
+    "SARIM-PRES-M547-QQB3",
+    "SARIM-PRES-T8BH-M7VM",
+    "SARIM-PRES-CQJK-2CC9",
+    "SARIM-PRES-S6XK-TBGS",
+    "SARIM-PRES-HDR4-S2EA",
+    "SARIM-PRES-QPBD-5K5F",
+    "SARIM-PRES-RY8X-ZQGX",
+    "SARIM-PRES-E4TJ-V2NA",
+    "SARIM-PRES-C5B8-9S2A"
+  ];
+  // For presidents of allied/foreign countries visiting the site — a distinct,
+  // weaker role from the real President of Сибирский Сарим.
+  const FOREIGN_PRESIDENT_INVITE_CODES = [
+    "SARIM-FPRES-WAD5-YC7Q",
+    "SARIM-FPRES-MC87-MRUP",
+    "SARIM-FPRES-Y8YM-YWVF",
+    "SARIM-FPRES-HG29-25GR",
+    "SARIM-FPRES-VVKS-CW28",
+    "SARIM-FPRES-7F6A-6P97",
+    "SARIM-FPRES-BB3K-5NSF",
+    "SARIM-FPRES-HCS5-SWU7",
+    "SARIM-FPRES-TSFV-Z7B7"
+  ];
   const SUPPORT_INVITE_CODES = [
     "SARIM-SUPP-4BPS-RAH6",
     "SARIM-SUPP-56XQ-ZD7A",
@@ -1189,12 +1262,13 @@
   ];
 
   const ROLE_CONFIG = {
-    citizen:    { prefix: 'СГ-', label: 'Гражданин',            secretType: 'key',      codes: null },
-    ruler:      { prefix: 'СП-', label: 'Правитель',            secretType: 'phrase12', codes: RULER_INVITE_CODES },
-    commission: { prefix: 'СК-', label: 'Паспортная комиссия',  secretType: 'phrase12', codes: COMMISSION_INVITE_CODES },
-    diplomat:   { prefix: 'СД-', label: 'Дипломат',             secretType: 'phrase12', codes: DIPLOMAT_INVITE_CODES },
-    support:    { prefix: 'СУ-', label: 'Служба поддержки',     secretType: 'phrase12', codes: SUPPORT_INVITE_CODES },
-    president:  { prefix: 'ПР-', label: 'Президент',            secretType: 'phrase24', codes: [PRESIDENT_INVITE_CODE] }
+    citizen:    { prefix: 'СГ-', label: 'Гражданин',                  secretType: 'key',      codes: null },
+    ruler:      { prefix: 'СП-', label: 'Правитель',                  secretType: 'phrase12', codes: RULER_INVITE_CODES },
+    commission: { prefix: 'СК-', label: 'Паспортная комиссия',        secretType: 'phrase12', codes: COMMISSION_INVITE_CODES },
+    diplomat:   { prefix: 'СД-', label: 'Дипломат',                   secretType: 'phrase12', codes: DIPLOMAT_INVITE_CODES },
+    support:    { prefix: 'СУ-', label: 'Служба поддержки',           secretType: 'phrase12', codes: SUPPORT_INVITE_CODES },
+    foreign_president: { prefix: 'ЗП-', label: 'Президент союзной страны', secretType: 'phrase12', codes: FOREIGN_PRESIDENT_INVITE_CODES },
+    president:  { prefix: 'ПР-', label: 'Президент',                  secretType: 'phrase24', codes: PRESIDENT_INVITE_CODES }
   };
   function roleByPrefix(id){
     for(const key in ROLE_CONFIG){ if(id.startsWith(ROLE_CONFIG[key].prefix)) return key; }
@@ -1202,10 +1276,20 @@
   }
   function roleLabel(role){ return (ROLE_CONFIG[role] && ROLE_CONFIG[role].label) || 'Гражданин'; }
   function isElevated(role){ return role === 'ruler' || role === 'commission' || role === 'president' || role === 'diplomat' || role === 'support'; }
-  function canReviewPassports(role){ return role === 'commission' || role === 'president'; }
-  function canUseDiplomaticChannel(role){ return role === 'diplomat' || role === 'ruler' || role === 'president'; }
-  function canBan(role){ return role === 'commission' || role === 'president'; }
+  function canReviewPassports(role){ return role === 'president'; } // commission no longer reviews at all — President + the bot only
+  function canUseDiplomaticChannel(role){ return role === 'diplomat' || role === 'ruler' || role === 'president' || role === 'foreign_president'; }
+  // Only Support can ban — Commission lost that power. The President can never be banned by anyone.
+  function canBan(role){ return role === 'support'; }
+  function isBanImmune(role){ return role === 'president'; }
   function canManageProfessions(role){ return role === 'support' || role === 'president'; }
+  // Decrees: rulers, the President, and foreign presidents (on behalf of allies) may issue them —
+  // but only the real President of Сибирский Сарим may delete one, ever.
+  function canIssueDecree(role){ return role === 'ruler' || role === 'president' || role === 'foreign_president'; }
+  function canDeleteDecree(role){ return role === 'president'; }
+  // Clearing a whole channel or deleting someone else's messages: President always can.
+  // Support can too — UNLESS Support has themselves been banned, in which case they may
+  // only remove their own messages.
+  function canModerateAll(user, banned){ return user && (user.role === 'president' || (user.role === 'support' && !banned)); }
 
   // Thematic wordlist for ruler mnemonic seed-phrases (bitcoin-style, 12 words)
   const WORDLIST = ["тайга","сталь","орбита","кодекс","штурвал","мороз","гранит","сигнал",
@@ -1296,6 +1380,7 @@
       diplomat: ['#4a2f6b','#26395c','#a9822f'],
       support: ['#1c6b7a','#26395c','#2f6b45'],
       president: ['#7a2530','#1b2942','#c9a24a'],
+      foreign_president: ['#2a5a7a','#1b2942','#5a8ab0'],
       citizen: ['#a9822f','#26395c','#7a2530']
     };
     const palette = palettes[role] || palettes.citizen;
@@ -1388,6 +1473,7 @@
       commission: 'IV — Комиссия',
       diplomat: 'IV — Дипломатический корпус',
       support: 'III — Служба поддержки',
+      foreign_president: 'VI — Союзный лидер',
       president: 'VII — Президент'
     };
     const clearance = clearanceByRole[role];
@@ -1512,8 +1598,8 @@
     document.getElementById('loggedOutView').classList.add('hidden');
     document.getElementById('loggedInView').classList.remove('hidden');
     const whoNameEl = document.getElementById('whoName');
-    whoNameEl.textContent = (record.role === 'president' ? '♛ ' : '') + record.handle;
-    whoNameEl.className = 'name' + (record.role === 'president' ? ' role-president' : '');
+    whoNameEl.textContent = roleBadge(record.role) + record.handle;
+    whoNameEl.className = 'name' + (nameClass(record.role) !== 'who' ? ' ' + nameClass(record.role).replace('who ', '') : '');
     document.getElementById('whoRole').textContent = roleLabel(record.role);
     document.getElementById('pId').textContent = record.id;
     document.getElementById('pName').textContent = record.fio || record.handle;
@@ -1545,7 +1631,7 @@
     else { avcEl.textContent = 'на рассмотрении'; avcEl.className = 'p-status pending'; }
 
     // Machine-readable zone, styled after real passport MRZ conventions
-    const roleCode = { citizen:'C', ruler:'R', commission:'K', diplomat:'D', support:'S', president:'P' }[record.role] || 'C';
+    const roleCode = { citizen:'C', ruler:'R', commission:'K', diplomat:'D', support:'S', foreign_president:'F', president:'P' }[record.role] || 'C';
     const nameT = mrzPad(transliterate(record.fio || record.handle), 24);
     const line1 = 'P<SAR' + nameT;
     const line2 = mrzPad(record.id, 9) + '<SAR<' + mrzPad((record.createdAt||'').replace(/-/g,''), 6) + '<' + roleCode + '<<<<<<<<<<<<<<<<<';
@@ -1568,10 +1654,12 @@
     document.getElementById('tabDiplomacy').classList.toggle('hidden', !canUseDiplomaticChannel(record.role));
     document.getElementById('tabPassports').classList.toggle('hidden', !canReviewPassports(record.role));
     document.getElementById('tabPersonnel').classList.toggle('hidden', !canManageProfessions(record.role));
+    document.getElementById('tabJournal').classList.toggle('hidden', !(canBan(record.role) || record.role === 'president'));
     document.getElementById('personnelPanel').classList.add('hidden');
+    document.getElementById('journalPanel').classList.add('hidden');
     document.getElementById('dmTargetBar').classList.add('hidden');
     dmPartner = null;
-    document.getElementById('decreeForm').classList.toggle('hidden', !(record.role === 'ruler' || record.role === 'president'));
+    document.getElementById('decreeForm').classList.toggle('hidden', !canIssueDecree(record.role));
   }
 
   document.getElementById('btnLogout').addEventListener('click', () => {
@@ -1588,11 +1676,54 @@
 
   let activeChat = 'citizens';
   let chatPollTimer = null;
+  let currentUserBanned = false;
+  async function refreshSelfBanStatus(){
+    if(!currentUser){ currentUserBanned = false; return; }
+    currentUserBanned = await isUserBanned(currentUser.id);
+    updateModToolbar();
+  }
   function startChatPolling(){
     stopChatPolling();
-    chatPollTimer = setInterval(() => { if(currentUser) loadChat(activeChat, true); }, 5000);
+    refreshSelfBanStatus();
+    chatPollTimer = setInterval(() => { if(currentUser){ loadChat(activeChat, true); refreshSelfBanStatus(); } }, 5000);
   }
   function stopChatPolling(){ if(chatPollTimer){ clearInterval(chatPollTimer); chatPollTimer = null; } }
+
+  // ---------- Audit log ("bot" watching bans & passports) ----------
+  async function isUserBanned(id){
+    try{
+      const res = await store.get('ban:' + id, true);
+      if(!res || !res.value) return false;
+      const data = JSON.parse(res.value);
+      return !data.unbanned;
+    }catch(e){ return false; }
+  }
+  async function logAudit(action, actor, target, extra){
+    try{
+      const res = await store.get('audit-log', true);
+      const log = res && res.value ? JSON.parse(res.value) : [];
+      log.push({ action, by: actor.handle, byId: actor.id, byRole: actor.role, target: target || '', extra: extra || '', at: new Date().toLocaleString('ru-RU') });
+      await store.set('audit-log', JSON.stringify(log.slice(-300)), true);
+    }catch(e){ /* logging must never block the real action */ }
+  }
+  // If a Support member issues too many bans too quickly, the bot steps in:
+  // it blocks the ban and bans the abusive Support account itself.
+  async function botCheckBanSpam(actor){
+    try{
+      const res = await store.get('audit-log', true);
+      const log = res && res.value ? JSON.parse(res.value) : [];
+      // Count this actor's ban entries among the most recent log lines as a simple, robust proxy
+      // for "too many bans too quickly" — no need to parse timestamps back for this.
+      const recentCount = log.slice(-50).filter(e => e.action === 'ban' && e.byId === actor.id).length;
+      if(recentCount >= 5){
+        await store.set('ban:' + actor.id, JSON.stringify({ by: 'Бот-модератор', at: new Date().toISOString(), reason: 'автоматически — превышен лимит банов' }), true);
+        await logAudit('bot_autoban', { handle: 'Бот-модератор', id: 'BOT', role: 'bot' }, actor.id, 'слишком много банов подряд от ' + actor.handle);
+        if(currentUser && actor.id === currentUser.id) currentUserBanned = true;
+        return true; // blocked
+      }
+    }catch(e){ /* if the check itself fails, don't block a legitimate ban */ }
+    return false;
+  }
 
   document.querySelectorAll('.chat-tab').forEach(tab => {
     tab.addEventListener('click', () => {
@@ -1601,10 +1732,16 @@
       tab.classList.add('active');
       document.getElementById('dmTargetBar').classList.toggle('hidden', kind !== 'dm');
       function pulseIn(el){ if(!el) return; el.classList.remove('panel-anim'); void el.offsetWidth; el.classList.add('panel-anim'); }
+      function hideAllPanels(){
+        document.getElementById('passportsPanel').classList.add('hidden');
+        document.getElementById('personnelPanel').classList.add('hidden');
+        document.getElementById('journalPanel').classList.add('hidden');
+        document.getElementById('modToolbar').classList.add('hidden');
+      }
 
       if(kind === 'passports'){
         activeChat = 'passports';
-        document.getElementById('personnelPanel').classList.add('hidden');
+        hideAllPanels();
         document.getElementById('chatBox').classList.add('hidden');
         document.getElementById('chatInputRow').classList.add('hidden');
         document.getElementById('chatLockedNote').classList.add('hidden');
@@ -1615,7 +1752,7 @@
       }
       if(kind === 'personnel'){
         activeChat = 'personnel';
-        document.getElementById('passportsPanel').classList.add('hidden');
+        hideAllPanels();
         document.getElementById('chatBox').classList.add('hidden');
         document.getElementById('chatInputRow').classList.add('hidden');
         document.getElementById('chatLockedNote').classList.add('hidden');
@@ -1624,10 +1761,20 @@
         loadPersonnelPanel();
         return;
       }
+      if(kind === 'journal'){
+        activeChat = 'journal';
+        hideAllPanels();
+        document.getElementById('chatBox').classList.add('hidden');
+        document.getElementById('chatInputRow').classList.add('hidden');
+        document.getElementById('chatLockedNote').classList.add('hidden');
+        document.getElementById('journalPanel').classList.remove('hidden');
+        pulseIn(document.getElementById('journalPanel'));
+        loadJournalPanel();
+        return;
+      }
       if(kind === 'dm'){
         activeChat = 'dm';
-        document.getElementById('passportsPanel').classList.add('hidden');
-        document.getElementById('personnelPanel').classList.add('hidden');
+        hideAllPanels();
         document.getElementById('chatBox').classList.remove('hidden');
         document.getElementById('chatInputRow').classList.remove('hidden');
         document.getElementById('chatLockedNote').classList.add('hidden');
@@ -1637,8 +1784,7 @@
         return;
       }
 
-      document.getElementById('passportsPanel').classList.add('hidden');
-      document.getElementById('personnelPanel').classList.add('hidden');
+      hideAllPanels();
       const wantsRulers = kind === 'rulers';
       const wantsDiplomacy = kind === 'diplomacy';
       const allowed = (wantsRulers && currentUser && isElevated(currentUser.role))
@@ -1649,6 +1795,7 @@
         document.getElementById('chatBox').classList.remove('hidden');
         document.getElementById('chatInputRow').classList.remove('hidden');
         document.getElementById('chatLockedNote').classList.add('hidden');
+        updateModToolbar();
         pulseIn(document.getElementById('chatBox'));
         loadChat(activeChat);
       } else {
@@ -1672,18 +1819,38 @@
   }
   function nameClass(role){
     if(role === 'president') return 'who role-president';
+    if(role === 'foreign_president') return 'who role-foreign-president';
     if(isElevated(role)) return 'who role-ruler';
     return 'who';
+  }
+  function roleBadge(role){
+    if(role === 'president') return '♛ ';
+    if(role === 'foreign_president') return '⚜ ';
+    return '';
+  }
+  function updateModToolbar(){
+    const bar = document.getElementById('modToolbar');
+    if(!bar) return;
+    const canMod = canModerateAll(currentUser, currentUserBanned);
+    const onRealChat = ['citizens','rulers','diplomacy'].includes(activeChat);
+    bar.classList.toggle('hidden', !(canMod && onRealChat));
   }
   function renderChat(msgs){
     const box = document.getElementById('chatBox');
     const wasAtBottom = box.scrollTop + box.clientHeight >= box.scrollHeight - 20;
     if(!msgs.length){ box.innerHTML = '<div class="chat-empty">Пока пусто. Будьте первым.</div>'; return; }
-    const showBan = currentUser && canBan(currentUser.role);
-    box.innerHTML = msgs.map(m => `<div class="msg">
-        <span class="${nameClass(m.role)}" data-id="${escapeHtml(m.id||'')}" data-handle="${escapeHtml(m.who)}" title="Написать в личные">${m.role==='president' ? '♛ ' : ''}${escapeHtml(m.who)}</span>${escapeHtml(m.text)}<span class="when">${m.when}</span>
+    const showBan = currentUser && canBan(currentUser.role) && !currentUserBanned;
+    const canModAll = canModerateAll(currentUser, currentUserBanned);
+    box.innerHTML = msgs.map(m => {
+      const isMine = currentUser && m.id === currentUser.id;
+      const canDeleteThis = canModAll || isMine;
+      return `<div class="msg">
+        <span class="${nameClass(m.role)}" data-id="${escapeHtml(m.id||'')}" data-handle="${escapeHtml(m.who)}" title="Написать в личные">${roleBadge(m.role)}${escapeHtml(m.who)}</span>${escapeHtml(m.text)}<span class="when">${m.when}</span>
         ${showBan && m.id && m.id !== currentUser.id ? `<button class="ban-btn" data-ban-id="${escapeHtml(m.id)}" data-ban-handle="${escapeHtml(m.who)}">забанить</button>` : ''}
-      </div>`).join('');
+        ${canModAll && m.id && m.id !== currentUser.id ? `<button class="msg-del-all-btn" data-delall-id="${escapeHtml(m.id)}" data-delall-handle="${escapeHtml(m.who)}">удалить все от ${escapeHtml(m.who)}</button>` : ''}
+        ${canDeleteThis && m.mid ? `<button class="msg-del-btn" data-del-mid="${escapeHtml(m.mid)}" title="Удалить сообщение">✕</button>` : ''}
+      </div>`;
+    }).join('');
     if(wasAtBottom) box.scrollTop = box.scrollHeight;
   }
   function escapeHtml(s){
@@ -1694,6 +1861,10 @@
   document.getElementById('chatBox').addEventListener('click', (e) => {
     const banBtn = e.target.closest('.ban-btn');
     if(banBtn){ handleBanClick(banBtn.dataset.banId, banBtn.dataset.banHandle); return; }
+    const delBtn = e.target.closest('.msg-del-btn');
+    if(delBtn){ deleteMessage(activeChat, delBtn.dataset.delMid); return; }
+    const delAllBtn = e.target.closest('.msg-del-all-btn');
+    if(delAllBtn){ deleteAllFromUser(activeChat, delAllBtn.dataset.delallId, delAllBtn.dataset.delallHandle); return; }
     const nameEl = e.target.closest('.who');
     if(nameEl && nameEl.dataset.id && currentUser && nameEl.dataset.id !== currentUser.id){
       openDM(nameEl.dataset.id, nameEl.dataset.handle);
@@ -1701,13 +1872,69 @@
   });
 
   async function handleBanClick(id, handle){
-    if(!currentUser || !canBan(currentUser.role) || !id) return;
+    if(!currentUser || !canBan(currentUser.role) || currentUserBanned || !id) return;
+    try{
+      const targetRes = await store.get('citizen:' + id, true);
+      if(targetRes){
+        const targetRec = JSON.parse(targetRes.value);
+        if(isBanImmune(targetRec.role)){ alert('Президента нельзя забанить — у него полный иммунитет.'); return; }
+      }
+    } catch(e){ /* if the lookup fails, fall through — the bot check below still protects the system */ }
     if(!confirm(`Забанить ${handle} (${id}) в чатах?`)) return;
+    const blocked = await botCheckBanSpam(currentUser);
+    if(blocked){ alert('Бот-модератор заблокировал это действие: слишком много банов подряд — ваш аккаунт временно забанен.'); loadChat(activeChat); return; }
     try{
       await store.set('ban:' + id, JSON.stringify({ by: currentUser.handle, at: new Date().toISOString() }), true);
+      await logAudit('ban', currentUser, id, handle);
       loadChat(activeChat);
     } catch(e){ /* ignore */ }
   }
+  async function handleUnban(id){
+    if(!currentUser || !((canBan(currentUser.role) && !currentUserBanned) || currentUser.role === 'president')) return;
+    try{
+      // The shared store interface has no explicit "delete key" — marking it unbanned
+      // is functionally identical, since every ban check treats this shape as not-banned.
+      await store.set('ban:' + id, JSON.stringify({ unbanned: true, by: currentUser.handle, at: new Date().toISOString() }), true);
+      await logAudit('unban', currentUser, id);
+      if(currentUser.id === id) currentUserBanned = false;
+      loadJournalPanel();
+    } catch(e){ /* ignore */ }
+  }
+  async function deleteMessage(channel, mid){
+    if(!currentUser || !mid) return;
+    try{
+      const res = await store.get('chat:' + channel, true);
+      const msgs = res ? JSON.parse(res.value) : [];
+      const target = msgs.find(m => m.mid === mid);
+      if(!target) return;
+      const allowed = canModerateAll(currentUser, currentUserBanned) || target.id === currentUser.id;
+      if(!allowed) return;
+      const filtered = msgs.filter(m => m.mid !== mid);
+      await store.set('chat:' + channel, JSON.stringify(filtered), true);
+      renderChat(filtered);
+    } catch(e){ /* ignore */ }
+  }
+  async function deleteAllFromUser(channel, userId, handle){
+    if(!currentUser || !canModerateAll(currentUser, currentUserBanned) || !userId) return;
+    if(!confirm(`Удалить все сообщения от ${handle} в этом чате?`)) return;
+    try{
+      const res = await store.get('chat:' + channel, true);
+      const msgs = res ? JSON.parse(res.value) : [];
+      const filtered = msgs.filter(m => m.id !== userId);
+      await store.set('chat:' + channel, JSON.stringify(filtered), true);
+      await logAudit('delete_all_from_user', currentUser, userId, handle + ' в ' + channel);
+      renderChat(filtered);
+    } catch(e){ /* ignore */ }
+  }
+  document.getElementById('btnClearChat').addEventListener('click', async () => {
+    if(!currentUser || !canModerateAll(currentUser, currentUserBanned)) return;
+    if(!confirm('Полностью очистить этот чат для всех? Действие необратимо.')) return;
+    try{
+      await store.set('chat:' + activeChat, JSON.stringify([]), true);
+      await logAudit('clear_channel', currentUser, activeChat);
+      renderChat([]);
+    } catch(e){ /* ignore */ }
+  });
 
   document.getElementById('chatSend').addEventListener('click', sendChat);
   document.getElementById('chatInput').addEventListener('keydown', (e) => { if(e.key === 'Enter') sendChat(); });
@@ -1722,14 +1949,14 @@
     if(activeChat === 'dm') return sendDM();
     const msgEl = document.getElementById('chatLockedNote');
     try{
-      const banRes = await store.get('ban:' + currentUser.id, true).catch(() => null);
-      if(banRes){ input.value = ''; alert('Вы забанены в чатах государства.'); return; }
+      const banned = await isUserBanned(currentUser.id);
+      if(banned){ input.value = ''; alert('Вы забанены в чатах государства.'); return; }
     } catch(e){ /* if the ban check itself fails, don't block sending */ }
     input.disabled = true;
     try{
       const res = await store.get('chat:' + activeChat, true);
       const msgs = res ? JSON.parse(res.value) : [];
-      msgs.push({ who: currentUser.handle, role: currentUser.role, id: currentUser.id, text, when: new Date().toLocaleTimeString('ru-RU', {hour:'2-digit', minute:'2-digit'}) });
+      msgs.push({ mid: randHex(6), who: currentUser.handle, role: currentUser.role, id: currentUser.id, text, when: new Date().toLocaleTimeString('ru-RU', {hour:'2-digit', minute:'2-digit'}) });
       const trimmed = msgs.slice(-200);
       await store.set('chat:' + activeChat, JSON.stringify(trimmed), true);
       input.value = '';
@@ -1852,13 +2079,16 @@
       const fioOk = isPlausibleFIO(r.fio);
       const status = r.avcStatus || 'pending';
       const decided = status === 'verified' || status === 'rejected';
+      const isSelf = currentUser && r.id === currentUser.id;
       return `
         <div class="pp-row" data-id="${r.id}">
           <span class="pp-id mono">${escapeHtml(r.id)}</span>
           <span class="pp-fio ${fioOk ? '' : 'invalid'}">${escapeHtml(r.fio || r.handle || '—')}</span>
-          <span class="pp-badge ${fioOk ? 'ok' : 'bad'}">${fioOk ? 'ФИО в норме' : 'проверить ФИО'}</span>
+          <span class="pp-badge ${fioOk ? 'ok' : 'bad'}">🤖 ${fioOk ? 'бот: ФИО в норме' : 'бот: проверить ФИО'}</span>
           <span class="pp-badge ${status==='verified' ? 'ok' : (status==='rejected' ? 'bad' : '')}">${status==='verified' ? 'подтверждён' : (status==='rejected' ? 'отклонён' : 'на рассмотрении')}</span>
-          ${decided
+          ${isSelf
+            ? `<span class="pp-decided">нельзя проверять собственный паспорт</span>`
+            : decided
             ? `<span class="pp-decided">решение вынесено — изменить нельзя</span>`
             : `<div class="pp-actions">
                 <button class="approve" data-action="verified" data-id="${r.id}">Подтвердить</button>
@@ -1870,6 +2100,7 @@
       btn.addEventListener('click', async () => {
         if(!currentUser || !canReviewPassports(currentUser.role)) return;
         const id = btn.dataset.id, action = btn.dataset.action;
+        if(id === currentUser.id) return; // never allow self-review, even via a stale button
         btn.closest('.pp-row').style.opacity = '0.5';
         try{
           const res = await store.get('citizen:' + id, true);
@@ -1879,6 +2110,7 @@
           rec.avcStatus = action;
           await store.set('citizen:' + id, JSON.stringify(rec), true);
           if(currentUser.id === id){ currentUser.avcStatus = action; }
+          logAudit('passport_' + action, currentUser, id);
         } finally {
           loadPassportsForReview();
         }
@@ -1939,6 +2171,52 @@
         } catch(e){
           msgEl.textContent = 'Ошибка'; msgEl.classList.add('err');
         }
+      });
+    });
+  }
+
+  // ---------- Journal: banned users + bot/moderation audit log ----------
+  async function loadJournalPanel(){
+    const panel = document.getElementById('journalPanel');
+    panel.innerHTML = '<div class="pp-empty">Загрузка...</div>';
+    let bannedHtml = '';
+    let logHtml = '';
+    try{
+      const listRes = await store.list('ban:', true);
+      const keys = (listRes && listRes.keys) || [];
+      const rows = [];
+      for(const k of keys){
+        try{
+          const res = await store.get(k, true);
+          if(!res || !res.value) continue;
+          const data = JSON.parse(res.value);
+          if(data.unbanned) continue;
+          const id = k.slice('ban:'.length);
+          rows.push({ id, by: data.by || '?', at: data.at || '', reason: data.reason || '' });
+        }catch(e){ /* skip unreadable entry */ }
+      }
+      bannedHtml = rows.length
+        ? rows.map(r => `<div class="banned-row"><span class="b-id mono">${escapeHtml(r.id)}</span><span>забанен: ${escapeHtml(r.by)}${r.reason ? ' — ' + escapeHtml(r.reason) : ''}</span>${(currentUser && ((canBan(currentUser.role) && !currentUserBanned) || currentUser.role === 'president')) ? `<button data-unban-id="${escapeHtml(r.id)}">Разбанить</button>` : ''}</div>`).join('')
+        : '<div class="pp-empty">Забаненных нет.</div>';
+    } catch(e){
+      bannedHtml = '<div class="pp-empty">Не удалось загрузить список банов.</div>';
+    }
+    try{
+      const res = await store.get('audit-log', true);
+      const log = res && res.value ? JSON.parse(res.value) : [];
+      logHtml = log.length
+        ? log.slice(-40).reverse().map(e => `<div class="journal-entry">${e.byRole==='bot' ? '<span class="j-bot">🤖 БОТ</span>' : escapeHtml(e.by)} · <span class="j-action">${escapeHtml(e.action)}</span> · ${escapeHtml(e.target||'')} ${e.extra ? '— ' + escapeHtml(e.extra) : ''} <span style="float:right; color:var(--steel);">${escapeHtml(e.at)}</span></div>`).join('')
+        : '<div class="pp-empty">Журнал пуст.</div>';
+    } catch(e){
+      logHtml = '<div class="pp-empty">Не удалось загрузить журнал.</div>';
+    }
+    const panelEl = document.getElementById('journalPanel');
+    panelEl.innerHTML = `<div class="journal-section-title">Забаненные — доступна разблокировка</div>${bannedHtml}<div class="journal-section-title">Журнал действий (бот и модерация)</div>${logHtml}`;
+    panelEl.querySelectorAll('button[data-unban-id]').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        btn.disabled = true;
+        await handleUnban(btn.dataset.unbanId);
+        loadJournalPanel();
       });
     });
   }
