@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0054)file:///C:/Users/User/Downloads/sibirsky-sarim_25.html -->
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Сибирский Сарим — официальный государственный портал</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%231a2140'/%3E%3Ccircle cx='50' cy='50' r='40' fill='%23233a6e'/%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%23eaf1ff' stroke-width='1'/%3E%3Ccircle cx='50' cy='50' r='19' fill='none' stroke='%23eaf1ff' stroke-width='5'/%3E%3Cpath d='M50 34 L62 66 L38 66 Z' fill='none' stroke='%23eaf1ff' stroke-width='4'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 100 100&#39;%3E%3Ccircle cx=&#39;50&#39; cy=&#39;50&#39; r=&#39;48&#39; fill=&#39;%231a2140&#39;/%3E%3Ccircle cx=&#39;50&#39; cy=&#39;50&#39; r=&#39;40&#39; fill=&#39;%23233a6e&#39;/%3E%3Ccircle cx=&#39;50&#39; cy=&#39;50&#39; r=&#39;40&#39; fill=&#39;none&#39; stroke=&#39;%23eaf1ff&#39; stroke-width=&#39;1&#39;/%3E%3Ccircle cx=&#39;50&#39; cy=&#39;50&#39; r=&#39;19&#39; fill=&#39;none&#39; stroke=&#39;%23eaf1ff&#39; stroke-width=&#39;5&#39;/%3E%3Cpath d=&#39;M50 34 L62 66 L38 66 Z&#39; fill=&#39;none&#39; stroke=&#39;%23eaf1ff&#39; stroke-width=&#39;4&#39;/%3E%3C/svg%3E">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=PT+Serif:wght@400;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
@@ -223,6 +223,13 @@
   }
   .passport-photo svg{ width:100%; height:100%; opacity:0.9; }
   .p-motto{ font-style:italic; color:var(--text-dim); font-size:12.5px; text-align:center; padding:10px 20px 0; border-top:1px dashed var(--line-strong); margin-top:8px; }
+  .p-progress-wrap{ padding:10px 22px 0; }
+  .p-progress-label{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--text-dim); margin-bottom:5px; }
+  .p-progress-bar{ height:6px; background:var(--panel-2); border:1px solid var(--line-strong); }
+  .p-progress-fill{ height:100%; background:var(--gold); transition:width .5s ease; }
+  .p-awards{ padding:10px 22px 0; display:flex; flex-wrap:wrap; gap:6px; }
+  .p-award-badge{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; padding:4px 9px; border:1px solid var(--gold); background:var(--panel-2); color:var(--navy); }
+  .p-award-badge .a-date{ color:var(--steel); margin-left:5px; }
   .passport-photo .pp-corner{ position:absolute; width:10px; height:10px; border:1.5px solid var(--gold); }
   .passport-photo .pp-tl{ top:3px; left:3px; border-right:none; border-bottom:none; }
   .passport-photo .pp-br{ bottom:3px; right:3px; border-left:none; border-top:none; }
@@ -260,12 +267,31 @@
   .code-issuer button:hover{ background:var(--gold); color:#fff; }
   .pp-decided{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--steel); font-style:italic; }
   .mod-toolbar{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; background:var(--panel-2); border:1px solid var(--line-strong); border-bottom:none; padding:8px 16px; }
+  .mod-toolbar button{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; padding:5px 10px; border:1px solid var(--gold); background:var(--panel); color:var(--navy); cursor:pointer; }
+  .mod-toolbar button:hover{ background:var(--gold); color:#fff; }
+  .poll-create-form{ background:var(--panel-2); border:1px solid var(--line-strong); border-bottom:none; padding:12px 16px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .poll-create-form input{ font-family:'IBM Plex Mono',monospace; font-size:12px; padding:7px 10px; border:1px solid var(--line-strong); background:var(--parchment); flex:1; min-width:160px; }
+  .poll-create-form button{ font-family:'IBM Plex Mono',monospace; font-size:11px; padding:7px 12px; cursor:pointer; }
+  .poll-create-form #btnCancelPoll{ background:none; border:1px solid var(--line-strong); color:var(--text-dim); }
+  .poll-panel{ background:var(--panel); border:1px solid var(--gold); border-bottom:none; padding:16px 18px; }
+  .poll-panel .poll-q{ font-weight:700; color:var(--navy); font-family:'Playfair Display',serif; font-size:16px; margin-bottom:10px; }
+  .poll-opt-row{ display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+  .poll-opt-bar-wrap{ flex:1; height:20px; background:var(--panel-2); border:1px solid var(--line-strong); position:relative; cursor:pointer; }
+  .poll-opt-bar-wrap:hover{ border-color:var(--gold); }
+  .poll-opt-bar{ height:100%; background:var(--gold-light); }
+  .poll-opt-label{ position:absolute; left:8px; top:2px; font-size:11.5px; color:var(--navy); }
+  .poll-opt-pct{ font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text-dim); min-width:70px; text-align:right; }
+  .poll-meta{ font-size:11px; color:var(--steel); margin-top:8px; font-family:'IBM Plex Mono',monospace; }
+  .poll-opt-row.voted .poll-opt-bar-wrap{ border-color:var(--ok); }
   .mod-toolbar button{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; padding:5px 10px; border:1px solid var(--seal-red); background:var(--panel); color:var(--seal-red); cursor:pointer; }
   .mod-toolbar button:hover{ background:var(--seal-red); color:#fff; }
   .mod-toolbar-note{ font-size:11px; color:var(--text-dim); font-style:italic; }
   .msg{ position:relative; padding-right:18px; }
   .msg-del-btn{ display:none; position:absolute; right:0; top:0; background:none; border:none; color:var(--seal-red); cursor:pointer; font-size:12px; padding:0 4px; }
   .msg:hover .msg-del-btn{ display:inline; }
+  .msg-edit-btn{ display:none; position:absolute; right:18px; top:0; background:none; border:none; color:var(--gold); cursor:pointer; font-size:12px; padding:0 4px; }
+  .msg:hover .msg-edit-btn{ display:inline; }
+  .edited-tag{ font-size:10px; color:var(--steel); font-style:italic; }
   .msg-del-all-btn{ margin-left:6px; font-family:'IBM Plex Mono',monospace; font-size:9.5px; color:var(--text-dim); background:none; border:1px solid var(--line-strong); padding:1px 6px; cursor:pointer; }
   .msg-del-all-btn:hover{ background:var(--panel-2); }
   .journal-entry{ padding:10px 16px; border-bottom:1px solid var(--line); font-size:12px; font-family:'IBM Plex Mono',monospace; color:var(--text-dim); }
@@ -285,6 +311,12 @@
   .msg .when{ font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--steel); margin-left:8px; }
   .chat-empty{ color:var(--steel); font-size:13px; font-style:italic; }
   .chat-input-row{ display:flex; border:1px solid var(--line-strong); border-top:none; }
+  .chat-input-row #chatPhotoBtn{ border:none; background:var(--panel-2); border-right:1px solid var(--line-strong); font-size:16px; padding:0 14px; cursor:pointer; }
+  .chat-input-row #chatPhotoBtn:hover{ background:var(--gold-light); }
+  .photo-preview-bar{ display:flex; align-items:center; gap:10px; border:1px solid var(--line-strong); border-top:none; padding:8px 14px; background:var(--panel-2); }
+  .photo-preview-bar img{ height:44px; border:1px solid var(--line-strong); }
+  .photo-preview-bar button{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; background:none; border:1px solid var(--line-strong); padding:4px 8px; cursor:pointer; color:var(--text-dim); }
+  .msg-photo{ max-width:220px; display:block; margin-top:6px; border:1px solid var(--line-strong); cursor:pointer; }
   .chat-input-row input{ flex:1; background:var(--parchment); border:none; color:var(--text); padding:12px 14px; font-family:'PT Serif',serif; font-size:14px; }
   .chat-input-row input:focus{ outline:none; }
   .chat-input-row button{ border:none; background:var(--navy); color:var(--parchment); padding:0 22px; font-family:'IBM Plex Mono',monospace; font-size:12px; text-transform:uppercase; cursor:pointer; }
@@ -380,22 +412,22 @@
 
 <svg width="0" height="0" style="position:absolute">
   <defs>
-    <radialGradient id="emblemGrad" cx="50%" cy="50%" r="60%">
-      <stop offset="0%" stop-color="#3a63b0"/>
-      <stop offset="55%" stop-color="#233a6e"/>
-      <stop offset="100%" stop-color="#1a2140"/>
-    </radialGradient>
+    <radialgradient id="emblemGrad" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#3a63b0"></stop>
+      <stop offset="55%" stop-color="#233a6e"></stop>
+      <stop offset="100%" stop-color="#1a2140"></stop>
+    </radialgradient>
     <symbol id="sarimEmblem" viewBox="0 0 200 200">
-      <circle cx="100" cy="100" r="98" fill="#161c33"/>
-      <circle cx="100" cy="100" r="90" fill="url(#emblemGrad)"/>
-      <g id="raysGroup" stroke="#cfe0ff" stroke-width="1" opacity="0.55"></g>
+      <circle cx="100" cy="100" r="98" fill="#161c33"></circle>
+      <circle cx="100" cy="100" r="90" fill="url(#emblemGrad)"></circle>
+      <g id="raysGroup" stroke="#cfe0ff" stroke-width="1" opacity="0.55"><line x1="132" y1="100" x2="188" y2="100"></line><line x1="131.60602689904442" y1="105.00590288128738" x2="186.91657397237213" y2="113.76623292354031"></line><line x1="130.43380852144492" y1="109.88854381999832" x2="183.69297343397352" y2="127.19349550499537"></line><line x1="128.51220877402778" y1="114.5276959916655" x2="178.4085741285764" y2="139.9511639770801"></line><line x1="125.88854381999832" y1="118.80912807335915" x2="171.19349550499538" y2="151.72510220173763"></line><line x1="122.62741699796952" y1="122.62741699796952" x2="162.22539674441617" y2="162.22539674441617"></line><line x1="118.80912807335915" y1="125.88854381999832" x2="151.72510220173763" y2="171.19349550499538"></line><line x1="114.5276959916655" y1="128.51220877402778" x2="139.9511639770801" y2="178.40857412857636"></line><line x1="109.88854381999832" y1="130.43380852144492" x2="127.19349550499538" y2="183.69297343397352"></line><line x1="105.00590288128738" y1="131.60602689904442" x2="113.76623292354031" y2="186.91657397237213"></line><line x1="100" y1="132" x2="100" y2="188"></line><line x1="94.9940971187126" y1="131.6060268990444" x2="86.23376707645967" y2="186.91657397237213"></line><line x1="90.11145618000168" y1="130.43380852144492" x2="72.80650449500463" y2="183.69297343397352"></line><line x1="85.4723040083345" y1="128.51220877402778" x2="60.04883602291989" y2="178.4085741285764"></line><line x1="81.19087192664087" y1="125.88854381999832" x2="48.27489779826237" y2="171.19349550499538"></line><line x1="77.37258300203048" y1="122.62741699796952" x2="37.77460325558383" y2="162.22539674441617"></line><line x1="74.11145618000168" y1="118.80912807335915" x2="28.80650449500463" y2="151.72510220173766"></line><line x1="71.48779122597223" y1="114.5276959916655" x2="21.59142587142364" y2="139.9511639770801"></line><line x1="69.56619147855508" y1="109.88854381999832" x2="16.307026566026494" y2="127.19349550499538"></line><line x1="68.39397310095559" y1="105.0059028812874" x2="13.08342602762788" y2="113.76623292354033"></line><line x1="68" y1="100" x2="12" y2="100.00000000000001"></line><line x1="68.39397310095559" y1="94.99409711871262" x2="13.08342602762788" y2="86.2337670764597"></line><line x1="69.56619147855508" y1="90.11145618000167" x2="16.307026566026494" y2="72.8065044950046"></line><line x1="71.48779122597222" y1="85.47230400833452" x2="21.59142587142361" y2="60.04883602291993"></line><line x1="74.11145618000168" y1="81.19087192664087" x2="28.806504495004617" y2="48.27489779826237"></line><line x1="77.37258300203047" y1="77.37258300203048" x2="37.774603255583806" y2="37.77460325558383"></line><line x1="81.19087192664085" y1="74.11145618000168" x2="48.27489779826235" y2="28.80650449500463"></line><line x1="85.4723040083345" y1="71.48779122597223" x2="60.04883602291987" y2="21.59142587142364"></line><line x1="90.11145618000168" y1="69.56619147855508" x2="72.80650449500462" y2="16.307026566026494"></line><line x1="94.9940971187126" y1="68.39397310095559" x2="86.23376707645967" y2="13.08342602762788"></line><line x1="100" y1="68" x2="99.99999999999999" y2="12"></line><line x1="105.00590288128738" y1="68.39397310095559" x2="113.7662329235403" y2="13.08342602762788"></line><line x1="109.88854381999832" y1="69.56619147855508" x2="127.19349550499535" y2="16.30702656602648"></line><line x1="114.5276959916655" y1="71.48779122597223" x2="139.9511639770801" y2="21.591425871423624"></line><line x1="118.80912807335913" y1="74.11145618000168" x2="151.72510220173763" y2="28.806504495004617"></line><line x1="122.62741699796952" y1="77.37258300203047" x2="162.22539674441617" y2="37.774603255583806"></line><line x1="125.88854381999832" y1="81.19087192664085" x2="171.19349550499538" y2="48.274897798262344"></line><line x1="128.51220877402778" y1="85.4723040083345" x2="178.40857412857636" y2="60.048836022919865"></line><line x1="130.43380852144492" y1="90.11145618000168" x2="183.69297343397352" y2="72.80650449500462"></line><line x1="131.6060268990444" y1="94.9940971187126" x2="186.91657397237213" y2="86.23376707645966"></line></g>
       <g stroke="#eaf1ff" stroke-width="1.6" opacity="0.75">
-        <line x1="100" y1="10" x2="100" y2="190"/>
-        <line x1="10" y1="100" x2="190" y2="100"/>
+        <line x1="100" y1="10" x2="100" y2="190"></line>
+        <line x1="10" y1="100" x2="190" y2="100"></line>
       </g>
-      <circle cx="100" cy="100" r="90" fill="none" stroke="#0f1526" stroke-width="2"/>
-      <circle cx="100" cy="100" r="70" fill="none" stroke="#eaf1ff" stroke-width="14"/>
-      <path d="M100 60 L128 118 L72 118 Z" fill="url(#emblemGrad)" stroke="#eaf1ff" stroke-width="10" stroke-linejoin="round"/>
+      <circle cx="100" cy="100" r="90" fill="none" stroke="#0f1526" stroke-width="2"></circle>
+      <circle cx="100" cy="100" r="70" fill="none" stroke="#eaf1ff" stroke-width="14"></circle>
+      <path d="M100 60 L128 118 L72 118 Z" fill="url(#emblemGrad)" stroke="#eaf1ff" stroke-width="10" stroke-linejoin="round"></path>
     </symbol>
   </defs>
 </svg>
@@ -404,25 +436,27 @@
 
 <nav>
   <div class="nav-brand">
-    <svg class="seal-mini" viewBox="0 0 100 100"><use href="#sarimEmblem" x="2" y="2" width="96" height="96"/></svg>
+    <svg class="seal-mini" viewBox="0 0 100 100"><use href="#sarimEmblem" x="2" y="2" width="96" height="96"></use></svg>
     <span>Сибирский Сарим</span>
   </div>
   <div class="nav-links">
-    <a href="#constitution">Конституция</a>
-    <a href="#avc">Альянс AVC</a>
-    <a href="#ally">Гобидори</a>
-    <a href="#territory">Карта</a>
-    <a href="#symbols">Символика</a>
-    <a href="#anthem">Гимн</a>
-    <a href="#decrees">Указы</a>
-    <a href="#cabinet">Кабинет</a>
-    <a href="#chronicle">Хроника</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_25.html#constitution">Конституция</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_25.html#avc">Альянс AVC</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_25.html#ally">Гобидори</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_25.html#territory">Карта</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_25.html#symbols">Символика</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_25.html#anthem">Гимн</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_25.html#decrees">Указы</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_25.html#laws">Законы</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_25.html#jobs">Вакансии</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_25.html#cabinet">Кабинет</a>
+    <a href="file:///C:/Users/User/Downloads/sibirsky-sarim_25.html#chronicle">Хроника</a>
   </div>
 </nav>
 
 <header class="state-header">
   <svg class="seal-big" viewBox="0 0 100 100">
-    <use href="#sarimEmblem" x="1" y="1" width="98" height="98"/>
+    <use href="#sarimEmblem" x="1" y="1" width="98" height="98"></use>
   </svg>
   <div class="eyebrow-official">Государственный портал</div>
   <h1>Сибирский Сарим</h1>
@@ -433,12 +467,12 @@
     <div class="status-cell"><div class="label">Основано</div><div class="value">2024</div></div>
     <div class="status-cell"><div class="label">Альянс</div><div class="value">AVC — с 22.01.2026</div></div>
     <div class="status-cell"><div class="label">Устройство</div><div class="value">Военно-экономическое</div></div>
-    <div class="status-cell"><div class="label">Время Сарима</div><div class="value" id="stateClock">—</div></div>
+    <div class="status-cell"><div class="label">Время Сарима</div><div class="value" id="stateClock">23:53:06 · 18.07.2026</div></div>
   </div>
-  <div class="quote-of-day" id="quoteOfDay"></div>
+  <div class="quote-of-day" id="quoteOfDay"><span class="qlabel">Девиз дня</span>Посягательство на суверенитет или цифровую сеть Сибирского Сарима расценивается как нападение на весь альянс AVC.</div>
 </header>
 
-<section id="constitution">
+<section id="constitution" class="reveal in">
   <div class="section-kicker">Основной закон</div>
   <h2>Конституция государства</h2>
   <p class="section-sub">Принята и действует с 22 января 2026 года — момента подписания акта о присоединении к альянсу AVC. Разверните статью, чтобы прочитать полный текст.</p>
@@ -447,10 +481,64 @@
     Мы, народ Сибирского Сарима, утверждая право на суверенитет в физическом и цифровом пространствах, стремясь к экономическому процветанию и военной безопасности, принимаем настоящую Конституцию. С 22 января 2026 года Сибирский Сарим признаёт себя неотъемлемой частью альянса AVC.
   </div>
 
-  <div id="articles" class="official-panel"></div>
+  <div id="articles" class="official-panel"><div class="article" style="padding: 20px 22px;">
+      <div class="article-head" data-idx="0">
+        <span class="article-num mono">Статья 1</span>
+        <span class="article-title">Государственное устройство</span>
+        <span class="article-toggle mono">+</span>
+      </div>
+      <div class="article-body">
+        <p><span class="clause-num">1.1</span>Сибирский Сарим — это суверенное военно-экономическое государство, строящее свою политику на принципах технологического прогресса и дисциплины.</p><p><span class="clause-num">1.2</span>Высшим приоритетом государства является защита интересов граждан, сохранение внутренней стабильности и укрепление позиций в виртуальном пространстве.</p>
+      </div>
+    </div><div class="article" style="padding: 20px 22px;">
+      <div class="article-head" data-idx="1">
+        <span class="article-num mono">Статья 2</span>
+        <span class="article-title">Взаимодействие с Альянсом AVC</span>
+        <span class="article-toggle mono">+</span>
+      </div>
+      <div class="article-body">
+        <p><span class="clause-num">2.1</span>С 22 января 2026 года Сибирский Сарим делегирует часть полномочий в сфере коллективной обороны и единого экономического планирования структурам альянса AVC.</p><p><span class="clause-num">2.2</span>Военные и кибернетические силы государства интегрированы в общую систему безопасности Альянса для отражения внешних и сетевых угроз.</p>
+      </div>
+    </div><div class="article" style="padding: 20px 22px;">
+      <div class="article-head" data-idx="2">
+        <span class="article-num mono">Статья 3</span>
+        <span class="article-title">Экономическая база</span>
+        <span class="article-toggle mono">+</span>
+      </div>
+      <div class="article-body">
+        <p><span class="clause-num">3.1</span>Экономика Сибирского Сарима основывается на высокотехнологичных ресурсах, цифровой торговле и совместных проектах с участниками AVC.</p><p><span class="clause-num">3.2</span>Государство гарантирует стабильность виртуальных активов и защиту инфраструктуры данных на всей своей территории.</p>
+      </div>
+    </div><div class="article" style="padding: 20px 22px;">
+      <div class="article-head" data-idx="3">
+        <span class="article-num mono">Статья 4</span>
+        <span class="article-title">Обязанности и права</span>
+        <span class="article-toggle mono">+</span>
+      </div>
+      <div class="article-body">
+        <p><span class="clause-num">4.1</span>Каждый гражданин имеет право на защищённую цифровую личность и поддержку со стороны государственных институтов и ресурсов Альянса.</p><p><span class="clause-num">4.2</span>Обеспечение информационной и физической безопасности Родины является священным долгом каждого участника общества.</p>
+      </div>
+    </div><div class="article" style="padding: 20px 22px;">
+      <div class="article-head" data-idx="4">
+        <span class="article-num mono">Статья 5</span>
+        <span class="article-title">Оборона</span>
+        <span class="article-toggle mono">+</span>
+      </div>
+      <div class="article-body">
+        <p><span class="clause-num">5.1</span>Посягательство на суверенитет или цифровую сеть Сибирского Сарима расценивается как нападение на весь альянс AVC.</p><p><span class="clause-num">5.2</span>Государство поддерживает постоянную боевую готовность подразделений для защиты национальных и союзных интересов.</p>
+      </div>
+    </div><div class="article" style="padding: 20px 22px;">
+      <div class="article-head" data-idx="5">
+        <span class="article-num mono">Статья 6</span>
+        <span class="article-title">Заключительные положения</span>
+        <span class="article-toggle mono">+</span>
+      </div>
+      <div class="article-body">
+        <p><span class="clause-num">6.1</span>Настоящая Конституция вступает в силу с момента подписания акта о присоединении к AVC — 22 января 2026 года.</p>
+      </div>
+    </div></div>
 </section>
 
-<section id="avc">
+<section id="avc" class="reveal">
   <div class="section-kicker">Внешняя политика</div>
   <h2>Альянс AVC</h2>
   <p class="section-sub">Сибирский Сарим — участник альянса AVC с 22 января 2026 года. Часть полномочий делегирована структурам альянса; остальное остаётся исключительной юрисдикцией государства.</p>
@@ -475,7 +563,7 @@
   </div>
 </section>
 
-<section id="ally">
+<section id="ally" class="reveal">
   <div class="section-kicker">Специальный союз</div>
   <h2>Гобидори</h2>
   <p class="section-sub">Ближайший союзник Сибирского Сарима — союз заключён в 2024 году. Оба государства проходят возрождение государственности параллельно в 2026 году. Раздел будет дополнен по мере поступления данных.</p>
@@ -493,39 +581,39 @@
   </div>
 </section>
 
-<section id="territory">
+<section id="territory" class="reveal">
   <div class="section-kicker">Территориальное деление</div>
   <h2>Карта секторов</h2>
   <p class="section-sub">Административные секторы государства. Нажмите на сектор, чтобы прочитать о нём — именно из этого списка граждане выбирают родной сектор при оформлении паспорта.</p>
   <div class="map-wrap">
-    <svg id="sectorMap" viewBox="0 0 320 320"></svg>
+    <svg id="sectorMap" viewBox="0 0 320 320"><polygon points="210.2,131.0 210.2,189.0 160.0,218.0 109.8,189.0 109.8,131.0 160.0,102.0" class="hex center"></polygon><text x="160" y="164" class="hex-label on-dark"><tspan x="160" dy="-6">Ядро</tspan><tspan x="160" dy="12">столицы</tspan></text><polygon points="210.2,23.0 210.2,81.0 160.0,110.0 109.8,81.0 109.8,23.0 160.0,-6.0" class="hex"></polygon><text x="160" y="56" class="hex-label"><tspan x="160" dy="-6">Северный</tspan><tspan x="160" dy="12">редут</tspan></text><polygon points="303.8,77.0 303.8,135.0 253.5,164.0 203.3,135.0 203.3,77.0 253.5,48.0" class="hex"></polygon><text x="253.53074360871938" y="110" class="hex-label"><tspan x="253.53074360871938" dy="-6">Восточный</tspan><tspan x="253.53074360871938" dy="12">периметр</tspan></text><polygon points="303.8,185.0 303.8,243.0 253.5,272.0 203.3,243.0 203.3,185.0 253.5,156.0" class="hex unexplored"></polygon><polygon points="210.2,239.0 210.2,297.0 160.0,326.0 109.8,297.0 109.8,239.0 160.0,210.0" class="hex"></polygon><text x="160" y="272" class="hex-label"><tspan x="160" dy="-6">Морозный</tspan><tspan x="160" dy="12">рубеж</tspan></text><polygon points="116.7,185.0 116.7,243.0 66.5,272.0 16.2,243.0 16.2,185.0 66.5,156.0" class="hex"></polygon><text x="66.46925639128062" y="218" class="hex-label"><tspan x="66.46925639128062" dy="-6">Стальной</tspan><tspan x="66.46925639128062" dy="12">округ</tspan></text><polygon points="116.7,77.0 116.7,135.0 66.5,164.0 16.2,135.0 16.2,77.0 66.5,48.0" class="hex"></polygon><text x="66.46925639128064" y="109.99999999999999" class="hex-label"><tspan x="66.46925639128064" dy="-6">Таёжный</tspan><tspan x="66.46925639128064" dy="12">анклав</tspan></text></svg>
     <div class="map-info" id="mapInfo"><div class="mi-empty">Выберите сектор на карте слева</div></div>
   </div>
 </section>
 
-<section id="symbols">
+<section id="symbols" class="reveal">
   <div class="section-kicker">Государственная символика</div>
   <h2>Символы Сарима</h2>
   <p class="section-sub">Официальные атрибуты государственности.</p>
   <div class="symbols-grid">
     <div class="symbol-card">
       <svg class="flag-real" viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice">
-        <rect x="0" y="0" width="300" height="75" fill="#ffffff"/>
-        <rect x="0" y="75" width="300" height="75" fill="#1b81ff"/>
-        <use href="#sarimEmblem" x="10" y="10" width="62" height="62"/>
+        <rect x="0" y="0" width="300" height="75" fill="#ffffff"></rect>
+        <rect x="0" y="75" width="300" height="75" fill="#1b81ff"></rect>
+        <use href="#sarimEmblem" x="10" y="10" width="62" height="62"></use>
       </svg>
       <h3>Государственный флаг</h3>
       <p>Белое полотнище (мир и открытость) и лазурно-синее поле (просторы и технологический горизонт), с государственной эмблемой в верхнем углу.</p>
     </div>
     <div class="symbol-card">
-      <svg class="emblem-standalone" viewBox="0 0 200 200"><use href="#sarimEmblem" x="0" y="0" width="200" height="200"/></svg>
+      <svg class="emblem-standalone" viewBox="0 0 200 200"><use href="#sarimEmblem" x="0" y="0" width="200" height="200"></use></svg>
       <h3>Государственная эмблема</h3>
       <p>Компас-розетка с восходящим треугольником в центре — курс государства, бдительность и единая цель, обрамлённые кольцом суверенитета.</p>
     </div>
   </div>
 </section>
 
-<section id="anthem">
+<section id="anthem" class="reveal">
   <div class="section-kicker">Государственная символика</div>
   <h2>Гимн Сибирского Сарима</h2>
   <p class="section-sub">Официальный текст государственного гимна.</p>
@@ -568,11 +656,32 @@
   </div>
 </section>
 
-<section id="decrees">
+<section id="decrees" class="reveal">
   <div class="section-kicker">Официальный реестр</div>
   <h2>Указы государства</h2>
   <p class="section-sub">Публичный журнал актов, изданных от имени государства. Пополняется по мере событий — новые указы могут издавать только вошедшие в кабинет правители.</p>
-  <div class="decree-list" id="decreeList"></div>
+  <div class="decree-list" id="decreeList">
+      <div class="decree">
+        <span class="dnum mono">№ 001</span>
+        <span class="dtitle">Акт о присоединении к альянсу AVC</span>
+        <span class="ddate mono">22.01.2026</span>
+        
+      </div>
+    
+      <div class="decree">
+        <span class="dnum mono">№ 002</span>
+        <span class="dtitle">О возрождении государственности</span>
+        <span class="ddate mono">2026</span>
+        
+      </div>
+    
+      <div class="decree">
+        <span class="dnum mono">№ 003</span>
+        <span class="dtitle">⚜ Проверка на указы призидента и на удаление указов <span class="pp-badge" style="margin-left:6px;">от союзного президента</span></span>
+        <span class="ddate mono">17.07.2026</span>
+        
+      </div>
+    </div>
 
   <div class="official-panel hidden" id="decreeForm" style="margin-top:26px; padding:26px;">
     <div class="section-kicker" style="margin-bottom:14px;">Только для правителей</div>
@@ -585,12 +694,33 @@
   </div>
 </section>
 
-<section id="cabinet">
+<section id="laws" class="reveal">
+  <div class="section-kicker">Правовая база</div>
+  <h2>Цифровой архив законов</h2>
+  <p class="section-sub">Действующие нормативные акты портала. Быстрая команда в чате: наберите <span class="mono" style="color:var(--gold);">/законы</span>, чтобы получить ссылку на этот раздел.</p>
+  <div class="official-panel" id="lawArchive" style="padding:6px 0;"><div class="article open" style="padding:20px 22px;"><div class="article-title" style="margin-bottom:10px;">Конституция — см. полный текст выше</div><div class="article-body" style="max-height:none; margin-top:0;"><p>Разделы I–VI, дата вступления в силу 22.01.2026.</p></div></div><div class="article" style="padding:20px 22px;"><div class="article-head" data-law="rules"><span class="article-title">Регламент портала и чата</span><span class="article-toggle mono">+</span></div><div class="article-body"><p><span class="clause-num">1.</span>Регламент чата: запрещены оскорбления по национальному признаку и разжигание розни — карается предупреждением бота, три предупреждения ведут к автобану.</p><p><span class="clause-num">2.</span>Баны выносятся только с указанием причины и срока (или как бессрочные).</p><p><span class="clause-num">3.</span>Паспорт проверяется исключительно Президентом или автоматическим ботом.</p><p><span class="clause-num">4.</span>Указы, изданные Президентом союзной страны, может удалить только Президент Сибирского Сарима.</p></div></div></div>
+</section>
+
+<section id="jobs" class="reveal">
+  <div class="section-kicker">Государственная служба</div>
+  <h2>Биржа вакансий</h2>
+  <p class="section-sub">Открытые должности в государственных структурах. Разместить вакансию может только Президент; система также предлагает подать заявку гражданам с достаточным стажем.</p>
+  <div class="decree-list" id="jobList"><div class="decree"><span class="dtitle" style="color:var(--text-dim); font-style:italic;">Открытых вакансий пока нет.</span></div></div>
+  <div class="official-panel hidden" id="jobPostForm" style="margin-top:22px; padding:24px;">
+    <div class="section-kicker" style="margin-bottom:12px;">Только для Президента</div>
+    <div class="field"><label>Название должности</label><input type="text" id="jobTitle" maxlength="80" placeholder="Например: инженер систем обороны"></div>
+    <div class="field"><label>Описание</label><input type="text" id="jobDesc" maxlength="200" placeholder="Кратко о задачах"></div>
+    <button class="btn" id="btnPostJob">Опубликовать вакансию</button>
+    <div class="auth-msg" id="jobMsg"></div>
+  </div>
+</section>
+
+<section id="cabinet" class="reveal">
   <div class="section-kicker">Личный доступ</div>
   <h2>Кабинет гражданина</h2>
   <p class="section-sub">Паспорт и ключ доступа создаются один раз — как приватный ключ криптокошелька. Гражданам выдаётся ключ, правителям и паспортной комиссии — секретная фраза из 12 слов, а президенту — усиленная фраза из 24 слов, длиннее любого другого ключа в государстве. Все повышенные статусы требуют кода приглашения. Ключи не хранятся в открытом виде и не подлежат восстановлению.</p>
 
-  <div id="loggedOutView">
+  <div id="loggedOutView" class="hidden">
     <div class="auth-tabs">
       <div class="auth-tab active" data-tab="login">Вход</div>
       <div class="auth-tab" data-tab="register">Оформить паспорт</div>
@@ -683,36 +813,40 @@
     </div>
   </div>
 
-  <div id="loggedInView" class="hidden">
-    <div class="whoami">Вы вошли как <span class="name" id="whoName"></span> · <span id="whoRole"></span><button id="btnLogout">Выйти</button></div>
+  <div id="loggedInView" class="">
+    <div class="whoami">Вы вошли как <span class="name" id="whoName">d</span> · <span id="whoRole">Гражданин</span><button id="btnLogout">Выйти</button></div>
 
     <div class="passport-card">
-      <svg class="p-watermark" viewBox="0 0 200 200"><use href="#sarimEmblem" x="0" y="0" width="200" height="200"/></svg>
+      <svg class="p-watermark" viewBox="0 0 200 200"><use href="#sarimEmblem" x="0" y="0" width="200" height="200"></use></svg>
       <div class="passport-topbar">
         <span class="ptitle">Паспорт гражданина · Сибирский Сарим</span>
-        <span class="pnum mono" id="pSerial"></span>
+        <span class="pnum mono" id="pSerial">СЕР. A70067E5</span>
       </div>
       <div class="passport-body">
-        <div class="passport-photo" id="pSigil">
-          <div class="pp-corner pp-tl"></div><div class="pp-corner pp-br"></div>
-        </div>
+        <div class="passport-photo" id="pSigil"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#f6f2e8"></rect><g fill="#7a2530"><rect x="0" y="0" width="40" height="40"></rect><rect x="160" y="0" width="40" height="40"></rect><rect x="40" y="0" width="40" height="40"></rect><rect x="120" y="0" width="40" height="40"></rect><rect x="80" y="40" width="40" height="40"></rect><rect x="0" y="80" width="40" height="40"></rect><rect x="160" y="80" width="40" height="40"></rect><rect x="80" y="80" width="40" height="40"></rect><rect x="80" y="160" width="40" height="40"></rect></g></svg><div class="pp-corner pp-tl"></div><div class="pp-corner pp-br"></div></div>
         <div class="passport-fields">
-          <div class="p-row"><span class="k">ID</span><span class="v" id="pId"></span></div>
-          <div class="p-row"><span class="k">Имя</span><span class="v" id="pName"></span></div>
-          <div class="p-row"><span class="k">Статус</span><span class="v" id="pRole"></span></div>
-          <div class="p-row"><span class="k">Специализация</span><span class="v" id="pSpec"></span></div>
-          <div class="p-row"><span class="k">Сектор</span><span class="v" id="pSector"></span></div>
-          <div class="p-row"><span class="k">Допуск</span><span class="v" id="pClearance"></span></div>
-          <div class="p-row"><span class="k">Выдан</span><span class="v" id="pDate"></span></div>
-          <div class="p-row"><span class="k">Действителен до</span><span class="v" id="pExpiry"></span></div>
-          <div class="p-row"><span class="k">Проверка AVC</span><span class="v"><span class="p-status pending" id="pAvc">на рассмотрении</span></span></div>
+          <div class="p-row"><span class="k">ID</span><span class="v" id="pId">СГ-A70067E5</span></div>
+          <div class="p-row"><span class="k">Имя</span><span class="v" id="pName">d d d</span></div>
+          <div class="p-row"><span class="k">Статус</span><span class="v" id="pRole">Гражданин</span></div>
+          <div class="p-row"><span class="k">Специализация</span><span class="v" id="pSpec">Кибер-страж</span></div>
+          <div class="p-row"><span class="k">Сектор</span><span class="v" id="pSector">Северный редут</span></div>
+          <div class="p-row"><span class="k">Допуск</span><span class="v" id="pClearance">Уровень III</span></div>
+          <div class="p-row"><span class="k">Стаж</span><span class="v" id="pTenure">2 дн.</span></div>
+          <div class="p-row"><span class="k">Выдан</span><span class="v" id="pDate">2026-07-16</span></div>
+          <div class="p-row"><span class="k">Действителен до</span><span class="v" id="pExpiry">2031-07-16</span></div>
+          <div class="p-row"><span class="k">Проверка AVC</span><span class="v"><span class="p-status pending" id="pAvc">отклонён</span></span></div>
         </div>
       </div>
-      <div class="p-motto" id="pMotto"></div>
-      <div class="passport-mrz" id="pMrz"></div>
+      <div class="p-progress-wrap" id="pProgressWrap">
+        <div class="p-progress-label"><span id="pProgressLabel">До следующего уровня: 2/180 дн. (1%)</span></div>
+        <div class="p-progress-bar"><div class="p-progress-fill" id="pProgressFill" style="width: 1%;"></div></div>
+      </div>
+      <div class="p-awards" id="pAwards"></div>
+      <div class="p-motto" id="pMotto">«Честь в коде, сила в единстве»</div>
+      <div class="passport-mrz" id="pMrz">PSARDDD&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;<br>СГA70067ESAR202607C&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</div>
     </div>
     <p class="section-sub" style="margin-bottom:8px; font-size:13px;">Паспорта Сибирского Сарима проверяются альянсом AVC не сразу, а по мере рассмотрения — это не мгновенная процедура. Писать в чат может только гражданин с оформленным паспортом — вы видите эту страницу, значит доступ уже открыт.</p>
-    <p class="auth-msg" id="storageModeNotice" style="margin-bottom:30px;"></p>
+    <p class="auth-msg ok" id="storageModeNotice" style="margin-bottom:30px;">✓ Подключено к общему серверу — паспорт и чат видны всем посетителям сайта.</p>
 
     <div class="chat-wrap">
       <div class="chat-tabs">
@@ -722,7 +856,11 @@
         <div class="chat-tab" data-chat="dm" id="tabDM">Личные</div>
         <div class="chat-tab hidden" id="tabPassports" data-chat="passports">Паспорты</div>
         <div class="chat-tab hidden" id="tabPersonnel" data-chat="personnel">Кадры</div>
+        <div class="chat-tab hidden" id="tabUnban" data-chat="unban">Разбан</div>
         <div class="chat-tab hidden" id="tabJournal" data-chat="journal">Журнал</div>
+        <div class="chat-tab hidden" id="tabCodes" data-chat="codes">Актуальность кодов</div>
+        <div class="chat-tab" data-chat="complaints" id="tabComplaints">Жалобы</div>
+        <div class="chat-tab" data-chat="supportcomplaints" id="tabSupportComplaints">Жалобы на поддержку</div>
       </div>
       <div class="dm-target-bar hidden" id="dmTargetBar">Собеседник: <b id="dmTargetName"></b>
         <span class="code-issuer hidden" id="codeIssuer">
@@ -741,34 +879,88 @@
         <button id="btnClearChat" type="button">🗑 Очистить весь чат</button>
         <span class="mod-toolbar-note">Модерация: удаляйте отдельные сообщения кнопкой ✕, наведя на них.</span>
       </div>
-      <div class="chat-box" id="chatBox"></div>
+      <div class="mod-toolbar hidden" id="pollToolbar">
+        <button id="btnNewPoll" type="button">📊 Создать голосование</button>
+      </div>
+      <div class="poll-create-form hidden" id="pollCreateForm">
+        <input type="text" id="pollQuestion" placeholder="Вопрос голосования" maxlength="120">
+        <input type="text" id="pollOptions" placeholder="Варианты через запятую: да, нет, воздержаться">
+        <button class="btn" id="btnPublishPoll" type="button">Опубликовать</button>
+        <button id="btnCancelPoll" type="button">Отмена</button>
+        <div class="auth-msg" id="pollMsg"></div>
+      </div>
+      <div class="poll-panel hidden" id="pollPanel"></div>
+      <div class="chat-box" id="chatBox"><div class="msg">
+        <span class="who" data-id="СГ-97D9E982" data-handle="Тестировщик" title="Написать в личные">Тестировщик</span>Есть баги на сайте?<span class="when">19:41</span>
+        
+        
+        
+        
+      </div><div class="msg">
+        <span class="who role-president" data-id="ПР-40AF5916" data-handle="Президент Сибирского Сарима" title="Написать в личные">♛ Президент Сибирского Сарима</span>Почти нету багов только указы у Союзных Президентов (СП) надо убрать а так нету!<span class="when">19:44</span>
+        
+        
+        
+        
+      </div><div class="msg">
+        <span class="who" data-id="СГ-97D9E982" data-handle="Тестировщик" title="Написать в личные">Тестировщик</span>Ого ещё и уведомления есть!<span class="when">19:45</span>
+        
+        
+        
+        
+      </div><div class="msg">
+        <span class="who role-president" data-id="ПР-40AF5916" data-handle="Президент Сибирского Сарима" title="Написать в личные">♛ Президент Сибирского Сарима</span>А еще забыл о пропажи личных сообщений также будет доработано<span class="when">19:46</span>
+        
+        
+        
+        
+      </div><div class="msg">
+        <span class="who role-ruler" data-id="СК-4F32884F" data-handle="Тестировщик" title="Написать в личные">Тестировщик</span>Ещё надо добавить - Добавить проверку паспортов у Комиссии , удобный интерфейс в Личных сообщениях , отправка фото ( только в личных сообщениях ) и многое другое!<span class="when">19:51</span>
+        
+        
+        
+        
+      </div><div class="msg">
+        <span class="who role-president" data-id="ПР-40AF5916" data-handle="Президент Сибирского Сарима" title="Написать в личные">♛ Президент Сибирского Сарима</span>Возможно обновление сайта будет сегодня или завтра!<span class="when">19:52</span>
+        
+        
+        
+        
+      </div></div>
       <div class="chat-input-row" id="chatInputRow">
+        <button id="chatPhotoBtn" type="button" class="hidden" title="Прикрепить фото (только в ЛС)">📎</button>
+        <input type="file" id="chatPhotoInput" accept="image/*" class="hidden">
         <input type="text" id="chatInput" placeholder="Сообщение...">
         <button id="chatSend">Отправить</button>
       </div>
+      <div class="photo-preview-bar hidden" id="photoPreviewBar"><img id="photoPreviewImg" alt="preview"><button id="btnCancelPhoto" type="button">✕ убрать фото</button></div>
       <div class="chat-locked-note hidden" id="chatLockedNote">Этот канал доступен только правителям.</div>
       <div class="passports-panel hidden" id="passportsPanel"></div>
       <div class="passports-panel hidden" id="personnelPanel"></div>
+      <div class="passports-panel hidden" id="unbanPanel"></div>
       <div class="passports-panel hidden" id="journalPanel"></div>
+      <div class="passports-panel hidden" id="codesPanel"></div>
+      <div class="passports-panel hidden" id="complaintsPanel"></div>
+      <div class="passports-panel hidden" id="supportComplaintsPanel"></div>
     </div>
   </div>
 </section>
 
-<section id="chronicle">
+<section id="chronicle" class="reveal">
   <div class="section-kicker">Летопись</div>
   <h2>Хроника государства</h2>
   <p class="section-sub">Записи ведутся по мере событий — указы, кризисы, договоры.</p>
-  <div class="chronicle" id="chronicleList"></div>
+  <div class="chronicle" id="chronicleList"><div class="entry"><div class="date mono">2024</div><div class="desc">Основание государства Сибирский Сарим.</div></div><div class="entry"><div class="date mono">2024</div><div class="desc">Заключён союз с Гобидори.</div></div><div class="entry"><div class="date mono">22.01.2026</div><div class="desc">Подписан акт о присоединении к альянсу AVC. Конституция вступает в силу.</div></div><div class="entry"><div class="date mono">2026</div><div class="desc">Начало возрождения государства и союза с Гобидори.</div></div></div>
 </section>
 
 <footer>
   <div class="fmotto">СИБИРСКИЙ САРИМ · АЛЬЯНС AVC · 2026</div>
-  <div class="fnote">Официальный государственный портал · <span id="visitCounter">посещение №…</span></div>
+  <div class="fnote">Официальный государственный портал · <span id="visitCounter">посещение №51</span></div>
 </footer>
 
 <!-- Firebase (Firestore) — real shared backend for passports, chat and decrees -->
-<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
+<script src="./index_files/firebase-app-compat.js.Без названия"></script>
+<script src="./index_files/firebase-firestore-compat.js.Без названия"></script>
 
 <script>
   // If anything on the page throws, show it instead of silently breaking —
@@ -1016,6 +1208,75 @@
     if(!head) return;
     head.parentElement.classList.toggle('open');
   });
+
+  // ---------- Law archive (Section 2.3) — reuses the constitution + adds portal rules ----------
+  (function renderLawArchive(){
+    const el = document.getElementById('lawArchive');
+    if(!el) return;
+    const rules = [
+      "Регламент чата: запрещены оскорбления по национальному признаку и разжигание розни — карается предупреждением бота, три предупреждения ведут к автобану.",
+      "Баны выносятся только с указанием причины и срока (или как бессрочные).",
+      "Паспорт проверяется исключительно Президентом или автоматическим ботом.",
+      "Указы, изданные Президентом союзной страны, может удалить только Президент Сибирского Сарима."
+    ];
+    let html = `<div class="article open" style="padding:20px 22px;"><div class="article-title" style="margin-bottom:10px;">Конституция — см. полный текст выше</div><div class="article-body" style="max-height:none; margin-top:0;"><p>Разделы I–VI, дата вступления в силу 22.01.2026.</p></div></div>`;
+    html += `<div class="article" style="padding:20px 22px;"><div class="article-head" data-law="rules"><span class="article-title">Регламент портала и чата</span><span class="article-toggle mono">+</span></div><div class="article-body">${rules.map((r,i)=>`<p><span class="clause-num">${i+1}.</span>${r}</p>`).join('')}</div></div>`;
+    el.innerHTML = html;
+    el.querySelectorAll('.article-head').forEach(h => h.addEventListener('click', () => h.parentElement.classList.toggle('open')));
+  })();
+
+  // ---------- Job board (Section 3) ----------
+  async function loadJobBoard(){
+    const list = document.getElementById('jobList');
+    if(!list) return;
+    try{
+      const res = await store.get('job-board', true);
+      const jobs = res && res.value ? JSON.parse(res.value) : [];
+      list.innerHTML = jobs.length
+        ? jobs.slice().reverse().map(j => `<div class="decree"><span class="dnum mono">${j.postedByBot ? '🤖' : '👤'}</span><span class="dtitle">${escapeHtml(j.title)} <span style="color:var(--text-dim); font-weight:400; font-size:13px;">— ${escapeHtml(j.desc)}</span></span><span class="ddate mono">${escapeHtml(j.at)}</span></div>`).join('')
+        : '<div class="decree"><span class="dtitle" style="color:var(--text-dim); font-style:italic;">Открытых вакансий пока нет.</span></div>';
+    } catch(e){
+      list.innerHTML = '<div class="decree"><span class="dtitle" style="color:var(--text-dim); font-style:italic;">Не удалось загрузить биржу.</span></div>';
+    }
+  }
+  document.getElementById('btnPostJob').addEventListener('click', async () => {
+    const msgEl = document.getElementById('jobMsg');
+    msgEl.textContent = ''; msgEl.className = 'auth-msg';
+    if(!currentUser || currentUser.role !== 'president'){ msgEl.textContent = 'Публиковать вакансии может только Президент.'; msgEl.classList.add('err'); return; }
+    const title = document.getElementById('jobTitle').value.trim();
+    const desc = document.getElementById('jobDesc').value.trim();
+    if(!title || !desc){ msgEl.textContent = 'Заполните название и описание.'; msgEl.classList.add('err'); return; }
+    try{
+      const res = await store.get('job-board', true);
+      const jobs = res && res.value ? JSON.parse(res.value) : [];
+      jobs.push({ title, desc, postedBy: currentUser.handle, postedByBot: false, at: new Date().toLocaleDateString('ru-RU') });
+      await store.set('job-board', JSON.stringify(jobs.slice(-100)), true);
+      await logAudit('post_job', currentUser, title);
+      document.getElementById('jobTitle').value = ''; document.getElementById('jobDesc').value = '';
+      msgEl.textContent = 'Вакансия опубликована.'; msgEl.classList.add('ok');
+      loadJobBoard();
+    } catch(e){ msgEl.textContent = 'Не удалось опубликовать.'; msgEl.classList.add('err'); }
+  });
+  // Tenure-based suggestion (3.1): shown once per citizen, the first time their tenure
+  // crosses the same threshold used for the passport progress bar (see TENURE_THRESHOLDS).
+  async function maybeSuggestApplication(record){
+    if(record.role !== 'citizen') return;
+    const clearance = (record.clearance || 'I').split(' ')[0];
+    const threshold = TENURE_THRESHOLDS[clearance];
+    if(!threshold) return;
+    const days = Math.max(0, Math.floor((Date.now() - new Date(record.createdAt).getTime()) / 86400000));
+    if(days < threshold) return;
+    try{
+      const flagRes = await store.get('job-notified:' + record.id, true);
+      if(flagRes && flagRes.value) return; // already notified once
+      await store.set('job-notified:' + record.id, JSON.stringify({ at: new Date().toISOString() }), true);
+      const res = await store.get('job-board', true);
+      const jobs = res && res.value ? JSON.parse(res.value) : [];
+      jobs.push({ title: 'Заявка на повышение доступна', desc: `Ваш стаж (${days} дн.) достаточен, чтобы претендовать на следующий уровень допуска — обратитесь через «Жалобы» или к Президенту.`, postedBy: 'Бот-система', postedByBot: true, at: new Date().toLocaleDateString('ru-RU') });
+      await store.set('job-board', JSON.stringify(jobs.slice(-100)), true);
+    } catch(e){ /* non-critical, never block login over this */ }
+  }
+  loadJobBoard();
 
   // ---------- Chronicle ----------
   const events = [
@@ -1279,12 +1540,12 @@
   function canReviewPassports(role){ return role === 'president'; } // commission no longer reviews at all — President + the bot only
   function canUseDiplomaticChannel(role){ return role === 'diplomat' || role === 'ruler' || role === 'president' || role === 'foreign_president'; }
   // Only Support can ban — Commission lost that power. The President can never be banned by anyone.
-  function canBan(role){ return role === 'support'; }
+  function canBan(role){ return role === 'support' || role === 'president'; }
   function isBanImmune(role){ return role === 'president'; }
   function canManageProfessions(role){ return role === 'support' || role === 'president'; }
   // Decrees: rulers, the President, and foreign presidents (on behalf of allies) may issue them —
   // but only the real President of Сибирский Сарим may delete one, ever.
-  function canIssueDecree(role){ return role === 'ruler' || role === 'president' || role === 'foreign_president'; }
+  function canIssueDecree(role){ return role === 'ruler' || role === 'president'; } // foreign_president removed — confirmed spec change
   function canDeleteDecree(role){ return role === 'president'; }
   // Clearing a whole channel or deleting someone else's messages: President always can.
   // Support can too — UNLESS Support has themselves been banned, in which case they may
@@ -1458,9 +1719,19 @@
     if(role !== 'citizen'){
       try{
         const used = await store.get('invite-used:' + inviteCode, true).catch(() => null);
-        if(used){ msgEl.textContent = 'Этот код приглашения уже использован.'; msgEl.classList.add('err'); btn.disabled = false; btn.textContent = btnOriginalText; return; }
+        const usedData = used && used.value ? JSON.parse(used.value) : null;
+        if(usedData && !usedData.revoked){ msgEl.textContent = 'Этот код приглашения уже использован.'; msgEl.classList.add('err'); btn.disabled = false; btn.textContent = btnOriginalText; return; }
       } catch(e){ /* if the check itself fails, fall through and let registration proceed */ }
     }
+    // Lightweight ban-evasion signal (8.4): a client-only site can't see IP addresses,
+    // so this compares the new handle against currently-banned handles after stripping
+    // spaces/case and common look-alike substitutions. It never blocks registration —
+    // false positives are too likely for that — it only flags the account for the
+    // President to review in Журнал, alongside the real audit trail.
+    try{
+      const evasionHit = await checkPossibleBanEvasion(handle);
+      if(evasionHit){ await logAudit('possible_evasion', { handle, id: 'НОВЫЙ АККАУНТ', role: 'citizen' }, evasionHit, 'похож на забаненного: ' + evasionHit); }
+    }catch(e){ /* never block registration over this */ }
 
     const idSuffix = randHex(4).toUpperCase();
     const id = cfg.prefix + idSuffix;
@@ -1498,7 +1769,7 @@
         id, handle, fio, role, keyHash, avcStatus: 'pending',
         createdAt: createdAt.toISOString().slice(0,10),
         expiresAt: expiry.toISOString().slice(0,10),
-        specialization, sector, motto, clearance
+        specialization, sector, motto, clearance, awards: []
       };
       const res = await store.set('citizen:' + id, JSON.stringify(record), true);
       if(!res){ msgEl.textContent = 'Не удалось сохранить паспорт. Попробуйте ещё раз.'; msgEl.classList.add('err'); btn.disabled = false; btn.textContent = btnOriginalText; return; }
@@ -1594,6 +1865,39 @@
     return s.toUpperCase().split('').map(c => map[c] !== undefined ? map[c] : c).join('');
   }
 
+  function formatTenure(createdAt){
+    if(!createdAt) return '—';
+    const days = Math.max(0, Math.floor((Date.now() - new Date(createdAt).getTime()) / 86400000));
+    if(days < 1) return 'меньше дня';
+    if(days < 30) return days + ' дн.';
+    const months = Math.floor(days / 30);
+    if(months < 12) return months + ' мес.';
+    const years = Math.floor(months / 12);
+    return years + ' г. ' + (months % 12) + ' мес.';
+  }
+  // Placeholder tenure thresholds (in days) for the next clearance step, citizen track only.
+  // These numbers are illustrative — the President has not yet set the official values
+  // (flagged in the ТЗ document under "Не вошло в эту редакцию").
+  const TENURE_THRESHOLDS = { 'I': 30, 'II': 90, 'III': 180 };
+  function renderTenureProgress(record){
+    const wrap = document.getElementById('pProgressWrap');
+    const clearance = (record.clearance || 'I').split(' ')[0];
+    const threshold = TENURE_THRESHOLDS[clearance];
+    if(record.role !== 'citizen' || !threshold){ wrap.classList.add('hidden'); return; }
+    wrap.classList.remove('hidden');
+    const days = Math.max(0, Math.floor((Date.now() - new Date(record.createdAt).getTime()) / 86400000));
+    const pct = Math.min(100, Math.round((days / threshold) * 100));
+    document.getElementById('pProgressFill').style.width = pct + '%';
+    document.getElementById('pProgressLabel').textContent = pct >= 100
+      ? 'Стаж достаточен для рассмотрения повышения'
+      : `До следующего уровня: ${days}/${threshold} дн. (${pct}%)`;
+  }
+  function renderAwards(awards){
+    const el = document.getElementById('pAwards');
+    if(!awards || !awards.length){ el.innerHTML = ''; return; }
+    el.innerHTML = awards.map(a => `<span class="p-award-badge">🏅 ${escapeHtml(a.title)}<span class="a-date">${escapeHtml(a.date||'')}</span></span>`).join('');
+  }
+
   function enterCabinet(record){
     document.getElementById('loggedOutView').classList.add('hidden');
     document.getElementById('loggedInView').classList.remove('hidden');
@@ -1613,6 +1917,11 @@
     document.getElementById('pSigil').innerHTML = genSigil(record.id + record.keyHash.slice(0,8), record.role)
       + '<div class="pp-corner pp-tl"></div><div class="pp-corner pp-br"></div>';
     document.getElementById('pMotto').textContent = record.motto ? `«${record.motto}»` : '«Честь в коде, сила в единстве»';
+    document.getElementById('pTenure').textContent = formatTenure(record.createdAt);
+    renderTenureProgress(record);
+    renderAwards(record.awards || []);
+    maybeSuggestApplication(record).then(loadJobBoard).catch(() => {});
+    document.getElementById('jobPostForm').classList.toggle('hidden', record.role !== 'president');
 
     const noticeEl = document.getElementById('storageModeNotice');
     noticeEl.className = 'auth-msg'; // reset first — otherwise err/ok classes could stack from a previous login
@@ -1654,9 +1963,17 @@
     document.getElementById('tabDiplomacy').classList.toggle('hidden', !canUseDiplomaticChannel(record.role));
     document.getElementById('tabPassports').classList.toggle('hidden', !canReviewPassports(record.role));
     document.getElementById('tabPersonnel').classList.toggle('hidden', !canManageProfessions(record.role));
-    document.getElementById('tabJournal').classList.toggle('hidden', !(canBan(record.role) || record.role === 'president'));
+    // Разбан: Support (while not banned) can clear mistaken bans; President always can too.
+    document.getElementById('tabUnban').classList.toggle('hidden', !((record.role === 'support') || record.role === 'president'));
+    // Журнал (full audit trail) is now President-only — Support gets the lighter Разбан tab instead.
+    document.getElementById('tabJournal').classList.toggle('hidden', record.role !== 'president');
+    document.getElementById('tabCodes').classList.toggle('hidden', record.role !== 'president');
     document.getElementById('personnelPanel').classList.add('hidden');
+    document.getElementById('unbanPanel').classList.add('hidden');
     document.getElementById('journalPanel').classList.add('hidden');
+    document.getElementById('codesPanel').classList.add('hidden');
+    document.getElementById('complaintsPanel').classList.add('hidden');
+    document.getElementById('supportComplaintsPanel').classList.add('hidden');
     document.getElementById('dmTargetBar').classList.add('hidden');
     dmPartner = null;
     document.getElementById('decreeForm').classList.toggle('hidden', !canIssueDecree(record.role));
@@ -1685,7 +2002,12 @@
   function startChatPolling(){
     stopChatPolling();
     refreshSelfBanStatus();
-    chatPollTimer = setInterval(() => { if(currentUser){ loadChat(activeChat, true); refreshSelfBanStatus(); } }, 5000);
+    chatPollTimer = setInterval(() => {
+      if(!currentUser) return;
+      if(['citizens','rulers','diplomacy'].includes(activeChat)) loadChat(activeChat, true);
+      else if(activeChat === 'dm' && dmPartner) loadDM();
+      refreshSelfBanStatus();
+    }, 5000);
   }
   function stopChatPolling(){ if(chatPollTimer){ clearInterval(chatPollTimer); chatPollTimer = null; } }
 
@@ -1695,8 +2017,37 @@
       const res = await store.get('ban:' + id, true);
       if(!res || !res.value) return false;
       const data = JSON.parse(res.value);
-      return !data.unbanned;
+      if(data.unbanned) return false;
+      if(data.expiresAt && new Date(data.expiresAt).getTime() < Date.now()) return false; // auto-expired
+      return true;
     }catch(e){ return false; }
+  }
+  function normalizeForEvasionCheck(s){
+    return (s || '').toLowerCase()
+      .replace(/\s+/g,'')
+      .replace(/0/g,'o').replace(/1/g,'i').replace(/3/g,'e').replace(/4/g,'a').replace(/5/g,'s').replace(/7/g,'t')
+      .replace(/[^a-zа-я0-9]/g,'');
+  }
+  // Returns the ID of a currently-banned citizen with a suspiciously similar handle,
+  // or null. This is a name heuristic only — see the note at the registration call site
+  // about why IP-based detection isn't possible in a client-only site.
+  async function checkPossibleBanEvasion(newHandle){
+    const norm = normalizeForEvasionCheck(newHandle);
+    if(norm.length < 3) return null;
+    try{
+      const listRes = await store.list('ban:', true);
+      const keys = (listRes && listRes.keys) || [];
+      for(const k of keys){
+        const id = k.slice('ban:'.length);
+        const banned = await isUserBanned(id);
+        if(!banned) continue;
+        const citRes = await store.get('citizen:' + id, true).catch(() => null);
+        if(!citRes || !citRes.value) continue;
+        const rec = JSON.parse(citRes.value);
+        if(normalizeForEvasionCheck(rec.handle) === norm) return id;
+      }
+    }catch(e){ /* ignore — this is a best-effort signal, never a hard block */ }
+    return null;
   }
   async function logAudit(action, actor, target, extra){
     try{
@@ -1706,23 +2057,15 @@
       await store.set('audit-log', JSON.stringify(log.slice(-300)), true);
     }catch(e){ /* logging must never block the real action */ }
   }
-  // If a Support member issues too many bans too quickly, the bot steps in:
-  // it blocks the ban and bans the abusive Support account itself.
-  async function botCheckBanSpam(actor){
+  // Hidden log of Support's own ban actions — Support cannot read or edit this, only the
+  // bot (below) and the President can. This is what the bot checks complaints against.
+  async function logSupportAction(actor, targetId, msgText, reason, expiresAt){
     try{
-      const res = await store.get('audit-log', true);
+      const res = await store.get('support-action-log', true);
       const log = res && res.value ? JSON.parse(res.value) : [];
-      // Count this actor's ban entries among the most recent log lines as a simple, robust proxy
-      // for "too many bans too quickly" — no need to parse timestamps back for this.
-      const recentCount = log.slice(-50).filter(e => e.action === 'ban' && e.byId === actor.id).length;
-      if(recentCount >= 5){
-        await store.set('ban:' + actor.id, JSON.stringify({ by: 'Бот-модератор', at: new Date().toISOString(), reason: 'автоматически — превышен лимит банов' }), true);
-        await logAudit('bot_autoban', { handle: 'Бот-модератор', id: 'BOT', role: 'bot' }, actor.id, 'слишком много банов подряд от ' + actor.handle);
-        if(currentUser && actor.id === currentUser.id) currentUserBanned = true;
-        return true; // blocked
-      }
-    }catch(e){ /* if the check itself fails, don't block a legitimate ban */ }
-    return false;
+      log.push({ byId: actor.id, by: actor.handle, targetId, msgText: msgText || '', reason, expiresAt: expiresAt || null, at: new Date().toISOString() });
+      await store.set('support-action-log', JSON.stringify(log.slice(-500)), true);
+    }catch(e){ /* logging must never block the real ban */ }
   }
 
   document.querySelectorAll('.chat-tab').forEach(tab => {
@@ -1732,44 +2075,39 @@
       tab.classList.add('active');
       document.getElementById('dmTargetBar').classList.toggle('hidden', kind !== 'dm');
       function pulseIn(el){ if(!el) return; el.classList.remove('panel-anim'); void el.offsetWidth; el.classList.add('panel-anim'); }
+      const ALL_PANEL_IDS = ['passportsPanel','personnelPanel','unbanPanel','journalPanel','codesPanel','complaintsPanel','supportComplaintsPanel'];
       function hideAllPanels(){
-        document.getElementById('passportsPanel').classList.add('hidden');
-        document.getElementById('personnelPanel').classList.add('hidden');
-        document.getElementById('journalPanel').classList.add('hidden');
+        ALL_PANEL_IDS.forEach(id => document.getElementById(id).classList.add('hidden'));
         document.getElementById('modToolbar').classList.add('hidden');
+        document.getElementById('pollToolbar').classList.add('hidden');
+        document.getElementById('pollCreateForm').classList.add('hidden');
+        document.getElementById('pollPanel').classList.add('hidden');
       }
+      // Every non-chat, panel-style tab follows the same show/hide/load shape —
+      // declared once here instead of repeated per tab.
+      const PANEL_TABS = {
+        passports:        { panel: 'passportsPanel', load: loadPassportsForReview },
+        personnel:        { panel: 'personnelPanel',  load: loadPersonnelPanel },
+        unban:            { panel: 'unbanPanel',      load: loadUnbanPanel },
+        journal:          { panel: 'journalPanel',    load: loadJournalPanel },
+        codes:            { panel: 'codesPanel',      load: loadCodesPanel },
+        complaints:       { panel: 'complaintsPanel', load: loadComplaintsPanel },
+        supportcomplaints:{ panel: 'supportComplaintsPanel', load: loadSupportComplaintsPanel }
+      };
 
-      if(kind === 'passports'){
-        activeChat = 'passports';
+      if(PANEL_TABS[kind]){
+        const cfg = PANEL_TABS[kind];
+        activeChat = kind;
         hideAllPanels();
         document.getElementById('chatBox').classList.add('hidden');
         document.getElementById('chatInputRow').classList.add('hidden');
         document.getElementById('chatLockedNote').classList.add('hidden');
-        document.getElementById('passportsPanel').classList.remove('hidden');
-        pulseIn(document.getElementById('passportsPanel'));
-        loadPassportsForReview();
-        return;
-      }
-      if(kind === 'personnel'){
-        activeChat = 'personnel';
-        hideAllPanels();
-        document.getElementById('chatBox').classList.add('hidden');
-        document.getElementById('chatInputRow').classList.add('hidden');
-        document.getElementById('chatLockedNote').classList.add('hidden');
-        document.getElementById('personnelPanel').classList.remove('hidden');
-        pulseIn(document.getElementById('personnelPanel'));
-        loadPersonnelPanel();
-        return;
-      }
-      if(kind === 'journal'){
-        activeChat = 'journal';
-        hideAllPanels();
-        document.getElementById('chatBox').classList.add('hidden');
-        document.getElementById('chatInputRow').classList.add('hidden');
-        document.getElementById('chatLockedNote').classList.add('hidden');
-        document.getElementById('journalPanel').classList.remove('hidden');
-        pulseIn(document.getElementById('journalPanel'));
-        loadJournalPanel();
+        document.getElementById('chatPhotoBtn').classList.add('hidden');
+        cancelPendingPhoto();
+        const panelEl = document.getElementById(cfg.panel);
+        panelEl.classList.remove('hidden');
+        pulseIn(panelEl);
+        cfg.load();
         return;
       }
       if(kind === 'dm'){
@@ -1779,12 +2117,15 @@
         document.getElementById('chatInputRow').classList.remove('hidden');
         document.getElementById('chatLockedNote').classList.add('hidden');
         document.getElementById('codeIssuer').classList.toggle('hidden', !(currentUser && currentUser.role === 'president' && dmPartner));
+        document.getElementById('chatPhotoBtn').classList.remove('hidden');
         pulseIn(document.getElementById('chatBox'));
         loadDM();
         return;
       }
 
       hideAllPanels();
+      document.getElementById('chatPhotoBtn').classList.add('hidden');
+      cancelPendingPhoto();
       const wantsRulers = kind === 'rulers';
       const wantsDiplomacy = kind === 'diplomacy';
       const allowed = (wantsRulers && currentUser && isElevated(currentUser.role))
@@ -1834,7 +2175,87 @@
     const canMod = canModerateAll(currentUser, currentUserBanned);
     const onRealChat = ['citizens','rulers','diplomacy'].includes(activeChat);
     bar.classList.toggle('hidden', !(canMod && onRealChat));
+    updatePollUI();
   }
+
+  // ---------- Voting / polls (Section 2.1) — Rulers & President only, citizen chat only ----------
+  function canCreatePoll(role){ return role === 'ruler' || role === 'president'; }
+  function updatePollUI(){
+    const toolbar = document.getElementById('pollToolbar');
+    const form = document.getElementById('pollCreateForm');
+    if(!toolbar) return;
+    const onCitizenChat = activeChat === 'citizens';
+    const canCreate = currentUser && canCreatePoll(currentUser.role) && onCitizenChat;
+    toolbar.classList.toggle('hidden', !canCreate);
+    if(!canCreate) form.classList.add('hidden');
+    document.getElementById('pollPanel').classList.toggle('hidden', !onCitizenChat);
+    if(onCitizenChat) loadPoll(); else document.getElementById('pollPanel').innerHTML = '';
+  }
+  document.getElementById('btnNewPoll').addEventListener('click', () => {
+    document.getElementById('pollCreateForm').classList.toggle('hidden');
+  });
+  document.getElementById('btnCancelPoll').addEventListener('click', () => {
+    document.getElementById('pollCreateForm').classList.add('hidden');
+  });
+  document.getElementById('btnPublishPoll').addEventListener('click', async () => {
+    const msgEl = document.getElementById('pollMsg');
+    msgEl.textContent = ''; msgEl.className = 'auth-msg';
+    if(!currentUser || !canCreatePoll(currentUser.role)) return;
+    const question = document.getElementById('pollQuestion').value.trim();
+    const options = document.getElementById('pollOptions').value.split(',').map(s => s.trim()).filter(Boolean);
+    if(!question){ msgEl.textContent = 'Введите вопрос.'; msgEl.classList.add('err'); return; }
+    if(options.length < 2){ msgEl.textContent = 'Нужно минимум 2 варианта, через запятую.'; msgEl.classList.add('err'); return; }
+    try{
+      const poll = { id: randHex(6), question, options, votes: {}, createdBy: currentUser.handle, createdByRole: currentUser.role, at: new Date().toLocaleString('ru-RU') };
+      await store.set('poll:citizens', JSON.stringify(poll), true);
+      await logAudit('create_poll', currentUser, question);
+      document.getElementById('pollQuestion').value = '';
+      document.getElementById('pollOptions').value = '';
+      document.getElementById('pollCreateForm').classList.add('hidden');
+      loadPoll();
+    } catch(e){ msgEl.textContent = 'Не удалось опубликовать.'; msgEl.classList.add('err'); }
+  });
+  async function loadPoll(){
+    const panel = document.getElementById('pollPanel');
+    try{
+      const res = await store.get('poll:citizens', true);
+      if(!res || !res.value){ panel.innerHTML = ''; panel.classList.add('hidden'); return; }
+      renderPoll(JSON.parse(res.value));
+    } catch(e){ /* no active poll */ }
+  }
+  function renderPoll(poll){
+    const panel = document.getElementById('pollPanel');
+    panel.classList.remove('hidden');
+    const votes = poll.votes || {};
+    const total = Object.keys(votes).length;
+    const myVote = currentUser ? votes[currentUser.id] : undefined;
+    const counts = poll.options.map((_, i) => Object.values(votes).filter(v => v === i).length);
+    panel.innerHTML = `<div class="poll-q">📊 ${escapeHtml(poll.question)}</div>` +
+      poll.options.map((opt, i) => {
+        const pct = total ? Math.round((counts[i] / total) * 100) : 0;
+        return `<div class="poll-opt-row ${myVote === i ? 'voted' : ''}">
+          <div class="poll-opt-bar-wrap" data-vote-idx="${i}"><div class="poll-opt-bar" style="width:${pct}%;"></div><span class="poll-opt-label">${escapeHtml(opt)}${myVote === i ? ' ✓' : ''}</span></div>
+          <span class="poll-opt-pct">${pct}% · ${counts[i]}</span>
+        </div>`;
+      }).join('') +
+      `<div class="poll-meta">Голосов: ${total} · создал(а) ${escapeHtml(poll.createdBy)} · ${escapeHtml(poll.at)}</div>`;
+    panel.querySelectorAll('[data-vote-idx]').forEach(el => {
+      el.addEventListener('click', () => voteOnPoll(Number(el.dataset.voteIdx)));
+    });
+  }
+  async function voteOnPoll(idx){
+    if(!currentUser) return;
+    try{
+      const res = await store.get('poll:citizens', true);
+      if(!res || !res.value) return;
+      const poll = JSON.parse(res.value);
+      poll.votes = poll.votes || {};
+      poll.votes[currentUser.id] = idx; // re-clicking changes your vote, doesn't add a second one
+      await store.set('poll:citizens', JSON.stringify(poll), true);
+      renderPoll(poll);
+    } catch(e){ /* ignore */ }
+  }
+
   function renderChat(msgs){
     const box = document.getElementById('chatBox');
     const wasAtBottom = box.scrollTop + box.clientHeight >= box.scrollHeight - 20;
@@ -1845,8 +2266,9 @@
       const isMine = currentUser && m.id === currentUser.id;
       const canDeleteThis = canModAll || isMine;
       return `<div class="msg">
-        <span class="${nameClass(m.role)}" data-id="${escapeHtml(m.id||'')}" data-handle="${escapeHtml(m.who)}" title="Написать в личные">${roleBadge(m.role)}${escapeHtml(m.who)}</span>${escapeHtml(m.text)}<span class="when">${m.when}</span>
-        ${showBan && m.id && m.id !== currentUser.id ? `<button class="ban-btn" data-ban-id="${escapeHtml(m.id)}" data-ban-handle="${escapeHtml(m.who)}">забанить</button>` : ''}
+        <span class="${nameClass(m.role)}" data-id="${escapeHtml(m.id||'')}" data-handle="${escapeHtml(m.who)}" title="Написать в личные">${roleBadge(m.role)}${escapeHtml(m.who)}</span>${escapeHtml(m.text)}${m.edited ? ' <span class="edited-tag">(изменено)</span>' : ''}<span class="when">${m.when}</span>
+        ${isMine && m.mid ? `<button class="msg-edit-btn" data-edit-mid="${escapeHtml(m.mid)}" title="Изменить сообщение">✎</button>` : ''}
+        ${showBan && m.id && m.id !== currentUser.id ? `<button class="ban-btn" data-ban-id="${escapeHtml(m.id)}" data-ban-handle="${escapeHtml(m.who)}" data-ban-text="${escapeHtml(m.text)}">забанить</button>` : ''}
         ${canModAll && m.id && m.id !== currentUser.id ? `<button class="msg-del-all-btn" data-delall-id="${escapeHtml(m.id)}" data-delall-handle="${escapeHtml(m.who)}">удалить все от ${escapeHtml(m.who)}</button>` : ''}
         ${canDeleteThis && m.mid ? `<button class="msg-del-btn" data-del-mid="${escapeHtml(m.mid)}" title="Удалить сообщение">✕</button>` : ''}
       </div>`;
@@ -1860,7 +2282,9 @@
   // Clicking a name opens a private message thread with that person.
   document.getElementById('chatBox').addEventListener('click', (e) => {
     const banBtn = e.target.closest('.ban-btn');
-    if(banBtn){ handleBanClick(banBtn.dataset.banId, banBtn.dataset.banHandle); return; }
+    if(banBtn){ handleBanClick(banBtn.dataset.banId, banBtn.dataset.banHandle, banBtn.dataset.banText); return; }
+    const editBtn = e.target.closest('.msg-edit-btn');
+    if(editBtn){ editMessage(activeChat, editBtn.dataset.editMid); return; }
     const delBtn = e.target.closest('.msg-del-btn');
     if(delBtn){ deleteMessage(activeChat, delBtn.dataset.delMid); return; }
     const delAllBtn = e.target.closest('.msg-del-all-btn');
@@ -1870,8 +2294,23 @@
       openDM(nameEl.dataset.id, nameEl.dataset.handle);
     }
   });
+  async function editMessage(channel, mid){
+    if(!currentUser || !mid) return;
+    try{
+      const res = await store.get('chat:' + channel, true);
+      const msgs = res ? JSON.parse(res.value) : [];
+      const idx = msgs.findIndex(m => m.mid === mid);
+      if(idx === -1 || msgs[idx].id !== currentUser.id) return; // only ever your own message
+      const newText = prompt('Изменить сообщение:', msgs[idx].text);
+      if(newText === null || !newText.trim()) return;
+      msgs[idx].text = newText.trim();
+      msgs[idx].edited = true;
+      await store.set('chat:' + channel, JSON.stringify(msgs), true);
+      renderChat(msgs);
+    } catch(e){ /* ignore */ }
+  }
 
-  async function handleBanClick(id, handle){
+  async function handleBanClick(id, handle, msgText){
     if(!currentUser || !canBan(currentUser.role) || currentUserBanned || !id) return;
     try{
       const targetRes = await store.get('citizen:' + id, true);
@@ -1879,13 +2318,25 @@
         const targetRec = JSON.parse(targetRes.value);
         if(isBanImmune(targetRec.role)){ alert('Президента нельзя забанить — у него полный иммунитет.'); return; }
       }
-    } catch(e){ /* if the lookup fails, fall through — the bot check below still protects the system */ }
-    if(!confirm(`Забанить ${handle} (${id}) в чатах?`)) return;
-    const blocked = await botCheckBanSpam(currentUser);
-    if(blocked){ alert('Бот-модератор заблокировал это действие: слишком много банов подряд — ваш аккаунт временно забанен.'); loadChat(activeChat); return; }
+    } catch(e){ /* if the lookup fails, fall through */ }
+    const reason = prompt(`Причина бана для ${handle} — обязательна:`);
+    if(!reason || !reason.trim()){ alert('Бан отменён: причина обязательна.'); return; }
+    const durationRaw = prompt('Срок бана в днях (число). Оставьте пустым для бессрочного бана:');
+    let expiresAt = null, durationLabel = 'бессрочно';
+    if(durationRaw && durationRaw.trim()){
+      const days = parseInt(durationRaw.trim(), 10);
+      if(!isNaN(days) && days > 0){
+        expiresAt = new Date(Date.now() + days*86400000).toISOString();
+        durationLabel = days + ' дн.';
+      }
+    }
+    if(!confirm(`Забанить ${handle} (${id}) — ${durationLabel}. Причина: «${reason.trim()}». Подтвердить?`)) return;
     try{
-      await store.set('ban:' + id, JSON.stringify({ by: currentUser.handle, at: new Date().toISOString() }), true);
-      await logAudit('ban', currentUser, id, handle);
+      await store.set('ban:' + id, JSON.stringify({ by: currentUser.handle, byId: currentUser.id, at: new Date().toISOString(), reason: reason.trim(), expiresAt }), true);
+      await logAudit('ban', currentUser, id, `${handle} — ${reason.trim()} (${durationLabel})`);
+      if(currentUser.role === 'support'){
+        await logSupportAction(currentUser, id, msgText || '', reason.trim(), expiresAt);
+      }
       loadChat(activeChat);
     } catch(e){ /* ignore */ }
   }
@@ -1937,21 +2388,75 @@
   });
 
   document.getElementById('chatSend').addEventListener('click', sendChat);
-  document.getElementById('chatInput').addEventListener('keydown', (e) => { if(e.key === 'Enter') sendChat(); });
+  document.getElementById('chatInput').addEventListener('keydown', (e) => {
+    if(e.key !== 'Enter') return;
+    const inputEl = e.target;
+    if(inputEl.value.trim() === '/законы'){
+      e.preventDefault();
+      inputEl.value = '';
+      const lawsSection = document.getElementById('laws');
+      if(lawsSection) lawsSection.scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+    sendChat();
+  });
+
+  // ---------- Content filter (Section 2.2) ----------
+  // BANNED_PATTERNS is intentionally empty here — a real hate-speech/slur list
+  // must be filled in by the site's own moderators (President), not authored by
+  // this assistant. Publishing an actual slur list would itself be harmful and
+  // would also hand bad actors a map of exactly what to obfuscate around.
+  // Add plain lowercase substrings here, e.g.: const BANNED_PATTERNS = ["слово1","слово2"];
+  const BANNED_PATTERNS = [];
+  function checkContentFilter(text){
+    const lower = text.toLowerCase();
+    for(const p of BANNED_PATTERNS){
+      if(p && lower.includes(p)) return { blocked: true, reason: 'запрещённое слово' };
+    }
+    // Mechanical spam signals — safe to check without a curated word list:
+    const letters = text.replace(/[^a-zа-яё]/gi, '');
+    const upperRatio = letters.length > 8 ? (text.replace(/[^А-ЯЁA-Z]/g,'').length / letters.length) : 0;
+    if(upperRatio > 0.8 && letters.length > 12) return { blocked: true, reason: 'капс-спам' };
+    if(/(.)\1{7,}/.test(text)) return { blocked: true, reason: 'повторяющиеся символы' };
+    return { blocked: false };
+  }
+  async function applyWarning(user){
+    try{
+      const res = await store.get('warnings:' + user.id, true);
+      const data = res && res.value ? JSON.parse(res.value) : { count: 0 };
+      data.count = (data.count || 0) + 1;
+      await store.set('warnings:' + user.id, JSON.stringify(data), true);
+      await logAudit('filter_warning', { handle: 'Бот-модератор', id: 'BOT', role: 'bot' }, user.id, 'предупреждение ' + data.count + '/3');
+      if(data.count >= 3){
+        await store.set('ban:' + user.id, JSON.stringify({ by: 'Бот-модератор', byId: 'BOT', at: new Date().toISOString(), reason: 'автоматически — 3 предупреждения фильтра текста' }), true);
+        await logAudit('bot_autoban_filter', { handle: 'Бот-модератор', id: 'BOT', role: 'bot' }, user.id, '3 предупреждения');
+        return { banned: true, count: data.count };
+      }
+      return { banned: false, count: data.count };
+    } catch(e){ return { banned: false, count: 0 }; }
+  }
 
   async function sendChat(){
     if(!currentUser) return;
     const input = document.getElementById('chatInput');
     const text = input.value.trim();
+    if(activeChat === 'dm') return sendDM(); // DM allows photo-only messages, so check this before the empty-text guard below
     if(!text) return;
     if(activeChat === 'rulers' && !isElevated(currentUser.role)) return;
     if(activeChat === 'diplomacy' && !canUseDiplomaticChannel(currentUser.role)) return;
-    if(activeChat === 'dm') return sendDM();
     const msgEl = document.getElementById('chatLockedNote');
     try{
       const banned = await isUserBanned(currentUser.id);
       if(banned){ input.value = ''; alert('Вы забанены в чатах государства.'); return; }
     } catch(e){ /* if the ban check itself fails, don't block sending */ }
+    const filterResult = checkContentFilter(text);
+    if(filterResult.blocked){
+      input.value = '';
+      const w = await applyWarning(currentUser);
+      if(w.banned){ currentUserBanned = true; alert('Сообщение удалено ботом (' + filterResult.reason + '). Это было 3-е предупреждение — вы забанены автоматически.'); }
+      else { alert('Сообщение удалено ботом (' + filterResult.reason + '). Предупреждение ' + w.count + '/3.'); }
+      return;
+    }
     input.disabled = true;
     try{
       const res = await store.get('chat:' + activeChat, true);
@@ -1985,6 +2490,7 @@
     document.getElementById('dmTargetBar').classList.remove('hidden');
     document.getElementById('dmTargetName').textContent = handle + ' (' + id + ')';
     document.getElementById('codeIssuer').classList.toggle('hidden', !(currentUser && currentUser.role === 'president'));
+    document.getElementById('chatPhotoBtn').classList.remove('hidden');
     loadDM();
   }
   async function loadDM(){
@@ -2002,27 +2508,92 @@
   function renderDM(msgs){
     const box = document.getElementById('chatBox');
     if(!msgs.length){ box.innerHTML = '<div class="chat-empty">Сообщений пока нет. Напишите первым.</div>'; return; }
-    box.innerHTML = msgs.map(m => `<div class="msg"><span class="${nameClass(m.role)}">${m.fromId === currentUser.id ? 'Вы' : escapeHtml(m.who)}</span>${escapeHtml(m.text)}<span class="when">${m.when}</span></div>`).join('');
+    box.innerHTML = msgs.map(m => `<div class="msg"><span class="${nameClass(m.role)}">${m.fromId === currentUser.id ? 'Вы' : escapeHtml(m.who)}</span>${escapeHtml(m.text||'')}${m.edited ? ' <span class="edited-tag">(изменено)</span>' : ''}<span class="when">${m.when}</span>${m.fromId === currentUser.id && m.mid && m.text ? `<button class="msg-edit-btn" data-dm-edit-mid="${escapeHtml(m.mid)}" title="Изменить сообщение">✎</button>` : ''}${m.image && m.image.startsWith('data:image/') ? `<img class="msg-photo" src="${m.image}" onclick="window.open(this.src)">` : ''}</div>`).join('');
     box.scrollTop = box.scrollHeight;
+  }
+  document.getElementById('chatBox').addEventListener('click', (e) => {
+    const dmEditBtn = e.target.closest('[data-dm-edit-mid]');
+    if(dmEditBtn && activeChat === 'dm') editDM(dmEditBtn.dataset.dmEditMid);
+  });
+  async function editDM(mid){
+    if(!currentUser || !dmPartner || !mid) return;
+    try{
+      const key = dmKey(currentUser.id, dmPartner.id);
+      const res = await store.get(key, true);
+      const msgs = res ? JSON.parse(res.value) : [];
+      const idx = msgs.findIndex(m => m.mid === mid);
+      if(idx === -1 || msgs[idx].fromId !== currentUser.id) return;
+      const newText = prompt('Изменить сообщение:', msgs[idx].text);
+      if(newText === null || !newText.trim()) return;
+      msgs[idx].text = newText.trim();
+      msgs[idx].edited = true;
+      await store.set(key, JSON.stringify(msgs), true);
+      renderDM(msgs);
+    } catch(e){ /* ignore */ }
   }
   async function sendDM(){
     if(!currentUser || !dmPartner) return;
     const input = document.getElementById('chatInput');
     const text = input.value.trim();
-    if(!text) return;
+    if(!text && !pendingPhotoDataUrl) return;
     input.disabled = true;
     try{
       const key = dmKey(currentUser.id, dmPartner.id);
       const res = await store.get(key, true);
       const msgs = res ? JSON.parse(res.value) : [];
-      msgs.push({ who: currentUser.handle, role: currentUser.role, fromId: currentUser.id, text, when: new Date().toLocaleTimeString('ru-RU', {hour:'2-digit', minute:'2-digit'}) });
+      const entry = { mid: randHex(6), who: currentUser.handle, role: currentUser.role, fromId: currentUser.id, text, when: new Date().toLocaleTimeString('ru-RU', {hour:'2-digit', minute:'2-digit'}) };
+      if(pendingPhotoDataUrl) entry.image = pendingPhotoDataUrl;
+      msgs.push(entry);
       const trimmed = msgs.slice(-200);
       await store.set(key, JSON.stringify(trimmed), true);
       input.value = '';
+      cancelPendingPhoto();
       renderDM(trimmed);
     } catch(e){ console.error('Ошибка отправки личного сообщения', e); }
     finally { input.disabled = false; input.focus(); }
   }
+
+  // ---------- DM photo attachment (Section 5.3) — DM only, compressed client-side ----------
+  let pendingPhotoDataUrl = null;
+  function cancelPendingPhoto(){
+    pendingPhotoDataUrl = null;
+    document.getElementById('photoPreviewBar').classList.add('hidden');
+    document.getElementById('chatPhotoInput').value = '';
+  }
+  document.getElementById('btnCancelPhoto').addEventListener('click', cancelPendingPhoto);
+  document.getElementById('chatPhotoBtn').addEventListener('click', () => {
+    if(activeChat !== 'dm') return;
+    document.getElementById('chatPhotoInput').click();
+  });
+  document.getElementById('chatPhotoInput').addEventListener('change', (e) => {
+    const file = e.target.files && e.target.files[0];
+    if(!file) return;
+    if(!file.type.startsWith('image/')){ alert('Можно прикрепить только изображение.'); cancelPendingPhoto(); return; }
+    const reader = new FileReader();
+    reader.onload = () => {
+      const img = new Image();
+      img.onload = () => {
+        // Downscale to keep the shared document small — Firestore caps a document at 1MB,
+        // and DM history for a pair lives in one document, so images must stay compact.
+        const MAX_DIM = 480;
+        let w = img.width, h = img.height;
+        if(w > MAX_DIM || h > MAX_DIM){
+          const scale = MAX_DIM / Math.max(w, h);
+          w = Math.round(w * scale); h = Math.round(h * scale);
+        }
+        const canvas = document.createElement('canvas');
+        canvas.width = w; canvas.height = h;
+        canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+        const dataUrl = canvas.toDataURL('image/jpeg', 0.6);
+        if(dataUrl.length > 350000){ alert('Изображение слишком большое даже после сжатия — выберите другое.'); cancelPendingPhoto(); return; }
+        pendingPhotoDataUrl = dataUrl;
+        document.getElementById('photoPreviewImg').src = dataUrl;
+        document.getElementById('photoPreviewBar').classList.remove('hidden');
+      };
+      img.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+  });
 
   // President-only helper: find an unused invite code for the chosen role and
   // drop it straight into the message box, ready to send.
@@ -2144,6 +2715,7 @@
   function renderPersonnelPanel(records){
     const panel = document.getElementById('personnelPanel');
     if(!records.length){ panel.innerHTML = '<div class="pp-empty">Граждан пока нет.</div>'; return; }
+    const isPresident = currentUser && currentUser.role === 'president';
     panel.innerHTML = records.map(r => `
       <div class="pp-row" data-id="${r.id}">
         <span class="pp-id mono">${escapeHtml(r.id)}</span>
@@ -2153,6 +2725,10 @@
         </select>
         <button class="prof-save" data-id="${r.id}">Сохранить</button>
         <span class="auth-msg prof-msg" id="prof-msg-${r.id}"></span>
+        ${isPresident ? `
+          <input type="text" class="award-input" data-id="${r.id}" placeholder="Название награды" style="font-family:'IBM Plex Mono',monospace; font-size:11px; padding:5px 8px; border:1px solid var(--line-strong); background:var(--parchment); width:150px;">
+          <button class="award-save" data-id="${r.id}">Наградить</button>
+        ` : ''}
       </div>`).join('');
     panel.querySelectorAll('.prof-save').forEach(btn => {
       btn.addEventListener('click', async () => {
@@ -2173,54 +2749,305 @@
         }
       });
     });
+    panel.querySelectorAll('.award-save').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        if(!currentUser || currentUser.role !== 'president') return;
+        const id = btn.dataset.id;
+        const input = panel.querySelector(`.award-input[data-id="${id}"]`);
+        const title = input.value.trim();
+        const msgEl = document.getElementById('prof-msg-' + id);
+        if(!title) return;
+        try{
+          const res = await store.get('citizen:' + id, true);
+          if(!res) return;
+          const rec = JSON.parse(res.value);
+          rec.awards = rec.awards || [];
+          rec.awards.push({ title, date: new Date().toLocaleDateString('ru-RU'), by: currentUser.handle });
+          await store.set('citizen:' + id, JSON.stringify(rec), true);
+          await logAudit('award', currentUser, id, title);
+          input.value = '';
+          if(msgEl){ msgEl.textContent = 'Награда присвоена'; msgEl.classList.add('ok'); }
+        } catch(e){ if(msgEl){ msgEl.textContent = 'Ошибка'; msgEl.classList.add('err'); } }
+      });
+    });
   }
 
   // ---------- Journal: banned users + bot/moderation audit log ----------
+  async function fetchBannedRows(){
+    const listRes = await store.list('ban:', true);
+    const keys = (listRes && listRes.keys) || [];
+    const rows = [];
+    for(const k of keys){
+      try{
+        const res = await store.get(k, true);
+        if(!res || !res.value) continue;
+        const data = JSON.parse(res.value);
+        if(data.unbanned) continue;
+        if(data.expiresAt && new Date(data.expiresAt).getTime() < Date.now()) continue; // auto-expired, not shown as active
+        const id = k.slice('ban:'.length);
+        rows.push({ id, by: data.by || '?', byId: data.byId || '', at: data.at || '', reason: data.reason || '', expiresAt: data.expiresAt || null });
+      }catch(e){ /* skip unreadable entry */ }
+    }
+    return rows;
+  }
+  function renderBannedRowsHtml(rows, canUnban){
+    if(!rows.length) return '<div class="pp-empty">Забаненных нет.</div>';
+    return rows.map(r => `<div class="banned-row"><span class="b-id mono">${escapeHtml(r.id)}</span><span>забанен: ${escapeHtml(r.by)}${r.reason ? ' — ' + escapeHtml(r.reason) : ''}${r.expiresAt ? ' · до ' + escapeHtml(new Date(r.expiresAt).toLocaleDateString('ru-RU')) : ' · бессрочно'}</span>${canUnban ? `<button data-unban-id="${escapeHtml(r.id)}">Разбанить</button>` : ''}</div>`).join('');
+  }
   async function loadJournalPanel(){
     const panel = document.getElementById('journalPanel');
     panel.innerHTML = '<div class="pp-empty">Загрузка...</div>';
-    let bannedHtml = '';
-    let logHtml = '';
+    let bannedHtml = '', logHtml = '';
     try{
-      const listRes = await store.list('ban:', true);
-      const keys = (listRes && listRes.keys) || [];
-      const rows = [];
-      for(const k of keys){
-        try{
-          const res = await store.get(k, true);
-          if(!res || !res.value) continue;
-          const data = JSON.parse(res.value);
-          if(data.unbanned) continue;
-          const id = k.slice('ban:'.length);
-          rows.push({ id, by: data.by || '?', at: data.at || '', reason: data.reason || '' });
-        }catch(e){ /* skip unreadable entry */ }
-      }
-      bannedHtml = rows.length
-        ? rows.map(r => `<div class="banned-row"><span class="b-id mono">${escapeHtml(r.id)}</span><span>забанен: ${escapeHtml(r.by)}${r.reason ? ' — ' + escapeHtml(r.reason) : ''}</span>${(currentUser && ((canBan(currentUser.role) && !currentUserBanned) || currentUser.role === 'president')) ? `<button data-unban-id="${escapeHtml(r.id)}">Разбанить</button>` : ''}</div>`).join('')
-        : '<div class="pp-empty">Забаненных нет.</div>';
-    } catch(e){
-      bannedHtml = '<div class="pp-empty">Не удалось загрузить список банов.</div>';
-    }
+      const rows = await fetchBannedRows();
+      bannedHtml = renderBannedRowsHtml(rows, currentUser && currentUser.role === 'president');
+    } catch(e){ bannedHtml = '<div class="pp-empty">Не удалось загрузить список банов.</div>'; }
     try{
       const res = await store.get('audit-log', true);
       const log = res && res.value ? JSON.parse(res.value) : [];
       logHtml = log.length
-        ? log.slice(-40).reverse().map(e => `<div class="journal-entry">${e.byRole==='bot' ? '<span class="j-bot">🤖 БОТ</span>' : escapeHtml(e.by)} · <span class="j-action">${escapeHtml(e.action)}</span> · ${escapeHtml(e.target||'')} ${e.extra ? '— ' + escapeHtml(e.extra) : ''} <span style="float:right; color:var(--steel);">${escapeHtml(e.at)}</span></div>`).join('')
+        ? log.slice(-60).reverse().map(e => `<div class="journal-entry">${e.byRole==='bot' ? '<span class="j-bot">🤖 БОТ</span>' : escapeHtml(e.by)} · <span class="j-action">${escapeHtml(e.action)}</span> · ${escapeHtml(e.target||'')} ${e.extra ? '— ' + escapeHtml(e.extra) : ''} <span style="float:right; color:var(--steel);">${escapeHtml(e.at)}</span></div>`).join('')
         : '<div class="pp-empty">Журнал пуст.</div>';
-    } catch(e){
-      logHtml = '<div class="pp-empty">Не удалось загрузить журнал.</div>';
+    } catch(e){ logHtml = '<div class="pp-empty">Не удалось загрузить журнал.</div>'; }
+    panel.innerHTML = `<div class="journal-section-title">Забаненные</div>${bannedHtml}<div class="journal-section-title">Журнал действий (бот и модерация) — виден только Президенту</div>${logHtml}`;
+    panel.querySelectorAll('button[data-unban-id]').forEach(btn => {
+      btn.addEventListener('click', async () => { btn.disabled = true; await handleUnban(btn.dataset.unbanId); loadJournalPanel(); });
+    });
+  }
+
+  // ---------- Разбан: lightweight Support-facing tab (ban list + unban only, no audit text) ----------
+  async function loadUnbanPanel(){
+    const panel = document.getElementById('unbanPanel');
+    panel.innerHTML = '<div class="pp-empty">Загрузка...</div>';
+    try{
+      const rows = await fetchBannedRows();
+      const canUnban = currentUser && ((currentUser.role === 'support' && !currentUserBanned) || currentUser.role === 'president');
+      panel.innerHTML = `<div class="journal-section-title">Разбан — снять ошибочную блокировку</div>${renderBannedRowsHtml(rows, canUnban)}`;
+      panel.querySelectorAll('button[data-unban-id]').forEach(btn => {
+        btn.addEventListener('click', async () => { btn.disabled = true; await handleUnban(btn.dataset.unbanId); loadUnbanPanel(); });
+      });
+    } catch(e){ panel.innerHTML = '<div class="pp-empty">Не удалось загрузить список банов.</div>'; }
+  }
+
+  // ---------- Актуальность кодов (President only): every invite code, free or used, with Revoke ----------
+  async function loadCodesPanel(){
+    const panel = document.getElementById('codesPanel');
+    if(!currentUser || currentUser.role !== 'president'){ panel.innerHTML = '<div class="pp-empty">Доступно только Президенту.</div>'; return; }
+    panel.innerHTML = '<div class="pp-empty">Загрузка...</div>';
+    let html = '';
+    for(const roleKey in ROLE_CONFIG){
+      const cfg = ROLE_CONFIG[roleKey];
+      if(!cfg.codes) continue; // citizens have no invite codes
+      html += `<div class="journal-section-title">${escapeHtml(cfg.label)} — ${cfg.codes.length} код(ов)</div>`;
+      for(const code of cfg.codes){
+        let statusHtml;
+        try{
+          const res = await store.get('invite-used:' + code, true);
+          const data = res && res.value ? JSON.parse(res.value) : null;
+          if(data && !data.revoked){
+            statusHtml = `<span class="pp-badge bad">занят</span> <span class="b-id mono">${escapeHtml(data.usedBy||'?')}</span> <button data-revoke-code="${escapeHtml(code)}" data-revoke-role="${escapeHtml(roleKey)}">Отозвать</button>`;
+          } else {
+            statusHtml = `<span class="pp-badge ok">свободен</span>`;
+          }
+        }catch(e){ statusHtml = `<span class="pp-badge">?</span>`; }
+        html += `<div class="banned-row"><span class="b-id mono">${escapeHtml(code)}</span>${statusHtml}</div>`;
+      }
     }
-    const panelEl = document.getElementById('journalPanel');
-    panelEl.innerHTML = `<div class="journal-section-title">Забаненные — доступна разблокировка</div>${bannedHtml}<div class="journal-section-title">Журнал действий (бот и модерация)</div>${logHtml}`;
-    panelEl.querySelectorAll('button[data-unban-id]').forEach(btn => {
+    panel.innerHTML = html || '<div class="pp-empty">Нет ролей с кодами приглашения.</div>';
+    panel.querySelectorAll('button[data-revoke-code]').forEach(btn => {
       btn.addEventListener('click', async () => {
+        if(!confirm('Отозвать этот код? Владелец вернётся в статус «Гражданин», а код снова станет свободным.')) return;
         btn.disabled = true;
-        await handleUnban(btn.dataset.unbanId);
-        loadJournalPanel();
+        await revokeCode(btn.dataset.revokeCode);
+        loadCodesPanel();
+      });
+    });
+  }
+  async function revokeCode(code){
+    try{
+      const usedRes = await store.get('invite-used:' + code, true);
+      if(!usedRes || !usedRes.value) return;
+      const usedData = JSON.parse(usedRes.value);
+      if(!usedData.usedBy) return;
+      const citRes = await store.get('citizen:' + usedData.usedBy, true);
+      if(citRes && citRes.value){
+        const rec = JSON.parse(citRes.value);
+        rec.role = 'citizen';
+        rec.clearance = ['I','I','I','II','II','III'][randInts(1,6)[0]];
+        await store.set('citizen:' + usedData.usedBy, JSON.stringify(rec), true);
+      }
+      await store.set('invite-used:' + code, JSON.stringify({ revoked: true, revokedBy: currentUser.handle, at: new Date().toISOString() }), true);
+      await logAudit('revoke_code', currentUser, usedData.usedBy, code);
+    } catch(e){ /* ignore */ }
+  }
+
+  // ---------- Жалобы: any citizen may write to the President ----------
+  async function loadComplaintsPanel(){
+    const panel = document.getElementById('complaintsPanel');
+    panel.innerHTML = '<div class="pp-empty">Загрузка...</div>';
+    let listHtml = '';
+    let list = [];
+    try{
+      const res = await store.get('complaints-general', true);
+      list = res && res.value ? JSON.parse(res.value) : [];
+    } catch(e){ /* start empty */ }
+    const isPresident = currentUser && currentUser.role === 'president';
+    if(isPresident){
+      listHtml = list.length
+        ? list.slice().reverse().map((c,revIdx) => {
+            const idx = list.length - 1 - revIdx;
+            return `<div class="journal-entry">${escapeHtml(c.fromHandle)} (${escapeHtml(c.fromId)}) · ${escapeHtml(c.at)}${c.resolved ? ' · <span class="pp-badge ok">рассмотрено</span>' : ''}<br>${escapeHtml(c.text)}${!c.resolved ? ` <button data-resolve-complaint="${idx}">Отметить рассмотренным</button>` : ''}</div>`;
+          }).join('')
+        : '<div class="pp-empty">Жалоб пока нет.</div>';
+    }
+    const formHtml = currentUser ? `
+      <div class="journal-section-title">Написать жалобу Президенту</div>
+      <div style="padding:14px 16px;">
+        <textarea id="complaintText" placeholder="Опишите проблему или обращение..." style="width:100%; min-height:70px; font-family:'IBM Plex Mono',monospace; font-size:13px; padding:10px; background:var(--parchment); border:1px solid var(--line-strong);"></textarea>
+        <button class="btn" id="btnSubmitComplaint" style="margin-top:10px;">Отправить</button>
+        <span class="auth-msg" id="complaintMsg"></span>
+      </div>` : '';
+    panel.innerHTML = formHtml + (isPresident ? `<div class="journal-section-title">Все обращения (видно только Президенту)</div>${listHtml}` : '');
+    const btn = document.getElementById('btnSubmitComplaint');
+    if(btn) btn.addEventListener('click', async () => {
+      const textEl = document.getElementById('complaintText');
+      const msgEl = document.getElementById('complaintMsg');
+      const text = textEl.value.trim();
+      if(!text){ msgEl.textContent = 'Введите текст обращения.'; msgEl.className = 'auth-msg err'; return; }
+      try{
+        const res = await store.get('complaints-general', true);
+        const cur = res && res.value ? JSON.parse(res.value) : [];
+        cur.push({ fromId: currentUser.id, fromHandle: currentUser.handle, text, at: new Date().toLocaleString('ru-RU'), resolved: false });
+        await store.set('complaints-general', JSON.stringify(cur.slice(-300)), true);
+        textEl.value = '';
+        msgEl.textContent = 'Обращение отправлено.'; msgEl.className = 'auth-msg ok';
+      } catch(e){ msgEl.textContent = 'Не удалось отправить.'; msgEl.className = 'auth-msg err'; }
+    });
+    panel.querySelectorAll('button[data-resolve-complaint]').forEach(b => {
+      b.addEventListener('click', async () => {
+        try{
+          const res = await store.get('complaints-general', true);
+          const cur = res && res.value ? JSON.parse(res.value) : [];
+          const idx = Number(b.dataset.resolveComplaint);
+          if(cur[idx]) cur[idx].resolved = true;
+          await store.set('complaints-general', JSON.stringify(cur), true);
+          loadComplaintsPanel();
+        } catch(e){ /* ignore */ }
+      });
+    });
+  }
+
+  // ---------- Жалобы на поддержку: complain about a specific Support ban, bot pre-checks it ----------
+  async function loadSupportComplaintsPanel(){
+    const panel = document.getElementById('supportComplaintsPanel');
+    panel.innerHTML = '<div class="pp-empty">Загрузка...</div>';
+    let myBan = null;
+    try{
+      if(currentUser){
+        const banRes = await store.get('ban:' + currentUser.id, true);
+        if(banRes && banRes.value){
+          const data = JSON.parse(banRes.value);
+          if(!data.unbanned) myBan = data;
+        }
+      }
+    } catch(e){ /* no current ban visible */ }
+    let list = [];
+    try{
+      const res = await store.get('support-complaints', true);
+      list = res && res.value ? JSON.parse(res.value) : [];
+    } catch(e){ /* start empty */ }
+    const isPresident = currentUser && currentUser.role === 'president';
+    let formHtml = '';
+    if(myBan && myBan.byId){
+      formHtml = `
+        <div class="journal-section-title">Пожаловаться на этот бан</div>
+        <div style="padding:14px 16px;">
+          <p style="font-size:13px; color:var(--text-dim); margin-bottom:8px;">Забанил: <b>${escapeHtml(myBan.by)}</b> (${escapeHtml(myBan.byId)}) · причина указана как: «${escapeHtml(myBan.reason||'не указана')}»</p>
+          <textarea id="supComplaintText" placeholder="Почему бан несправедлив?" style="width:100%; min-height:60px; font-family:'IBM Plex Mono',monospace; font-size:13px; padding:10px; background:var(--parchment); border:1px solid var(--line-strong);"></textarea>
+          <button class="btn" id="btnSubmitSupComplaint" style="margin-top:10px;">Отправить жалобу</button>
+          <span class="auth-msg" id="supComplaintMsg"></span>
+        </div>`;
+    } else if(currentUser){
+      formHtml = `<div class="journal-section-title">Пожаловаться на бан от поддержки</div><div class="pp-empty" style="padding:14px 16px;">Эта форма появляется автоматически, когда вы сами сейчас забанены — ID сотрудника поддержки подставляется из системной записи, а не вводится вручную.</div>`;
+    }
+    let listHtml = '';
+    if(isPresident){
+      listHtml = list.length
+        ? list.slice().reverse().map((c,revIdx) => {
+            const idx = list.length - 1 - revIdx;
+            return `<div class="journal-entry">${escapeHtml(c.fromHandle)} (${escapeHtml(c.fromId)}) на <b>${escapeHtml(c.supportId)}</b> · ${escapeHtml(c.at)} ${c.botResolved ? '· <span class="j-bot">🤖 бот уже разрешил автоматически</span>' : (c.resolved ? '· <span class="pp-badge ok">рассмотрено</span>' : '')}<br>жалоба: ${escapeHtml(c.text)}<br>причина бана в логе: «${escapeHtml(c.loggedReason||'—')}»
+              ${!c.resolved && !c.botResolved ? ` <button data-approve-supcomplaint="${idx}">Одобрить: разбанить + забанить сотрудника</button> <button data-reject-supcomplaint="${idx}">Отклонить</button>` : ''}</div>`;
+          }).join('')
+        : '<div class="pp-empty">Жалоб на поддержку пока нет.</div>';
+    }
+    panel.innerHTML = formHtml + (isPresident ? `<div class="journal-section-title">Все жалобы на поддержку (видно только Президенту)</div>${listHtml}` : '');
+
+    const subBtn = document.getElementById('btnSubmitSupComplaint');
+    if(subBtn) subBtn.addEventListener('click', async () => {
+      const textEl = document.getElementById('supComplaintText');
+      const msgEl = document.getElementById('supComplaintMsg');
+      const text = textEl.value.trim();
+      if(!text){ msgEl.textContent = 'Опишите жалобу.'; msgEl.className = 'auth-msg err'; return; }
+      try{
+        // Bot pre-check (8.5): compare against the hidden support audit log. If that log has
+        // no matching entry, or the entry's own reason is effectively empty, the bot resolves
+        // it immediately; otherwise it queues for the President's manual review.
+        let botResolved = false, loggedReason = '';
+        try{
+          const logRes = await store.get('support-action-log', true);
+          const supLog = logRes && logRes.value ? JSON.parse(logRes.value) : [];
+          const entry = [...supLog].reverse().find(e => e.targetId === currentUser.id && e.byId === myBan.byId);
+          loggedReason = entry ? (entry.reason || '') : '';
+          if(!entry || loggedReason.trim().length < 3){
+            botResolved = true;
+            await store.set('ban:' + currentUser.id, JSON.stringify({ unbanned: true, by: 'Бот-модератор', at: new Date().toISOString() }), true);
+            await store.set('ban:' + myBan.byId, JSON.stringify({ by: 'Бот-модератор', byId: 'BOT', at: new Date().toISOString(), reason: 'автоматически — жалоба подтверждена ботом (нарушение регламента при бане)' }), true);
+            await logAudit('bot_resolved_complaint', { handle: 'Бот-модератор', id: 'BOT', role: 'bot' }, myBan.byId, 'разбанен(а) ' + currentUser.id);
+            currentUserBanned = false;
+          }
+        } catch(e){ /* if the bot check fails, just queue for manual review below */ }
+        const res = await store.get('support-complaints', true);
+        const cur = res && res.value ? JSON.parse(res.value) : [];
+        cur.push({ fromId: currentUser.id, fromHandle: currentUser.handle, supportId: myBan.byId, text, loggedReason, botResolved, resolved: botResolved, at: new Date().toLocaleString('ru-RU') });
+        await store.set('support-complaints', JSON.stringify(cur.slice(-300)), true);
+        textEl.value = '';
+        msgEl.textContent = botResolved ? 'Бот подтвердил нарушение — вы уже разбанены.' : 'Жалоба отправлена на рассмотрение Президенту.';
+        msgEl.className = 'auth-msg ok';
+        loadSupportComplaintsPanel();
+      } catch(e){ msgEl.textContent = 'Не удалось отправить.'; msgEl.className = 'auth-msg err'; }
+    });
+    panel.querySelectorAll('button[data-approve-supcomplaint]').forEach(b => {
+      b.addEventListener('click', async () => {
+        try{
+          const res = await store.get('support-complaints', true);
+          const cur = res && res.value ? JSON.parse(res.value) : [];
+          const idx = Number(b.dataset.approveSupcomplaint);
+          const c = cur[idx];
+          if(!c) return;
+          await store.set('ban:' + c.fromId, JSON.stringify({ unbanned: true, by: currentUser.handle, at: new Date().toISOString() }), true);
+          await store.set('ban:' + c.supportId, JSON.stringify({ by: currentUser.handle, byId: currentUser.id, at: new Date().toISOString(), reason: 'нарушение регламента при бане — подтверждено по жалобе' }), true);
+          c.resolved = true;
+          await store.set('support-complaints', JSON.stringify(cur), true);
+          await logAudit('approve_support_complaint', currentUser, c.supportId, 'жалоба от ' + c.fromId);
+          loadSupportComplaintsPanel();
+        } catch(e){ /* ignore */ }
+      });
+    });
+    panel.querySelectorAll('button[data-reject-supcomplaint]').forEach(b => {
+      b.addEventListener('click', async () => {
+        try{
+          const res = await store.get('support-complaints', true);
+          const cur = res && res.value ? JSON.parse(res.value) : [];
+          const idx = Number(b.dataset.rejectSupcomplaint);
+          if(cur[idx]) cur[idx].resolved = true;
+          await store.set('support-complaints', JSON.stringify(cur), true);
+          loadSupportComplaintsPanel();
+        } catch(e){ /* ignore */ }
       });
     });
   }
 </script>
 
-</body>
-</html>
+
+
+</body></html>
